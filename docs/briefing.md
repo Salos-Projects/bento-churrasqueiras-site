@@ -148,7 +148,7 @@ Regras: **no máximo 2 famílias de fonte**, **uma única cor de ação**, ícon
 | Assistência | `/assistencia/` | garantia de 5 anos, retorno em 48 h, upload de fotos, manuais |
 | Política de Privacidade | `/politica-de-privacidade/` | linkada no rodapé |
 
-**Template de linha de produto** (SmartGrill e DuraGrill): hero com render · o que é · callouts técnicos · diferenciais · galeria de instalações · specs · manuais para download · depoimento · CTA WhatsApp com `?text=Quero um orçamento da SmartGrill`.
+**Template de linha de produto** (SmartGrill e DuraGrill): hero com render · o que é · **"raio-X" do produto: render grande e centralizado, com as legendas técnicas desenhadas conforme o scroll (decidido em 25/09 que fica nas páginas de produto, não na home)** · callouts técnicos · diferenciais · galeria de instalações · specs · manuais para download · depoimento · CTA WhatsApp com `?text=Quero um orçamento da SmartGrill`.
 
 ### 4.5 Conversão
 - **WhatsApp flutuante** em todas as páginas, com mensagem por página ou linha.

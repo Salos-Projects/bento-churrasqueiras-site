@@ -34,6 +34,7 @@
     barra.querySelectorAll("button").forEach(function (b) {
       b.setAttribute("aria-pressed", String(b.dataset.valor === valor));
     });
+    url = new URL(window.location.href);
     url.searchParams.set("fundo", valor);
     history.replaceState(null, "", url);
   }

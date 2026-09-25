@@ -483,6 +483,11 @@ body.menu-aberto { overflow: hidden; }
   margin-bottom: 8px;
 }
 .selo__anel { width: 100%; height: 100%; animation: girar 24s linear infinite; }
+.selo__anel text {
+  fill: var(--branco);
+  font: 600 11.5px var(--fonte-texto);
+  text-transform: uppercase;
+}
 .selo__chama {
   position: absolute;
   left: 50%;

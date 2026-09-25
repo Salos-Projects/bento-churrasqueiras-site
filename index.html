@@ -11,10 +11,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/estilo.css?v=1790364474">
+  <link rel="stylesheet" href="css/estilo.css?v=1790364613">
   <!-- TEMPORÁRIO: comparação de fundos da seção de produtos -->
-  <link rel="stylesheet" href="css/comparar-layout.css?v=1790364474">
-  <link rel="stylesheet" href="css/comparar-fundos.css?v=1790364474">
+  <link rel="stylesheet" href="css/comparar-layout.css?v=1790364613">
+  <link rel="stylesheet" href="css/comparar-fundos.css?v=1790364613">
 
   <script type="application/ld+json">
   {
@@ -147,7 +147,11 @@
         </div>
 
         <div class="selo" aria-hidden="true">
-          <img class="selo__anel" src="assets/marca/selo-anel.svg" alt="" width="190" height="190">
+          <!-- anel em texto real sobre o círculo: textLength distribui as letras por igual -->
+          <svg class="selo__anel" viewBox="0 0 190 190" width="190" height="190">
+            <defs><path id="selo-circulo" d="M95,17 a78,78 0 1,1 0,156 a78,78 0 1,1 0,-156"/></defs>
+            <text textLength="488" lengthAdjust="spacing"><textPath href="#selo-circulo">BENTO CHURRASQUEIRAS · BENTO CHURRASQUEIRAS · </textPath></text>
+          </svg>
           <img class="selo__chama" src="assets/marca/selo-chama.svg" alt="" width="69" height="109">
         </div>
       </div>
@@ -433,9 +437,9 @@
     <img src="assets/icones/whatsapp-branco.svg" alt="" width="28" height="28">
   </a>
 
-  <script src="js/main.js?v=1790364474" defer></script>
+  <script src="js/main.js?v=1790364613" defer></script>
   <!-- TEMPORÁRIO: comparação de fundos da seção de produtos -->
-  <script src="js/comparar-layout.js?v=1790364474" defer></script>
-  <script src="js/comparar-fundos.js?v=1790364474" defer></script>
+  <script src="js/comparar-layout.js?v=1790364613" defer></script>
+  <script src="js/comparar-fundos.js?v=1790364613" defer></script>
 </body>
 </html>

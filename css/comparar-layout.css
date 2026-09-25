@@ -199,3 +199,135 @@
       radial-gradient(ellipse 80% 90% at 50% 50%, transparent 55%, rgba(40, 42, 48, .10) 100%);
   }
 }
+
+/* ==========================================================================
+   A2 · Vitrine editorial (usa a mecânica da A: body.layout-a.layout-a2)
+   Nome gigante atravessando a tela, imagem sobreposta a ele, specs em faixa.
+   ========================================================================== */
+
+/* índice colado na borda esquerda da tela */
+.layout-a2 .vitrine-indice .container { width: auto; margin: 0 0 0 32px; }
+
+.layout-a2 .linha::before { display: none; } /* nome das opções de fundo 2a/2b/2c */
+.layout-a2 .linha { color: var(--texto); }
+.fundo-3.layout-a2 .linha:nth-child(even) { color: var(--branco); }
+
+.layout-a2 .linha__grade {
+  --nome: clamp(110px, 12.5vw, 240px);
+  padding: 0 0 0 max(0px, 180px - var(--gutter));
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  grid-template-rows: auto auto auto auto 1fr auto;
+  grid-template-areas:
+    "over   over"
+    "nome   nome"
+    "titulo midia"
+    "desc   midia"
+    "cta    midia"
+    "specs  specs";
+  column-gap: clamp(32px, 4vw, 72px);
+  align-items: start;
+}
+.layout-a2 .linha__texto { display: contents; }
+.layout-a2 .linha__texto > .overline { grid-area: over; margin: 0; }
+.layout-a2 .linha__texto > .titulo {
+  grid-area: titulo;
+  margin: 28px 0 0;
+  font-size: 30px;
+}
+.layout-a2 .linha__descricao { grid-area: desc; margin-top: 10px; font-size: 16px; }
+.layout-a2 .checklist { display: none; }
+.layout-a2 .linha__texto > .botao { grid-area: cta; margin-top: 28px; justify-self: start; }
+
+/* nome gigante (decorativo; o h2 continua sendo o título real) */
+.layout-a2 .linha__grade::before {
+  content: attr(data-nome);
+  grid-area: nome;
+  font-family: var(--fonte-titulo);
+  font-size: var(--nome);
+  line-height: .82;
+  letter-spacing: .005em;
+  white-space: nowrap;
+  color: inherit;
+  margin-top: 6px;
+  opacity: 0;
+  translate: -80px 0;
+  transition: opacity .7s ease, translate 1s cubic-bezier(.2, .7, .2, 1);
+}
+.layout-a2 .linha.ativa .linha__grade::before { opacity: 1; translate: none; transition-delay: .05s; }
+
+/* imagem: sobe por cima da parte de baixo do nome, cantos retos */
+.layout-a2 .linha__midia {
+  grid-area: midia;
+  position: relative;
+  z-index: 1;
+  justify-self: stretch;
+  width: 100%;
+  max-width: none;
+  height: clamp(280px, 100vh - 470px + var(--nome) * .45, 640px);
+  margin: calc(var(--nome) * -.45) 0 0;
+}
+.layout-a2 .linha__midia--foto {
+  border-radius: 3px;
+  box-shadow: 0 50px 80px -40px rgba(0, 0, 0, .55);
+}
+.layout-a2 .linha__midia--foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: none;
+}
+/* render: mantém o recorte do Figma (esconde as marcas nas bordas da arte)
+   e não cria camada própria, para o fundo cinza continuar se misturando */
+.layout-a2 .linha__midia--render {
+  z-index: auto;
+  justify-self: end;
+  width: auto;
+  aspect-ratio: 894 / 812;
+  margin-top: 0;
+}
+
+/* título pequeno some quando repete o nome gigante (continua no HTML para SEO) */
+.layout-a2 .titulo.titulo-igual {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.layout-a2 .linha:has(.titulo-igual) .linha__descricao { margin-top: 28px; }
+
+/* faixa de specs cruzando a tela */
+.layout-a2 .linha__specs {
+  grid-area: specs;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid currentColor;
+  border-top-color: color-mix(in srgb, currentColor 18%, transparent);
+}
+.layout-a2 .linha__specs li {
+  display: grid;
+  gap: 4px;
+  padding: 20px 24px 0;
+  border-left: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+  opacity: 0;
+  translate: 0 20px;
+  transition: opacity .6s ease, translate .7s cubic-bezier(.2, .7, .2, 1);
+}
+.layout-a2 .linha__specs li:first-child { padding-left: 0; border-left: 0; }
+.layout-a2 .linha.ativa .linha__specs li { opacity: 1; translate: none; }
+.layout-a2 .linha.ativa .linha__specs li:nth-child(1) { transition-delay: .35s; }
+.layout-a2 .linha.ativa .linha__specs li:nth-child(2) { transition-delay: .45s; }
+.layout-a2 .linha.ativa .linha__specs li:nth-child(3) { transition-delay: .55s; }
+.layout-a2 .linha.ativa .linha__specs li:nth-child(4) { transition-delay: .65s; }
+.layout-a2 .linha__specs strong {
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+  font-size: clamp(30px, 2.6vw, 46px);
+  line-height: 1;
+  color: var(--laranja);
+}
+.layout-a2 .linha__specs span { font-size: 14px; line-height: 1.35; opacity: .75; }

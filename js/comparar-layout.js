@@ -5,6 +5,7 @@
   var opcoes = [
     ["atual", "Atual"],
     ["a", "A · Vitrine fixa"],
+    ["a2", "A2 · Vitrine editorial"],
     ["d", "D · Editorial"]
   ];
 
@@ -43,6 +44,12 @@
     lista.appendChild(li);
   });
   var botoes = lista.querySelectorAll("button");
+  linhas.forEach(function (l) {
+    var grade = l.querySelector(".linha__grade");
+    if (grade && l.dataset.nome) grade.dataset.nome = l.dataset.nome;
+    var t = l.querySelector(".titulo");
+    if (t && l.dataset.nome && t.textContent.trim().toUpperCase() === l.dataset.nome) t.classList.add("titulo-igual");
+  });
 
   function irPara(i) {
     var topo = linhasEl.getBoundingClientRect().top + window.scrollY;
@@ -88,7 +95,7 @@
 
   /* ---------- Troca de layout ---------- */
   function limpar() {
-    document.body.classList.remove("layout-a", "layout-d");
+    document.body.classList.remove("layout-a", "layout-a2", "layout-d");
     linhas.forEach(function (l) {
       l.classList.remove("ativa", "visivel");
       var img = l.querySelector(".linha__midia--foto img");
@@ -100,11 +107,12 @@
 
   function aplicar() {
     // a vitrine fixa não funciona bem no celular: lá vira o editorial
-    var efetivo = escolhido === "a" && celular.matches ? "d" : escolhido;
+    var efetivo = (escolhido === "a" || escolhido === "a2") && celular.matches ? "d" : escolhido;
     limpar();
-    ativo = efetivo;
-    if (efetivo === "a") {
+    ativo = efetivo === "a2" ? "a" : efetivo;
+    if (efetivo === "a" || efetivo === "a2") {
       document.body.classList.add("layout-a");
+      if (efetivo === "a2") document.body.classList.add("layout-a2");
       linhasEl.style.setProperty("--qtd", linhas.length);
       linhasEl.appendChild(indice);
       atualizarA();

@@ -467,6 +467,9 @@ body.menu-aberto .topo__pilula--esq {
   background: url("../assets/icones/check.svg") no-repeat center / contain;
 }
 .checklist strong { color: var(--laranja); font-weight: 700; }
+
+/* faixa de specs: só aparece no layout de vitrine editorial */
+.linha__specs { display: none; }
 .linha__texto .botao { margin-top: 52px; }
 
 /* Render com callouts (fundo igual ao da seção): recorte igual ao do Figma */

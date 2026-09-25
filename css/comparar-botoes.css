@@ -37,17 +37,15 @@
 .botoes-novos .botao:not(.botao--sec):hover::before { translate: 110% 0; }
 .botoes-novos .botao:not(.botao--sec):hover { background-color: var(--laranja); }
 
-/* secundário: contorno fino, preenchimento sobe por dentro no hover */
+/* secundário: contorno laranja com leve tom no fundo; preenche de laranja no hover */
 .botoes-novos .botao--sec {
   color: var(--branco);
-  border: 1px solid rgba(255, 255, 255, .45);
-  background: linear-gradient(var(--branco), var(--branco)) 0 100% / 100% 0 no-repeat transparent;
+  border: 1.5px solid var(--laranja);
+  background: linear-gradient(var(--laranja), var(--laranja)) 0 100% / 100% 0 no-repeat rgba(242, 110, 34, .10);
 }
-.botoes-novos .botao--sec:hover {
-  color: var(--grafite);
-  border-color: var(--branco);
-  background-size: 100% 100%;
-}
+.botoes-novos .botao--sec::after { color: var(--laranja); transition: translate .45s cubic-bezier(.2, .7, .2, 1), color .35s ease; }
+.botoes-novos .botao--sec:hover { color: var(--branco); background-size: 100% 100%; }
+.botoes-novos .botao--sec:hover::after { color: var(--branco); }
 
 /* link de texto (terceiro nível): sublinhado fino que cresce */
 .botoes-novos .link-seta {

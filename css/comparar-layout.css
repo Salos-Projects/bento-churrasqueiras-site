@@ -406,3 +406,14 @@
   -webkit-mask: linear-gradient(to right, transparent 0%, #000 min(22%, 280px));
   mask: linear-gradient(to right, transparent 0%, #000 min(22%, 280px));
 }
+
+/* títulos das linhas: mesma revelação da hero, disparada quando a linha entra */
+.linha .titulo { --atraso: 150ms; }
+.layout-a .linha.ativa .titulo .rv-in,
+.layout-d .linha.visivel .titulo .rv-in,
+body:not(.layout-a):not(.layout-d) .linha .titulo .rv-in { translate: none; rotate: none; }
+/* ao sair da linha, o título volta rápido para a posição inicial (reanima na volta) */
+.layout-a .linha:not(.ativa) .titulo .rv-in { transition-duration: .01s; transition-delay: .6s; }
+
+/* seletores de comparação escondidos: A3 escolhida */
+.seletor-fundo { display: none !important; }

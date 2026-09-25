@@ -362,7 +362,7 @@ body.menu-aberto .topo__pilula--esq {
   max-width: none;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 40%;
+  object-position: 50% 85%; /* mostra mais a parte de baixo da foto: a churrasqueira sobe */
   -webkit-mask: linear-gradient(to right, transparent, #000 14%);
   mask: linear-gradient(to right, transparent, #000 14%);
   z-index: -2;

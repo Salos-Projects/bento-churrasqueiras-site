@@ -123,7 +123,7 @@ Regras: **no máximo 2 famílias de fonte**, **uma única cor de ação**, ícon
 
 ### 4.3 Home (seções do protótipo + ajustes)
 1. **Header flutuante:** logo · Projetos · Produtos · botão WhatsApp · Menu (o menu abre em overlay com todas as páginas, inclusive linhas e Assistência).
-2. **Hero:** foto de ambiente gourmet em tela cheia, H1 "Para quem busca muito mais do que só uma churrasqueira", selo girando e **CTA "Monte sua churrasqueira"** (hoje ausente no protótipo; recomendo incluir).
+2. **Hero:** foto de ambiente gourmet em tela cheia, H1 "Para quem busca muito mais do que só uma churrasqueira" e selo girando. CTA do configurador **fica de fora por enquanto** (ver 4.7).
 3. **Linhas de produto** (uma por bloco, alternando lados): overline, nome, descrição, checklist e "Saiba mais sobre esta linha", com render e callouts (Inox 304, manivela removível, 35 kg na grelha, espetos rotativos etc.).
    - Os "Modelo XPTO" do protótipo viram as linhas reais: **SmartGrill**, **DuraGrill**, **Grelha de Elevação Manual**, **Grelha de Elevação Automática** e **Parrilla**. Falta definir quais entram na home.
 4. **Prova social (faixa laranja):** "Mais de 500 churrasqueiras entregues, milhares de sonhos realizados", carrossel de avaliações do Google e 4 números grandes.
@@ -143,7 +143,7 @@ Regras: **no máximo 2 famílias de fonte**, **uma única cor de ação**, ícon
 | Grelhas | `/grelhas/` | manual, automática e parrilla |
 | Acessórios | `/acessorios/` | bifeiras, cooktops, espeto de costelão, espetos |
 | Projetos | `/projetos/` | galeria com legenda (cidade, tipo, produto) e filtro |
-| Monte sua churrasqueira | `/configurator/...` (URL atual mantida) | reestilizado e linkado em toda parte |
+| Monte sua churrasqueira | `/configurator/...` | **fora do escopo inicial** — ver 4.7 |
 | Contato | `/contato/` | WhatsApp, `tel:`, mapa e form curto com labels |
 | Assistência | `/assistencia/` | garantia de 5 anos, retorno em 48 h, upload de fotos, manuais |
 | Política de Privacidade | `/politica-de-privacidade/` | linkada no rodapé |
@@ -152,7 +152,7 @@ Regras: **no máximo 2 famílias de fonte**, **uma única cor de ação**, ícon
 
 ### 4.5 Conversão
 - **WhatsApp flutuante** em todas as páginas, com mensagem por página ou linha.
-- **Um CTA primário por seção** ("Pedir orçamento no WhatsApp"); o configurador é o CTA secundário.
+- **Um CTA primário por seção** ("Pedir orçamento no WhatsApp").
 - Links `tel:` e `mailto:` em todo lugar.
 - Eventos de GA4/Ads/Pixel em cliques de WhatsApp, configurador, download de PDF e envio de formulário.
 
@@ -163,7 +163,10 @@ Regras: **no máximo 2 famílias de fonte**, **uma única cor de ação**, ícon
 - Alt descritivo em todas as imagens.
 - Fase 2: páginas locais (Serra Gaúcha, Bento Gonçalves, Caxias, Porto Alegre) e retomar o blog.
 
-### 4.7 Performance (metas)
+### 4.7 Configurador "Monte sua churrasqueira" — decisão adiada
+Fica **fora do lançamento**. Decidir depois entre manter o plugin Staggs (reestilizado) ou reconstruir o configurador em código e subir no site. Enquanto isso, nenhum link quebrado para ele no site novo.
+
+### 4.8 Performance (metas)
 - Peso da home < 1,5 MB e < 60 requests; LCP < 2,5 s no mobile; **CLS < 0,1**.
 - Uma lib de animação (sem duplicatas), respeitando `prefers-reduced-motion`; conteúdo visível sem JS.
 - Imagens WebP/AVIF responsivas com lazy-load; fontes com `font-display: swap` e subset.
@@ -175,9 +178,10 @@ Regras: **no máximo 2 famílias de fonte**, **uma única cor de ação**, ícon
 
 1. **Protótipo em código** (HTML/CSS com tokens, neste repositório): as páginas acima, responsivas, validadas no navegador em desktop e mobile.
 2. **Montagem no Elementor via MCP**, no site da Bento:
-   - O site já roda **Elementor 4.3 com o plugin `elementor-mcp` instalado**. Falta **gerar a conexão** (WP Admin → Elementor MCP → gerar prompt/senha de aplicação) e **ativar o Editor atômico (V4)**, que é o que o MCP usa para classes e variáveis.
+   - Site com **Elementor 4.3 + Pro** e plugin `elementor-mcp`.
    - Ordem: variáveis globais (cores, fontes, tamanhos) → classes globais (botão, overline, card, callout) → componentes (card de linha, card de depoimento, número) → header e footer (site parts) → páginas.
    - O MCP salva tudo como **rascunho**. Revisamos visualmente e publicamos página por página.
+   - **Conexão feita em 25/09/2026** (`bento-churrasqueiras-elementor`, escopo local deste projeto); 22 ferramentas disponíveis, Editor atômico ativo.
    - **Plano B:** o conversor interno `salos/html-to-elementor` gera JSON importável a partir do HTML.
 3. **Migração segura:** construir as páginas novas em rascunho ao lado das atuais, trocar na virada, aplicar 301 nas URLs antigas e reapontar o sitemap.
 4. **Pós-virada:** Search Console (remover as URLs de lixo), testar eventos de conversão, medir Core Web Vitals.
@@ -194,5 +198,6 @@ Regras: **no máximo 2 famílias de fonte**, **uma única cor de ação**, ícon
 - [ ] Quais linhas entram na home e o texto da "linha de custo-benefício".
 - [ ] Newsletter: manter ou trocar por catálogo/projeto em PDF.
 - [ ] Confirmar o 2º WhatsApp: (54) 99926-8929.
-- [ ] Acesso admin ao WordPress, conexão do MCP e ativação do Editor V4.
+- [x] Elementor Pro confirmado; conexão do MCP feita.
+- [ ] Acesso admin ao WordPress.
 - [ ] Revisar o usuário externo exposto na REST (v4company) e atualizar o PHP.

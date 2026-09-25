@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/estilo.css?v=1790371982">
+  <link rel="stylesheet" href="../css/estilo.css?v=1790372686">
 
 </head>
 <body>
@@ -113,14 +113,26 @@
         <p class="overline pg-abertura__over"><span class="linhas-intro__traco" aria-hidden="true"></span>Produtos</p>
         <h1 class="pg-abertura__titulo" id="pg-titulo" data-linhas>Churrasqueiras, grelhas e acessórios sob medida</h1>
         <p class="pg-abertura__apoio">Tudo em Inox 304, projetado para o seu espaço e fabricado em Garibaldi (RS) desde 2004.</p>
-        <!-- atalhos por família: acrescente um item quando entrar uma família nova -->
-        <nav class="atalhos" aria-label="Famílias de produto">
-          <a href="#rotativas"><span>01</span>Churrasqueiras rotativas</a>
-          <a href="#elevacao"><span>02</span>Grelhas e elevação</a>
-          <a href="#minimalista"><span>03</span>Linha minimalista</a>
-          <a href="#acessorios"><span>04</span>Acessórios</a>
-        </nav>
       </div>
+      <!-- vitrine de famílias (acordeão): acrescente uma faixa quando entrar uma família nova -->
+      <nav class="faixas" aria-label="Famílias de produto">
+        <a class="faixa" href="#rotativas" style="background-image: url('../assets/img/ambiente-exemplo-2.webp')">
+          <span class="faixa__num">01</span>
+          <span class="faixa__texto"><strong>Churrasqueiras rotativas</strong><small>SmartGrill · DuraGrill</small></span>
+        </a>
+        <a class="faixa" href="#elevacao" style="background-image: url('../assets/img/hero-churrasqueira-central.webp')">
+          <span class="faixa__num">02</span>
+          <span class="faixa__texto"><strong>Grelhas e elevação</strong><small>Elevatto · Automática · Manual · Parrilla</small></span>
+        </a>
+        <a class="faixa" href="#minimalista" style="background-image: url('../assets/img/ambiente-exemplo-2.webp')">
+          <span class="faixa__num">03</span>
+          <span class="faixa__texto"><strong>Linha minimalista</strong><small>Suporte de fundo · Espetos suspensos</small></span>
+        </a>
+        <a class="faixa" href="#acessorios" style="background-image: url('../assets/img/hero-churrasqueira-central.webp')">
+          <span class="faixa__num">04</span>
+          <span class="faixa__texto"><strong>Acessórios</strong><small>Bifeiras · Costelão · Cestos</small></span>
+        </a>
+      </nav>
     </section>
 
     <!-- ============ CAPÍTULO: CHURRASQUEIRAS ROTATIVAS (bloco reutilizável: copie para uma família nova) ============ -->
@@ -451,6 +463,6 @@
     <img src="../assets/icones/whatsapp-branco.svg" alt="" width="28" height="28">
   </a>
 
-  <script src="../js/main.js?v=1790371982" defer></script>
+  <script src="../js/main.js?v=1790372686" defer></script>
 </body>
 </html>

@@ -66,7 +66,7 @@
 
   function revelar(el) {
     el.classList.add("revelado");
-    var intro = el.closest(".linhas-intro");
+    var intro = el.closest(".linhas-intro, .pg-abertura");
     if (intro) intro.classList.add("aceso");
     var hero = el.closest(".hero");
     if (hero) hero.classList.add("revelado");

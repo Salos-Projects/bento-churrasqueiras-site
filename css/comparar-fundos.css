@@ -24,9 +24,7 @@ body[class*="fundo-"]:not(.fundo-0) .linha__midia--render { isolation: auto; }
 
 /* ---------- 1. Inox escovado + luz de estúdio ---------- */
 .fundo-1 .linhas,
-.fundo-2 .linhas,
-.fundo-1 .prova,
-.fundo-2 .prova {
+.fundo-2 .linhas {
   background:
     var(--inox-escovado-escuro) 0 0 / 2400px 600px,
     var(--inox-escovado) 1200px 300px / 2400px 600px,

@@ -33,13 +33,20 @@
           palavras.push(sp);
         });
         t.removeChild(n);
+      } else if (n.nodeType === 1 && n.tagName !== "BR") {
+        // elementos de destaque (ex.: <em>500</em>) viram uma "palavra" preservando a marcação
+        var el = document.createElement("span");
+        el.style.display = "inline-block";
+        t.insertBefore(el, n);
+        el.appendChild(n);
+        palavras.push(el);
       }
     });
     var linhas = [];
     var topo = null;
     palavras.forEach(function (p) {
       if (topo === null || Math.abs(p.offsetTop - topo) > 4) { linhas.push([]); topo = p.offsetTop; }
-      linhas[linhas.length - 1].push(p.textContent);
+      linhas[linhas.length - 1].push(p.innerHTML);
     });
     t.textContent = "";
     linhas.forEach(function (ws, i) {
@@ -48,7 +55,7 @@
       var dentro = document.createElement("span");
       dentro.className = "rv-in";
       dentro.style.setProperty("--l", i);
-      dentro.textContent = ws.join(" ");
+      dentro.innerHTML = ws.join(" "); // conteúdo vem do próprio HTML da página
       l.appendChild(dentro);
       t.appendChild(l);
     });
@@ -105,6 +112,26 @@
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") topo.querySelectorAll("[data-drop]").forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
     });
+  }
+
+  /* ---------- Números: contam de 0 até o valor ao entrar na tela ---------- */
+  var numeros = document.querySelector("[data-numeros]");
+  if (numeros && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var alvos = numeros.querySelectorAll("[data-contar]");
+    alvos.forEach(function (el) { el.textContent = "0"; });
+    var obsNum = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return;
+      obsNum.disconnect();
+      var inicio = performance.now();
+      var dur = 1800;
+      (function passo(agora) {
+        var p = Math.min(1, (agora - inicio) / dur);
+        var e = 1 - Math.pow(1 - p, 4);
+        alvos.forEach(function (el) { el.textContent = Math.round(e * Number(el.dataset.contar)); });
+        if (p < 1) requestAnimationFrame(passo);
+      })(inicio);
+    }, { threshold: 0.4 });
+    obsNum.observe(numeros);
   }
 
   /* ---------- Menu em overlay (mobile) ---------- */

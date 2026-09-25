@@ -11,10 +11,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/estilo.css?v=1790365016">
+  <link rel="stylesheet" href="css/estilo.css?v=1790366036">
   <!-- TEMPORÁRIO: comparação de fundos da seção de produtos -->
-  <link rel="stylesheet" href="css/comparar-layout.css?v=1790365016">
-  <link rel="stylesheet" href="css/comparar-fundos.css?v=1790365016">
+  <link rel="stylesheet" href="css/comparar-layout.css?v=1790366036">
+  <link rel="stylesheet" href="css/comparar-fundos.css?v=1790366036">
 
   <script type="application/ld+json">
   {
@@ -278,58 +278,83 @@
       </section>
     </div>
 
-    <!-- ============ PROVA SOCIAL ============ -->
+    <!-- ============ PROVA SOCIAL (claro quente) ============ -->
     <section class="prova" aria-labelledby="prova-titulo">
-      <div class="prova__cartao">
-        <span class="simbolo prova__simbolo" aria-hidden="true"><span class="simbolo__f3"></span><span class="simbolo__f7"></span><span class="simbolo__f6"></span></span>
+      <span class="simbolo prova__simbolo" aria-hidden="true"><span class="simbolo__f3"></span><span class="simbolo__f7"></span><span class="simbolo__f6"></span></span>
+
+      <div class="container prova__cabeca" data-revelar="scroll">
+        <p class="overline prova__over"><span class="prova__traco" aria-hidden="true"></span>Quem já tem uma Bento</p>
         <!-- TODO cliente: confirmar o número de churrasqueiras entregues -->
-        <h2 class="prova__titulo" id="prova-titulo">Mais de 500 churrasqueiras entregues, <br class="quebra">milhares de sonhos realizados</h2>
+        <h2 class="prova__titulo" id="prova-titulo" data-linhas>Mais de <em>500</em> churrasqueiras entregues, milhares de sonhos realizados</h2>
+      </div>
 
-        <div class="avaliacoes" data-carrossel>
-          <ul class="avaliacoes__trilho">
-            <li class="avaliacao">
-              <div class="avaliacao__topo"><span class="avaliacao__avatar">R</span><div><p class="avaliacao__nome">Renato Cardoso</p><p class="avaliacao__local">Embu das Artes – SP</p></div></div>
-              <p class="avaliacao__estrelas" aria-label="5 de 5 estrelas">★★★★★</p>
-              <p class="avaliacao__texto">Nosso projeto ficou ótimo, obrigado pelo excelente atendimento.</p>
-            </li>
-            <li class="avaliacao">
-              <div class="avaliacao__topo"><span class="avaliacao__avatar">R</span><div><p class="avaliacao__nome">Restaurante Estilo Campeiro</p><p class="avaliacao__local">Júlio de Castilhos – RS</p></div></div>
-              <p class="avaliacao__estrelas" aria-label="5 de 5 estrelas">★★★★★</p>
-              <p class="avaliacao__texto">Estreamos a churrasqueira aqui no restaurante, ficou ótima, nosso churrasqueiro já pegou o jeito. Show de bola!</p>
-            </li>
-            <li class="avaliacao">
-              <div class="avaliacao__topo"><span class="avaliacao__avatar">C</span><div><p class="avaliacao__nome">Clube de Tiro</p><p class="avaliacao__local">Garibaldi – RS</p></div></div>
-              <p class="avaliacao__estrelas" aria-label="5 de 5 estrelas">★★★★★</p>
-              <p class="avaliacao__texto">Ficou ótimo, a máquina é muito bonita.</p>
-            </li>
-            <li class="avaliacao">
-              <div class="avaliacao__topo"><span class="avaliacao__avatar">E</span><div><p class="avaliacao__nome">Edson Fabbris</p><p class="avaliacao__local">São Marcos – RS</p></div></div>
-              <p class="avaliacao__estrelas" aria-label="5 de 5 estrelas">★★★★★</p>
-              <p class="avaliacao__texto">O atendimento esclareceu todas as minhas dúvidas, a grelha ficou perfeita.</p>
-            </li>
-            <li class="avaliacao">
-              <div class="avaliacao__topo"><span class="avaliacao__avatar">R</span><div><p class="avaliacao__nome">Restaurante Botafogo</p><p class="avaliacao__local">Bento Gonçalves – RS</p></div></div>
-              <p class="avaliacao__estrelas" aria-label="5 de 5 estrelas">★★★★★</p>
-              <p class="avaliacao__texto">Esta churrasqueira nos atendeu muito melhor do que a antiga que tínhamos.</p>
-            </li>
-            <li class="avaliacao">
-              <div class="avaliacao__topo"><span class="avaliacao__avatar">J</span><div><p class="avaliacao__nome">Jean Leite</p><p class="avaliacao__local">Gravataí – RS</p></div></div>
-              <p class="avaliacao__estrelas" aria-label="5 de 5 estrelas">★★★★★</p>
-              <p class="avaliacao__texto">A churrasqueira do condomínio ficou 100%.</p>
-            </li>
-            <li class="avaliacao">
-              <div class="avaliacao__topo"><span class="avaliacao__avatar">L</span><div><p class="avaliacao__nome">Ladimir Seibel</p><p class="avaliacao__local">Carlos Barbosa – RS</p></div></div>
-              <p class="avaliacao__estrelas" aria-label="5 de 5 estrelas">★★★★★</p>
-              <p class="avaliacao__texto">O espeto de costelão é show.</p>
-            </li>
-          </ul>
-        </div>
+      <div class="container">
+        <ul class="numeros" data-numeros>
+          <li class="numero"><strong class="numero__valor"><span data-contar="22">22</span><small>anos</small></strong><span class="numero__rotulo">fabricando churrasqueiras sob medida</span></li>
+          <li class="numero"><strong class="numero__valor"><span data-contar="5">5</span><small>anos</small></strong><span class="numero__rotulo">de garantia em motor e componentes</span></li>
+          <li class="numero"><strong class="numero__valor"><span data-contar="48">48</span><small>h</small></strong><span class="numero__rotulo">para retorno da assistência técnica</span></li>
+          <li class="numero"><strong class="numero__valor"><small class="numero__mais">+</small><span data-contar="500">500</span></strong><span class="numero__rotulo">churrasqueiras entregues</span></li>
+        </ul>
+      </div>
 
-        <ul class="numeros">
-          <li class="numero"><strong class="numero__valor">22 anos</strong><span class="numero__rotulo">fabricando churrasqueiras</span></li>
-          <li class="numero"><strong class="numero__valor">5 anos</strong><span class="numero__rotulo">de garantia em motor e componentes</span></li>
-          <li class="numero"><strong class="numero__valor">48 h</strong><span class="numero__rotulo">para retorno da assistência técnica</span></li>
-          <li class="numero"><strong class="numero__valor">+500</strong><span class="numero__rotulo">churrasqueiras entregues</span></li>
+      <div class="depoimentos" data-carrossel>
+        <ul class="depoimentos__trilho avaliacoes__trilho">
+            <li class="depoimento">
+              <p class="depoimento__texto">Nosso projeto ficou ótimo, obrigado pelo excelente atendimento.</p>
+              <footer class="depoimento__autor">
+                <span class="depoimento__estrelas" aria-label="5 de 5 estrelas">★★★★★</span>
+                <strong>Renato Cardoso</strong>
+                <span>Embu das Artes – SP</span>
+              </footer>
+            </li>
+            <li class="depoimento">
+              <p class="depoimento__texto">Estreamos a churrasqueira aqui no restaurante, ficou ótima, nosso churrasqueiro já pegou o jeito. Show de bola!</p>
+              <footer class="depoimento__autor">
+                <span class="depoimento__estrelas" aria-label="5 de 5 estrelas">★★★★★</span>
+                <strong>Restaurante Estilo Campeiro</strong>
+                <span>Júlio de Castilhos – RS</span>
+              </footer>
+            </li>
+            <li class="depoimento">
+              <p class="depoimento__texto">Ficou ótimo, a máquina é muito bonita.</p>
+              <footer class="depoimento__autor">
+                <span class="depoimento__estrelas" aria-label="5 de 5 estrelas">★★★★★</span>
+                <strong>Clube de Tiro</strong>
+                <span>Garibaldi – RS</span>
+              </footer>
+            </li>
+            <li class="depoimento">
+              <p class="depoimento__texto">O atendimento esclareceu todas as minhas dúvidas, a grelha ficou perfeita.</p>
+              <footer class="depoimento__autor">
+                <span class="depoimento__estrelas" aria-label="5 de 5 estrelas">★★★★★</span>
+                <strong>Edson Fabbris</strong>
+                <span>São Marcos – RS</span>
+              </footer>
+            </li>
+            <li class="depoimento">
+              <p class="depoimento__texto">Esta churrasqueira nos atendeu muito melhor do que a antiga que tínhamos.</p>
+              <footer class="depoimento__autor">
+                <span class="depoimento__estrelas" aria-label="5 de 5 estrelas">★★★★★</span>
+                <strong>Restaurante Botafogo</strong>
+                <span>Bento Gonçalves – RS</span>
+              </footer>
+            </li>
+            <li class="depoimento">
+              <p class="depoimento__texto">A churrasqueira do condomínio ficou 100%.</p>
+              <footer class="depoimento__autor">
+                <span class="depoimento__estrelas" aria-label="5 de 5 estrelas">★★★★★</span>
+                <strong>Jean Leite</strong>
+                <span>Gravataí – RS</span>
+              </footer>
+            </li>
+            <li class="depoimento">
+              <p class="depoimento__texto">O espeto de costelão é show.</p>
+              <footer class="depoimento__autor">
+                <span class="depoimento__estrelas" aria-label="5 de 5 estrelas">★★★★★</span>
+                <strong>Ladimir Seibel</strong>
+                <span>Carlos Barbosa – RS</span>
+              </footer>
+            </li>
         </ul>
       </div>
     </section>
@@ -437,9 +462,9 @@
     <img src="assets/icones/whatsapp-branco.svg" alt="" width="28" height="28">
   </a>
 
-  <script src="js/main.js?v=1790365016" defer></script>
+  <script src="js/main.js?v=1790366036" defer></script>
   <!-- TEMPORÁRIO: comparação de fundos da seção de produtos -->
-  <script src="js/comparar-layout.js?v=1790365016" defer></script>
-  <script src="js/comparar-fundos.js?v=1790365016" defer></script>
+  <script src="js/comparar-layout.js?v=1790366036" defer></script>
+  <script src="js/comparar-fundos.js?v=1790366036" defer></script>
 </body>
 </html>

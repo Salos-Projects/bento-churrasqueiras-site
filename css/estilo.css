@@ -41,7 +41,7 @@ body {
   font-size: 18px;
   line-height: 1.5;
   color: var(--texto);
-  background: var(--fundo-produto);
+  background: #171615; /* escuro da marca: frestas de meio pixel entre seções não aparecem */
   overflow-x: clip;
 }
 img { display: block; max-width: 100%; height: auto; }
@@ -1149,7 +1149,7 @@ body.menu-aberto { overflow: hidden; }
   isolation: isolate;
   background: #171615;
   color: var(--branco);
-  padding: clamp(160px, 12vw, 200px) 0 clamp(16px, 2vw, 32px);
+  padding: clamp(160px, 12vw, 200px) 0 clamp(120px, 11vw, 200px);
   text-align: center;
 }
 .pg-abertura .linhas-intro__luz { top: clamp(120px, 9vw, 150px); }
@@ -1260,6 +1260,16 @@ body.menu-aberto { overflow: hidden; }
   inset: 0;
   background:
     linear-gradient(to bottom, var(--escuro), rgba(23, 22, 21, 0) 25%),
+    linear-gradient(to right, rgba(23, 22, 21, .75), rgba(23, 22, 21, 0) 55%);
+}
+.pg-abertura + .familia .familia__cena {
+  -webkit-mask: linear-gradient(to bottom, transparent, #000 30%, #000 45%, transparent);
+  mask: linear-gradient(to bottom, transparent, #000 30%, #000 45%, transparent);
+}
+/* primeiro capítulo depois das faixas: a cena nasce mais devagar do escuro, para não colar nas imagens de cima */
+.pg-abertura + .familia .familia__cena::after {
+  background:
+    linear-gradient(to bottom, var(--escuro) 8%, rgba(23, 22, 21, 0) 50%),
     linear-gradient(to right, rgba(23, 22, 21, .75), rgba(23, 22, 21, 0) 55%);
 }
 .familia__cabeca { padding-top: calc(var(--cena-h) - 230px); max-width: none; }

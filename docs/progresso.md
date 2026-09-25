@@ -23,7 +23,7 @@
 - **Catálogo 2026 (PDF) incorporado:** linhas novas Elevatto e Espetos suspensos, Suporte de fundo como linha própria. Produtos do site antigo fora do catálogo mantidos (decisão do Lucas, revisar depois). Produtos agora em 4 famílias (Rotativas · Grelhas e elevação · Linha minimalista · Acessórios); comparativo segue o catálogo (as duas rotativas têm buchas autolubrificantes; diferencial da SmartGrill = frente removível). Home ganhou a Elevatto na vitrine (5 linhas); Elevatto nos menus e rodapé. ⚠️ Catálogo diz "mais de 15 anos" (são 22).
 
 ### Próximos passos
-1. Gerar as 4 cenas de ambiente por IA (uma por linha, 16:9, ≥1920px, churrasqueira do centro para a direita) e uma **versão vertical da foto da hero** para o celular.
-2. Pendências do cliente em `docs/textos-home.md` e `docs/produtos.md` (+500, 2º WhatsApp, prazo de fabricação, se a Bento instala, páginas das linhas novas: Elevatto, Suporte de fundo, Espetos suspensos) e origem do render da grelha (marcas INNOVARE/KAFER).
-2. Definir se usamos as fotos atuais do site ou esperamos os originais em alta.
-3. Pendências com o cliente: ver seção 6 do briefing (Figma, renders, fotos, números reais, perfil Google, acesso admin ao WP).
+1. **Cenas por IA:** uma por linha da home (5) e uma por família na página Produtos (4), 16:9, ≥1920px, churrasqueira do centro para a direita; fotos do Catálogo 2026 como referência. Mais uma **versão vertical da hero** para o celular.
+2. **Páginas de cada linha** (os links "Conhecer" ainda não existem): começar pela **Elevatto** (novidade, candidata ao raio-X), depois SmartGrill/DuraGrill, Grelhas, Linha minimalista e Acessórios.
+3. **Pendências do cliente** (`docs/textos-home.md`, `docs/produtos.md`, briefing seção 6): +500 entregues, 2º WhatsApp, prazo de fabricação, se a Bento instala, se grelha manual/parrilla/bifeiras/costelão continuam, origem do render da grelha (INNOVARE/KAFER), "mais de 15 anos" no PDF do catálogo, perfil do Google, acesso admin ao WP.
+4. Montagem no Elementor só quando o Lucas liberar.

@@ -257,6 +257,37 @@
     modoVitrine();
   }
 
+  /* ---------- Raio-X: legendas aparecem conforme a rolagem ---------- */
+  document.querySelectorAll("[data-raiox]").forEach(function (sec) {
+    var partes = [
+      sec.querySelectorAll(".raiox__linhas path"),
+      sec.querySelectorAll(".raiox__ponto"),
+      sec.querySelectorAll(".raiox__rotulo")
+    ];
+    var total = partes[2].length;
+    var desktop = window.matchMedia("(min-width: 901px)");
+    var mostrar = function (qtd) {
+      partes.forEach(function (lista) {
+        Array.prototype.forEach.call(lista, function (el, i) { el.classList.toggle("on", i < qtd); });
+      });
+    };
+    var atualizar = function () {
+      if (!desktop.matches) return;
+      var r = sec.getBoundingClientRect();
+      var p = Math.min(1, Math.max(0, -r.top / (sec.offsetHeight - window.innerHeight)));
+      mostrar(Math.min(total, Math.floor(p * (total + 1) + .15)));
+    };
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { mostrar(total); return; }
+    window.addEventListener("scroll", atualizar, { passive: true });
+    window.addEventListener("resize", atualizar);
+    atualizar();
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) {
+        if (es[0].isIntersecting && !desktop.matches) mostrar(total);
+      }, { threshold: 0.2 }).observe(sec);
+    } else { mostrar(total); }
+  });
+
   /* ---------- Carrossel de avaliações (loop infinito) ---------- */
   var reduzir = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   document.querySelectorAll("[data-carrossel]").forEach(function (carrossel) {

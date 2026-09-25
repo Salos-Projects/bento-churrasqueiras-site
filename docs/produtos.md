@@ -33,6 +33,8 @@ Frase: Espetos girando sozinhos, na velocidade certa, com assado por igual.
 Catálogo: **as duas têm buchas autolubrificantes** (o post do Instagram dava a entender que era só a SmartGrill — segue o catálogo). Diferencial real da SmartGrill: frente removível.
 
 ## Família 02: Grelhas e elevação
+
+⚠️ O render "grelha com legendas" que veio do Figma **é da KAFER Churrasqueiras** (produto "Innovare manivela", @kaferchurrasqueiras na imagem) — removido do projeto em 25/09/2026. Não usar. Pedir ao cliente renders limpos da Bento para o raio-X.
 Frase: Controle total da distância da brasa — na manivela, no botão ou na voz.
 
 | Produto | URL | Resumo | Spec 1 | Spec 2 | Fonte |

@@ -1,0 +1,76 @@
+/* Bento Churrasqueiras — comportamento da home. Sem dependências. */
+(function () {
+  "use strict";
+
+  /* ---------- Menu em overlay ---------- */
+  var botao = document.querySelector("[data-menu-abrir]");
+  var menu = document.getElementById("menu");
+
+  function abrirMenu() {
+    menu.hidden = false;
+    requestAnimationFrame(function () { menu.classList.add("aberto"); });
+    botao.setAttribute("aria-expanded", "true");
+    document.body.classList.add("menu-aberto");
+    var primeiro = menu.querySelector("a");
+    if (primeiro) primeiro.focus();
+  }
+
+  function fecharMenu() {
+    menu.classList.remove("aberto");
+    botao.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("menu-aberto");
+    setTimeout(function () { menu.hidden = true; }, 250);
+    botao.focus();
+  }
+
+  if (botao && menu) {
+    botao.addEventListener("click", function () {
+      botao.getAttribute("aria-expanded") === "true" ? fecharMenu() : abrirMenu();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && botao.getAttribute("aria-expanded") === "true") fecharMenu();
+    });
+    menu.addEventListener("click", function (e) {
+      if (e.target.closest("a")) fecharMenu();
+    });
+  }
+
+  /* ---------- Carrossel de avaliações (loop infinito) ---------- */
+  var reduzir = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll("[data-carrossel]").forEach(function (carrossel) {
+    if (reduzir) return;
+    var trilho = carrossel.querySelector(".avaliacoes__trilho");
+    Array.prototype.slice.call(trilho.children).forEach(function (item) {
+      var copia = item.cloneNode(true);
+      copia.setAttribute("aria-hidden", "true");
+      trilho.appendChild(copia);
+    });
+    // ~40px por segundo, independente da quantidade de avaliações
+    trilho.style.setProperty("--duracao", Math.round(trilho.scrollWidth / 2 / 40) + "s");
+  });
+
+  /* ---------- WhatsApp flutuante: aparece depois do hero ---------- */
+  var flutuante = document.querySelector(".wpp-flutuante");
+  var hero = document.querySelector(".hero");
+  if (flutuante && hero && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (entradas) {
+      flutuante.classList.toggle("visivel", !entradas[0].isIntersecting);
+    }, { threshold: 0.15 }).observe(hero);
+  }
+
+  /* ---------- Newsletter: só visual por enquanto (vira Fluent Forms no Elementor) ---------- */
+  document.querySelectorAll("[data-news]").forEach(function (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var aviso = form.querySelector(".aviso") || form.appendChild(document.createElement("p"));
+      aviso.className = "aviso";
+      aviso.setAttribute("role", "status");
+      aviso.textContent = "Protótipo: o envio será ligado ao formulário do site.";
+    });
+  });
+
+  /* ---------- Ano no rodapé ---------- */
+  document.querySelectorAll("[data-ano]").forEach(function (el) {
+    el.textContent = new Date().getFullYear();
+  });
+})();

@@ -29,7 +29,9 @@ Princípios da reescrita:
 
 ## 3. Linhas de produto (blocos "MODELO XPTO")
 
-⚠️ **Decidir:** quais linhas entram na home. As imagens do Figma são de uma **grelha de elevação na manivela** (bloco 1) e de uma **churrasqueira rotativa com espetos** (bloco 2). A proposta abaixo cobre as 4 linhas atuais. Escolhemos 2 para a home, ou fazemos 4 blocos alternando os lados.
+✅ **Decidido (25/09):** entram as 4 linhas do site atual, na ordem SmartGrill, DuraGrill, Grelha e Acessórios.
+
+~~Decidir quais linhas entram na home.~~ As imagens do Figma são de uma **grelha de elevação na manivela** (bloco 1) e de uma **churrasqueira rotativa com espetos** (bloco 2). A proposta abaixo cobre as 4 linhas atuais. Escolhemos 2 para a home, ou fazemos 4 blocos alternando os lados.
 
 ### SmartGrill
 | | Atual | Proposta |
@@ -87,7 +89,7 @@ Alternativas para o 4º número, se o cliente tiver: cidades atendidas, estados 
 | Título | Entre em contato com a nossa equipe | **Fale direto com quem fabrica** |
 | Texto | Precisa de uma churrasqueira sob medida ou tem dúvidas sobre nossos produtos? Nossa equipe está pronta para ajudar! Entre em contato e descubra a solução ideal para o seu churrasco, com qualidade e tecnologia em inox. | Mande as medidas do seu espaço, ou uma foto, e a gente indica o modelo certo e faz o orçamento. Atendimento de segunda a sexta, direto da fábrica. |
 | CTA | Chame no Whatsapp | **Pedir orçamento no WhatsApp** → `wa.me/5554996889900?text=Olá! Vim pelo site e quero um orçamento de churrasqueira.` |
-| Conversa no mockup | "Olá, gostaria de tirar uma dúvida" / "Olá! Obrigado por entrar em contato conosco." / "Estamos aqui para lhe ajudar. Qual seria a sua dúvida?" | "Oi! Quero uma churrasqueira rotativa para minha área gourmet." / "Olá! Que bom falar com você 🔥 Me manda as medidas do espaço (ou uma foto) que já te indico o modelo." |
+| Conversa no mockup | "Olá, gostaria de tirar uma dúvida" / "Olá! Obrigado por entrar em contato conosco." / "Estamos aqui para lhe ajudar. Qual seria a sua dúvida?" | "Oi! Quero um orçamento de churrasqueira." / "Olá! Que bom falar com você!" / "Me manda as medidas do espaço ou uma foto?" (cada bolha cabe em 2 linhas, como no Figma) |
 
 ## 6. Newsletter
 | | Atual | Proposta |
@@ -110,7 +112,7 @@ Alternativas para o 4º número, se o cliente tiver: cidades atendidas, estados 
 ---
 
 ## Pendências para o cliente
-1. Quais linhas entram na home (2 ou 4 blocos)?
+1. ~~Quais linhas entram na home~~ → as 4.
 2. Em uma frase: qual a diferença entre SmartGrill e DuraGrill (para quem é cada uma)?
 3. O "+500 churrasqueiras entregues" é real? Tem outro número bom (cidades, estados)?
 4. Link do perfil do Google para as avaliações.

@@ -349,7 +349,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(23, 22, 21, .35), transparent 18%, transparent 80%, rgba(23, 22, 21, .6));
+  background: linear-gradient(to bottom, #171615, rgba(23, 22, 21, 0) 16%, transparent 80%, rgba(23, 22, 21, .6));
 }
 
 /* texto claro */
@@ -365,3 +365,17 @@
 .layout-a3 .vitrine-indice button[aria-current="true"] { color: var(--laranja); }
 .layout-a3 .vitrine-indice button[aria-current="true"] small { color: var(--branco); }
 .layout-a3 .vitrine-indice ol::before { background: rgba(255, 255, 255, .15); }
+
+/* passagem suave da abertura para a vitrine: a base da foto da abertura
+   escurece até a cor da vitrine, e o topo da cena nasce dessa mesma cor */
+.layout-a3 .hero::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 32%;
+  background: linear-gradient(to bottom, rgba(23, 22, 21, 0), rgba(23, 22, 21, .75) 60%, #171615);
+  z-index: 0; /* acima da elipse escura da abertura, abaixo do texto */
+  pointer-events: none;
+}

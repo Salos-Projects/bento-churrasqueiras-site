@@ -87,7 +87,30 @@
     prepararTitulos.t = setTimeout(prepararTitulos, 150);
   });
 
-  /* ---------- Menu em overlay ---------- */
+  /* ---------- Header: estado "rolado" e painel de Produtos ---------- */
+  var topo = document.querySelector("[data-topo]");
+  if (topo) {
+    var marcarRolado = function () { topo.classList.toggle("rolado", window.scrollY > 40); };
+    marcarRolado();
+    window.addEventListener("scroll", marcarRolado, { passive: true });
+
+    topo.querySelectorAll("[data-drop]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        b.setAttribute("aria-expanded", String(b.getAttribute("aria-expanded") !== "true"));
+      });
+      b.parentElement.addEventListener("mouseleave", function () { b.setAttribute("aria-expanded", "false"); });
+    });
+    document.addEventListener("click", function (e) {
+      topo.querySelectorAll("[data-drop]").forEach(function (b) {
+        if (!b.parentElement.contains(e.target)) b.setAttribute("aria-expanded", "false");
+      });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") topo.querySelectorAll("[data-drop]").forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
+    });
+  }
+
+  /* ---------- Menu em overlay (mobile) ---------- */
   var botao = document.querySelector("[data-menu-abrir]");
   var menu = document.getElementById("menu");
 

@@ -11,10 +11,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/estilo.css?v=1790363167">
+  <link rel="stylesheet" href="css/estilo.css?v=1790364307">
   <!-- TEMPORÁRIO: comparação de fundos da seção de produtos -->
-  <link rel="stylesheet" href="css/comparar-layout.css?v=1790363167">
-  <link rel="stylesheet" href="css/comparar-fundos.css?v=1790363167">
+  <link rel="stylesheet" href="css/comparar-layout.css?v=1790364307">
+  <link rel="stylesheet" href="css/comparar-fundos.css?v=1790364307">
 
   <script type="application/ld+json">
   {
@@ -42,28 +42,46 @@
 <body>
   <a class="pular" href="#conteudo">Ir para o conteúdo</a>
 
-  <!-- ============ HEADER (pílulas de vidro, como no Figma) ============ -->
-  <header class="topo">
-    <div class="topo__pilula topo__pilula--esq">
+  <!-- ============ HEADER (barra de vidro fixa: logo · links · WhatsApp) ============ -->
+  <header class="topo" data-topo>
+    <div class="container topo__barra">
       <a class="topo__logo" href="/" aria-label="Bento Churrasqueiras — página inicial">
         <img src="assets/marca/logo-header.svg" alt="Bento Churrasqueiras" width="156" height="88">
       </a>
+
       <nav class="topo__nav" aria-label="Principal">
-        <a href="/projetos/">Projetos</a>
-        <a href="/produtos/">Produtos</a>
+        <ul>
+          <li><a href="/empresa/">Empresa</a></li>
+          <li class="topo__drop">
+            <button type="button" aria-expanded="false" aria-controls="drop-produtos" data-drop>
+              Produtos <span class="topo__seta" aria-hidden="true"></span>
+            </button>
+            <div class="topo__painel" id="drop-produtos">
+              <ul>
+                <li><a href="/smartgrill/">SmartGrill</a></li>
+                <li><a href="/duragrill/">DuraGrill</a></li>
+                <li><a href="/grelhas/">Grelhas</a></li>
+                <li><a href="/acessorios/">Acessórios</a></li>
+                <li class="topo__painel-todos"><a href="/produtos/">Todos os produtos</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="/projetos/">Projetos</a></li>
+          <li><a href="/assistencia/">Assistência</a></li>
+          <li><a href="/contato/">Contato</a></li>
+        </ul>
       </nav>
+
       <a class="botao botao--wpp topo__wpp" href="https://wa.me/5554996889900?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20de%20churrasqueira." target="_blank" rel="noopener" data-evento="whatsapp_header">
         <img src="assets/icones/whatsapp-branco.svg" alt="" width="20" height="20">
         <span>WhatsApp</span>
       </a>
-    </div>
 
-    <div class="topo__pilula topo__pilula--dir">
-      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu" data-menu-abrir>
+      <!-- só no mobile: abre o menu em overlay -->
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu" data-menu-abrir>
         <span class="menu-botao__circulo" aria-hidden="true">
           <span></span><span></span><span></span>
         </span>
-        <span class="menu-botao__texto">Menu</span>
       </button>
     </div>
   </header>
@@ -415,9 +433,9 @@
     <img src="assets/icones/whatsapp-branco.svg" alt="" width="28" height="28">
   </a>
 
-  <script src="js/main.js?v=1790363167" defer></script>
+  <script src="js/main.js?v=1790364307" defer></script>
   <!-- TEMPORÁRIO: comparação de fundos da seção de produtos -->
-  <script src="js/comparar-layout.js?v=1790363167" defer></script>
-  <script src="js/comparar-fundos.js?v=1790363167" defer></script>
+  <script src="js/comparar-layout.js?v=1790364307" defer></script>
+  <script src="js/comparar-fundos.js?v=1790364307" defer></script>
 </body>
 </html>

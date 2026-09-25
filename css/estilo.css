@@ -987,43 +987,47 @@ body.menu-aberto { overflow: hidden; }
 .rodape__legal a { text-decoration: none; }
 .rodape__legal a:hover { color: var(--branco); }
 
-/* Receba o catálogo: faixa discreta no topo do rodapé */
+/* Receba o catálogo: faixa no claro quente entre o contato e o rodapé */
+.catalogo-secao {
+  background:
+    radial-gradient(ellipse 50% 80% at 85% 50%, rgba(255, 255, 255, .7), rgba(255, 255, 255, 0) 70%),
+    #f2eee9;
+  color: var(--grafite);
+  padding: clamp(64px, 6vw, 96px) 0;
+}
 .catalogo {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 32px;
   flex-wrap: wrap;
-  padding-bottom: clamp(48px, 5vw, 72px);
-  margin-bottom: clamp(48px, 5vw, 72px);
-  border-bottom: 1px solid rgba(255, 255, 255, .1);
 }
-.catalogo__titulo { font-family: var(--fonte-titulo); font-size: clamp(30px, 2.4vw, 40px); line-height: 1; }
-.catalogo__apoio { margin-top: 8px; font-size: 15px; color: rgba(255, 255, 255, .6); }
+.catalogo__titulo { font-family: var(--fonte-titulo); font-size: clamp(34px, 3vw, 52px); line-height: 1; color: var(--grafite); }
+.catalogo__apoio { margin-top: 10px; font-size: 16px; color: rgba(41, 41, 41, .65); }
 .catalogo__campo {
   display: flex;
   align-items: center;
-  flex: 0 1 540px;
-  height: 58px;
+  flex: 0 1 560px;
+  height: 60px;
   padding: 5px 5px 5px 26px;
-  border: 1px solid rgba(255, 255, 255, .18);
+  border: 1px solid rgba(41, 41, 41, .22);
   border-radius: 50px;
-  background: rgba(255, 255, 255, .04);
-  transition: border-color .2s ease;
+  background: rgba(255, 255, 255, .6);
+  transition: border-color .2s ease, background-color .2s ease;
 }
-.catalogo__campo:focus-within { border-color: var(--laranja); }
+.catalogo__campo:focus-within { border-color: var(--laranja); background: #fff; }
 .catalogo__campo input {
   flex: 1;
   min-width: 0;
   border: 0;
   outline: 0;
   background: none;
-  color: var(--branco);
+  color: var(--grafite);
   font: 400 16px var(--fonte-texto);
 }
-.catalogo__campo input::placeholder { color: rgba(255, 255, 255, .4); }
-.catalogo__campo .botao { min-height: 46px; padding-inline: 26px; font-size: 14px; letter-spacing: .04em; }
-.catalogo .aviso { flex-basis: 100%; font-size: 14px; color: rgba(255, 255, 255, .7); }
+.catalogo__campo input::placeholder { color: rgba(41, 41, 41, .4); }
+.catalogo__campo .botao { min-height: 48px; padding-inline: 28px; font-size: 14px; letter-spacing: .04em; }
+.catalogo .aviso { flex-basis: 100%; font-size: 14px; color: rgba(41, 41, 41, .7); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
 /* ---------- WhatsApp flutuante ---------- */
@@ -1090,6 +1094,8 @@ body.menu-aberto { overflow: hidden; }
   .catalogo__campo { flex-basis: 100%; }
   .catalogo__campo .botao { padding-inline: 18px; font-size: 13px; }
   .canal__valor--email { font-size: 16px; }
+  .so-desktop { display: none; }
+  .catalogo__campo { padding-left: 18px; }
   .prova__over, .linhas-intro__over { gap: 12px; letter-spacing: .22em; white-space: nowrap; }
   .prova__traco, .prova__over::after, .linhas-intro__traco, .linhas-intro__over::after { width: 22px; }
   .numero { padding: 28px 10px; }

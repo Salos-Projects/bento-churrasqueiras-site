@@ -11,10 +11,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/estilo.css?v=1790366371">
+  <link rel="stylesheet" href="css/estilo.css?v=1790366653">
   <!-- TEMPORÁRIO: comparação de fundos da seção de produtos -->
-  <link rel="stylesheet" href="css/comparar-layout.css?v=1790366371">
-  <link rel="stylesheet" href="css/comparar-fundos.css?v=1790366371">
+  <link rel="stylesheet" href="css/comparar-layout.css?v=1790366653">
+  <link rel="stylesheet" href="css/comparar-fundos.css?v=1790366653">
 
   <script type="application/ld+json">
   {
@@ -393,24 +393,27 @@
         </ul>
       </div>
     </section>
+    <!-- ============ RECEBA O CATÁLOGO (claro quente; pede o WhatsApp — no Elementor vira Fluent Forms) ============ -->
+    <section class="catalogo-secao" aria-label="Receba o catálogo">
+      <div class="container">
+        <form class="catalogo" action="#" method="post" data-catalogo>
+          <div class="catalogo__texto">
+            <p class="catalogo__titulo">Receba o catálogo completo</p>
+            <p class="catalogo__apoio">Todas as linhas, medidas e acabamentos, direto no seu WhatsApp.</p>
+          </div>
+          <label class="visually-hidden" for="catalogo-whats">Seu WhatsApp</label>
+          <div class="catalogo__campo">
+            <input id="catalogo-whats" name="whatsapp" type="tel" inputmode="tel" placeholder="(00) 00000-0000" autocomplete="tel" required>
+            <button class="botao" type="submit">Receber<span class="so-desktop"> catálogo</span></button>
+          </div>
+        </form>
+      </div>
+    </section>
   </main>
 
   <!-- ============ RODAPÉ ============ -->
   <footer class="rodape">
     <div class="container">
-      <!-- Receba o catálogo (pede o WhatsApp). No Elementor vira um Fluent Forms. -->
-      <form class="catalogo" action="#" method="post" data-catalogo>
-        <div class="catalogo__texto">
-          <p class="catalogo__titulo">Receba o catálogo completo</p>
-          <p class="catalogo__apoio">Todas as linhas, medidas e acabamentos, direto no seu WhatsApp.</p>
-        </div>
-        <label class="visually-hidden" for="catalogo-whats">Seu WhatsApp</label>
-        <div class="catalogo__campo">
-          <input id="catalogo-whats" name="whatsapp" type="tel" inputmode="tel" placeholder="(00) 00000-0000" autocomplete="tel" required>
-          <button class="botao" type="submit">Receber catálogo</button>
-        </div>
-      </form>
-
       <div class="rodape__topo">
         <div class="rodape__marca">
           <a href="/" aria-label="Bento Churrasqueiras — página inicial">
@@ -470,9 +473,9 @@
     <img src="assets/icones/whatsapp-branco.svg" alt="" width="28" height="28">
   </a>
 
-  <script src="js/main.js?v=1790366371" defer></script>
+  <script src="js/main.js?v=1790366653" defer></script>
   <!-- TEMPORÁRIO: comparação de fundos da seção de produtos -->
-  <script src="js/comparar-layout.js?v=1790366371" defer></script>
-  <script src="js/comparar-fundos.js?v=1790366371" defer></script>
+  <script src="js/comparar-layout.js?v=1790366653" defer></script>
+  <script src="js/comparar-fundos.js?v=1790366653" defer></script>
 </body>
 </html>

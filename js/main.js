@@ -19,7 +19,13 @@
     menu.classList.remove("aberto");
     botao.setAttribute("aria-expanded", "false");
     document.body.classList.remove("menu-aberto");
-    setTimeout(function () { menu.hidden = true; }, 250);
+    setTimeout(function () {
+      menu.hidden = true;
+      menu.querySelectorAll("[data-submenu]").forEach(function (g) {
+        g.setAttribute("aria-expanded", "false");
+        g.nextElementSibling.classList.remove("aberto");
+      });
+    }, 250);
     botao.focus();
   }
 
@@ -32,6 +38,16 @@
     });
     menu.addEventListener("click", function (e) {
       if (e.target.closest("a")) fecharMenu();
+    });
+
+    // Submenu de Produtos: abre/fecha ao clicar
+    menu.querySelectorAll("[data-submenu]").forEach(function (gatilho) {
+      var caixa = gatilho.nextElementSibling;
+      gatilho.addEventListener("click", function () {
+        var aberto = gatilho.getAttribute("aria-expanded") === "true";
+        gatilho.setAttribute("aria-expanded", String(!aberto));
+        caixa.classList.toggle("aberto", !aberto);
+      });
     });
   }
 

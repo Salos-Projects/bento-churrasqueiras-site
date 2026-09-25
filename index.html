@@ -73,13 +73,18 @@
           <li><a href="/">Home</a></li>
           <li><a href="/empresa/">Empresa</a></li>
           <li>
-            <a href="/produtos/">Produtos</a>
-            <ul class="menu__sub">
+            <button class="menu__abre-sub" type="button" aria-expanded="false" aria-controls="submenu-produtos" data-submenu>
+              Produtos <span class="menu__seta" aria-hidden="true"></span>
+            </button>
+            <div class="menu__sub-caixa">
+            <ul class="menu__sub" id="submenu-produtos">
+              <li><a href="/produtos/">Todos os produtos</a></li>
               <li><a href="/smartgrill/">SmartGrill</a></li>
               <li><a href="/duragrill/">DuraGrill</a></li>
               <li><a href="/grelhas/">Grelhas</a></li>
               <li><a href="/acessorios/">Acessórios</a></li>
             </ul>
+            </div>
           </li>
           <li><a href="/projetos/">Projetos</a></li>
           <li><a href="/assistencia/">Assistência</a></li>

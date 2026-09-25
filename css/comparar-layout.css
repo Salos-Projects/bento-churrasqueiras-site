@@ -417,3 +417,45 @@ body:not(.layout-a):not(.layout-d) .linha .titulo .rv-in { translate: none; rota
 
 /* seletores de comparação escondidos: A3 escolhida */
 .seletor-fundo { display: none !important; }
+
+/* fita de LED quente acima do "Nossas linhas": acende do centro para as pontas */
+.linhas-intro { position: relative; overflow: hidden; isolation: isolate; }
+.linhas-intro__luz {
+  position: absolute;
+  left: 50%;
+  top: clamp(40px, 5vw, 80px);
+  width: min(900px, 80vw);
+  height: 520px;
+  translate: -50% 0;
+  z-index: -1;
+  pointer-events: none;
+}
+/* a fita */
+.linhas-intro__luz::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(to right, transparent, #ffb77a 25%, #fff1e2 50%, #ffb77a 75%, transparent);
+  box-shadow: 0 0 18px 2px rgba(255, 170, 100, .55), 0 0 60px 6px rgba(242, 110, 34, .25);
+  scale: 0 1;
+  opacity: 0;
+  transition: scale 1.6s cubic-bezier(.19, 1, .22, 1), opacity .8s ease;
+}
+/* o halo que a luz projeta para baixo */
+.linhas-intro__luz::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 55% 75% at 50% 0%, rgba(255, 160, 90, .30), rgba(242, 110, 34, .12) 40%, rgba(242, 110, 34, 0) 75%);
+  opacity: 0;
+  transition: opacity 2s ease .4s;
+}
+.linhas-intro.aceso .linhas-intro__luz::before { scale: 1 1; opacity: 1; }
+.linhas-intro.aceso .linhas-intro__luz::after { opacity: 1; }
+/* claro/escuro: só faz sentido no escuro */
+body:not(.layout-a3) .linhas-intro__luz { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .linhas-intro__luz::before, .linhas-intro__luz::after { transition: none; scale: 1 1; opacity: 1; }
+}

@@ -87,12 +87,9 @@
     prepararTitulos.t = setTimeout(prepararTitulos, 150);
   });
 
-  /* ---------- Header: estado "rolado" e painel de Produtos ---------- */
+  /* ---------- Header: painel de Produtos ---------- */
   var topo = document.querySelector("[data-topo]");
   if (topo) {
-    var marcarRolado = function () { topo.classList.toggle("rolado", window.scrollY > 40); };
-    marcarRolado();
-    window.addEventListener("scroll", marcarRolado, { passive: true });
 
     topo.querySelectorAll("[data-drop]").forEach(function (b) {
       b.addEventListener("click", function () {

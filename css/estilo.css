@@ -125,7 +125,7 @@ body.menu-aberto { overflow: hidden; }
    Header — barra de vidro fixa no topo: logo · links centralizados · WhatsApp
    ========================================================================== */
 .topo {
-  position: fixed;
+  position: absolute; /* fica só no topo da página (não acompanha a rolagem) */
   top: 24px;
   left: 0;
   right: 0;

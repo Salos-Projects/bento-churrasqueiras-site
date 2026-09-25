@@ -83,6 +83,11 @@
     });
   });
 
+  /* ---------- A3 mobile: cada linha "ativa" ao entrar na tela ---------- */
+  var obsAtiva = "IntersectionObserver" in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("ativa"); obsAtiva.unobserve(e.target); } });
+  }, { threshold: 0.15 }) : null;
+
   /* ---------- D · Editorial ---------- */
   var observador = "IntersectionObserver" in window ? new IntersectionObserver(function (entradas) {
     entradas.forEach(function (e) {
@@ -103,21 +108,22 @@
 
   /* ---------- Troca de layout ---------- */
   function limpar() {
-    document.body.classList.remove("layout-a", "layout-a2", "layout-a3", "layout-d");
+    document.body.classList.remove("layout-a", "layout-a2", "layout-a3", "layout-a3m", "layout-d");
     linhas.forEach(function (l) {
       l.classList.remove("ativa", "visivel");
       var img = l.querySelector(".linha__midia--foto img");
       if (img) img.style.removeProperty("--py");
     });
     if (observador) linhas.forEach(function (l) { observador.unobserve(l); });
+    if (obsAtiva) linhas.forEach(function (l) { obsAtiva.unobserve(l); });
     if (indice.parentNode) indice.parentNode.removeChild(indice);
   }
 
   function aplicar() {
-    // a vitrine fixa não funciona bem no celular: lá vira o editorial
-    var efetivo = /^a/.test(escolhido) && celular.matches ? "d" : escolhido;
+    // no celular a vitrine fixa não funciona bem: A3 vira a versão empilhada (a3m); A/A2 viram o editorial
+    var efetivo = escolhido === "a3" && celular.matches ? "a3m" : (/^a/.test(escolhido) && celular.matches ? "d" : escolhido);
     limpar();
-    ativo = /^a/.test(efetivo) ? "a" : efetivo;
+    ativo = /^a[23]?$/.test(efetivo) ? "a" : efetivo;
     if (ativo === "a") {
       document.body.classList.add("layout-a");
       if (efetivo === "a2" || efetivo === "a3") document.body.classList.add("layout-a2");
@@ -125,6 +131,11 @@
       linhasEl.style.setProperty("--qtd", linhas.length);
       linhasEl.appendChild(indice);
       atualizarA();
+    } else if (efetivo === "a3m") {
+      ativo = "a3m";
+      document.body.classList.add("layout-a2", "layout-a3", "layout-a3m");
+      if (obsAtiva) linhas.forEach(function (l) { obsAtiva.observe(l); });
+      else linhas.forEach(function (l) { l.classList.add("ativa"); });
     } else if (efetivo === "d") {
       document.body.classList.add("layout-d");
       if (observador) linhas.forEach(function (l) { observador.observe(l); });

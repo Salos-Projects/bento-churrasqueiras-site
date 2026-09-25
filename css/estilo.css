@@ -121,6 +121,63 @@ body.menu-aberto { overflow: hidden; }
 .link-seta::after { content: " →"; }
 .link-seta:hover { border-color: var(--branco); }
 
+/* Botões refinados: principal (laranja) só para conversão, secundário em contorno, link de texto como 3º nível */
+.botao {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  gap: 12px;
+  min-height: 52px;
+  padding: 0 30px;
+  font: 500 14px/1 var(--fonte-texto);
+  letter-spacing: .08em;
+  transition: background-color .35s ease, color .35s ease, border-color .35s ease, background-size .55s cubic-bezier(.2, .7, .2, 1);
+}
+.botao:active { transform: none; }
+
+/* seta que desliza (não entra nos botões com ícone do WhatsApp do header/menu) */
+.botao:not(.topo__wpp):not(.botao--wpp)::after {
+  content: "→";
+  font-size: 16px;
+  line-height: 1;
+  transition: translate .45s cubic-bezier(.2, .7, .2, 1);
+}
+.botao:hover::after { translate: 5px 0; }
+
+/* principal: brilho que atravessa no hover */
+.botao:not(.botao--sec)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, .28) 50%, transparent 70%);
+  translate: -110% 0;
+  transition: translate .8s cubic-bezier(.2, .7, .2, 1);
+}
+.botao:not(.botao--sec):hover::before { translate: 110% 0; }
+.botao:not(.botao--sec):hover { background-color: var(--laranja); }
+
+/* secundário: contorno laranja com leve tom no fundo; preenche de laranja no hover */
+.botao--sec {
+  color: var(--branco);
+  border: 1.5px solid var(--laranja);
+  background: linear-gradient(var(--laranja), var(--laranja)) 0 100% / 100% 0 no-repeat rgba(242, 110, 34, .10);
+}
+.botao--sec::after { color: var(--laranja); transition: translate .45s cubic-bezier(.2, .7, .2, 1), color .35s ease; }
+.botao--sec:hover { color: var(--branco); background-size: 100% 100%; }
+.botao--sec:hover::after { color: var(--branco); }
+
+/* link de texto (terceiro nível): sublinhado fino que cresce */
+.link-seta {
+  border-bottom: 0;
+  padding-bottom: 4px;
+  letter-spacing: .04em;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 35% 1px no-repeat;
+  transition: background-size .5s cubic-bezier(.2, .7, .2, 1);
+}
+.link-seta:hover { background-size: 100% 1px; }
+
+
 /* ==========================================================================
    Header — barra de vidro fixa no topo: logo · links centralizados · WhatsApp
    ========================================================================== */
@@ -1095,6 +1152,13 @@ body.menu-aberto { overflow: hidden; }
   .catalogo__campo .botao { padding-inline: 18px; font-size: 13px; }
   .canal__valor--email { font-size: 16px; }
   .so-desktop { display: none; }
+  /* alvos de toque de pelo menos 44px */
+  .rodape__col ul { gap: 0; }
+  .rodape__col li a { display: inline-flex; align-items: center; min-height: 44px; }
+  .rodape__col li:not(:has(a)) { padding-block: 10px; }
+  .rodape__legal a, .canal__valor { display: inline-flex; align-items: center; min-height: 44px; }
+  .link-seta { display: inline-flex; align-items: center; min-height: 44px; padding-bottom: 0; background-position: 0 calc(100% - 9px); }
+  .canal { padding: 18px 0; }
   .catalogo__campo { padding-left: 18px; }
   .prova__over, .linhas-intro__over { gap: 12px; letter-spacing: .22em; white-space: nowrap; }
   .prova__traco, .prova__over::after, .linhas-intro__traco, .linhas-intro__over::after { width: 22px; }

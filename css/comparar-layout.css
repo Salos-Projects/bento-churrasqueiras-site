@@ -13,6 +13,7 @@
   transition: opacity .6s ease, translate .7s cubic-bezier(.2, .7, .2, 1);
 }
 .layout-a .linha.ativa .linha__texto > *,
+.layout-a3m .linha.ativa .linha__texto > *,
 .layout-d .linha.visivel .linha__texto > * {
   opacity: 1;
   translate: none;
@@ -410,8 +411,9 @@
 /* títulos das linhas: mesma revelação da hero, disparada quando a linha entra */
 .linha .titulo { --atraso: 150ms; }
 .layout-a .linha.ativa .titulo .rv-in,
+.layout-a3m .linha.ativa .titulo .rv-in,
 .layout-d .linha.visivel .titulo .rv-in,
-body:not(.layout-a):not(.layout-d) .linha .titulo .rv-in { translate: none; rotate: none; }
+body:not(.layout-a):not(.layout-d):not(.layout-a3m) .linha .titulo .rv-in { translate: none; rotate: none; }
 /* ao sair da linha, o título volta rápido para a posição inicial (reanima na volta) */
 .layout-a .linha:not(.ativa) .titulo .rv-in { transition-duration: .01s; transition-delay: .6s; }
 
@@ -459,3 +461,39 @@ body:not(.layout-a3) .linhas-intro__luz { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .linhas-intro__luz::before, .linhas-intro__luz::after { transition: none; scale: 1 1; opacity: 1; }
 }
+
+/* ==========================================================================
+   A3 mobile (layout-a3m): produtos empilhados no escuro; a cena fica no
+   topo de cada produto, em largura total, e se dissolve no escuro
+   ========================================================================== */
+.layout-a3m .linha {
+  display: block;
+  padding: 0 0 72px !important;
+  overflow: hidden;
+}
+.layout-a3m .linha__cena {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: 62vw;
+  min-height: 240px;
+  background-position: 50% 45%;
+  -webkit-mask: linear-gradient(to bottom, #000 55%, transparent);
+  mask: linear-gradient(to bottom, #000 55%, transparent);
+}
+.layout-a3m .linha__cena::after { background: linear-gradient(to bottom, #171615, rgba(23, 22, 21, 0) 25%); }
+.layout-a3m .linha__grade {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "over" "titulo" "desc" "specs" "cta";
+  row-gap: 0;
+  margin-top: -36px;
+  padding: 0;
+}
+.layout-a3m .linha .titulo { font-size: 44px; margin-top: 12px; }
+.layout-a3m .linha__descricao { font-size: 16px; margin-top: 12px; }
+.layout-a3m .linha__specs { gap: 20px 20px; margin-top: 28px; }
+.layout-a3m .linha__specs strong { font-size: 30px; }
+.layout-a3m .linha__specs span { font-size: 13px; }
+.layout-a3m .linha__texto > .botao { margin-top: 32px; }
+.layout-a3m .linha .overline { font-size: 12px; letter-spacing: .2em; }

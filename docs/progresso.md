@@ -9,7 +9,9 @@
 - MCP do Elementor da Bento conectado: `bento-churrasqueiras-elementor`, escopo local da pasta `Bento Churrasqueiras` (22 ferramentas, Editor atômico ativo). O MCP `lideratti-elementor` é de outro cliente — não usar aqui.
 - Decisão: configurador "Monte sua churrasqueira" (Staggs) fora do lançamento; decidir depois entre manter o Staggs ou refazer em código.
 
+- Figma do cliente conectado via MCP (conta Gmail, plano Starter = 20 leituras/mês). Paleta, fontes, logo/símbolo em SVG e estrutura da home extraídos → `docs/figma.md`, `assets/marca/`, `referencias/figma-site-completo.png`. 3 leituras usadas.
+
 ### Próximos passos
-1. Montar a home em código (HTML/CSS com tokens) seguindo o protótipo.
+1. Montar a home em código (HTML/CSS com tokens) seguindo o Figma (node IDs por seção em `docs/figma.md`).
 2. Definir se usamos as fotos atuais do site ou esperamos os originais em alta.
 3. Pendências com o cliente: ver seção 6 do briefing (Figma, renders, fotos, números reais, perfil Google, acesso admin ao WP).

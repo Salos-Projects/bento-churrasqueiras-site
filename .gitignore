@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+*.pem
+*.csv
+*.xls
+*.xlsx
+*.jsonl
+.playwright-mcp/
+.superpowers/
+.sdd/
+.claude/settings.local.json
+*.log
+__pycache__/
+node_modules/
+.DS_Store
+dist/

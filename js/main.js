@@ -9,6 +9,84 @@
   medirBarra();
   window.addEventListener("resize", medirBarra);
 
+  /* ---------- Revelação dos títulos (linha a linha) ---------- */
+  var titulos = Array.prototype.slice.call(document.querySelectorAll("[data-linhas]"));
+  titulos.forEach(function (t) { t.dataset.original = t.innerHTML; });
+
+  // agrupa as palavras por linha visual e embrulha cada linha numa máscara
+  function dividirEmLinhas(t) {
+    t.innerHTML = t.dataset.original;
+    var brs = t.querySelectorAll("br");
+    var escondidos = [];
+    brs.forEach(function (b) { if (getComputedStyle(b).display === "none") escondidos.push(b); });
+    escondidos.forEach(function (b) { b.remove(); });
+    var palavras = [];
+    Array.prototype.slice.call(t.childNodes).forEach(function (n) {
+      if (n.nodeType === 3) {
+        n.textContent.split(/(\s+)/).forEach(function (p) {
+          if (!p) return;
+          if (/^\s+$/.test(p)) { t.insertBefore(document.createTextNode(" "), n); return; }
+          var sp = document.createElement("span");
+          sp.textContent = p;
+          sp.style.display = "inline-block";
+          t.insertBefore(sp, n);
+          palavras.push(sp);
+        });
+        t.removeChild(n);
+      }
+    });
+    var linhas = [];
+    var topo = null;
+    palavras.forEach(function (p) {
+      if (topo === null || Math.abs(p.offsetTop - topo) > 4) { linhas.push([]); topo = p.offsetTop; }
+      linhas[linhas.length - 1].push(p.textContent);
+    });
+    t.textContent = "";
+    linhas.forEach(function (ws, i) {
+      var l = document.createElement("span");
+      l.className = "rv-linha";
+      var dentro = document.createElement("span");
+      dentro.className = "rv-in";
+      dentro.style.setProperty("--l", i);
+      dentro.textContent = ws.join(" ");
+      l.appendChild(dentro);
+      t.appendChild(l);
+    });
+    t.classList.add("rv-pronto");
+  }
+
+  function prepararTitulos() { titulos.forEach(dividirEmLinhas); }
+
+  function revelar(el) {
+    el.classList.add("revelado");
+    var hero = el.closest(".hero");
+    if (hero) hero.classList.add("revelado");
+  }
+
+  (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(function () {
+    prepararTitulos();
+    var blocos = document.querySelectorAll("[data-revelar]");
+    var obs = "IntersectionObserver" in window ? new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { revelar(e.target); obs.unobserve(e.target); } });
+    }, { threshold: 0.35 }) : null;
+    blocos.forEach(function (b) {
+      if (b.dataset.revelar === "carga" || !obs) {
+        requestAnimationFrame(function () { requestAnimationFrame(function () { revelar(b); }); });
+      } else {
+        obs.observe(b);
+      }
+    });
+  });
+
+  // ao mudar a largura, a quebra das linhas muda: refaz a divisão (já revelado)
+  var larguraAnterior = window.innerWidth;
+  window.addEventListener("resize", function () {
+    if (window.innerWidth === larguraAnterior) return;
+    larguraAnterior = window.innerWidth;
+    clearTimeout(prepararTitulos.t);
+    prepararTitulos.t = setTimeout(prepararTitulos, 150);
+  });
+
   /* ---------- Menu em overlay ---------- */
   var botao = document.querySelector("[data-menu-abrir]");
   var menu = document.getElementById("menu");

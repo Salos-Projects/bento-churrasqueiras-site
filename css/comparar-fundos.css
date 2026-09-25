@@ -46,22 +46,48 @@ body[class*="fundo-"]:not(.fundo-0) .linha__midia--render { isolation: auto; }
 }
 
 /* ---------- 2. Opção 1 + nome da linha gigante ao fundo ---------- */
+/* base comum: só contorno, bem transparente — é um detalhe, não um título */
 .fundo-2 .linha::before {
   content: attr(data-nome);
   position: absolute;
   z-index: -1;
-  right: calc(var(--gutter) - 20px);
-  top: clamp(8px, 2vw, 36px);
   font-family: var(--fonte-titulo);
-  font-size: clamp(120px, 14vw, 270px);
   line-height: .8;
   letter-spacing: .02em;
   white-space: nowrap;
-  color: rgba(56, 56, 56, .05);
-  -webkit-text-stroke: 1.5px rgba(56, 56, 56, .22);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(56, 56, 56, .09);
   pointer-events: none;
+  user-select: none;
 }
-.fundo-2 .linha { padding-top: clamp(96px, 11vw, 190px); }
+
+/* 2a · embaixo, cortado pela borda inferior do bloco (abaixo do botão) */
+.nome-a .linha { overflow: hidden; padding-bottom: clamp(110px, 12vw, 200px); }
+.nome-a .linha::before {
+  left: calc(var(--gutter) - 12px);
+  bottom: -.3em;
+  font-size: clamp(130px, 16vw, 280px);
+}
+
+/* 2b · atrás da coluna de texto */
+.nome-b .linha::before {
+  left: calc(var(--gutter) - 30px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(120px, 15vw, 290px);
+  -webkit-text-stroke-color: rgba(56, 56, 56, .07);
+}
+
+/* 2c · na vertical, na margem direita ao lado da imagem */
+.nome-c .linha { overflow: hidden; }
+.nome-c .linha::before {
+  writing-mode: vertical-rl;
+  right: max(0px, calc(var(--gutter) - 150px));
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(90px, 8vw, 150px);
+  -webkit-text-stroke-color: rgba(56, 56, 56, .12);
+}
 
 /* ---------- 3. Claro e escuro alternados (brasa no escuro) ---------- */
 .fundo-3 .linha:nth-child(odd) {

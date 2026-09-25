@@ -201,8 +201,9 @@
 }
 
 /* ==========================================================================
-   A2 · Vitrine editorial (usa a mecânica da A: body.layout-a.layout-a2)
-   Nome gigante atravessando a tela, imagem sobreposta a ele, specs em faixa.
+   A2 · Vitrine sangrada (usa a mecânica da A: body.layout-a.layout-a2)
+   Texto normal à esquerda com specs 2x2; a foto não é card: sangra até a
+   borda direita da tela e se dissolve no fundo.
    ========================================================================== */
 
 /* índice colado na borda esquerda da tela */
@@ -213,121 +214,99 @@
 .fundo-3.layout-a2 .linha:nth-child(even) { color: var(--branco); }
 
 .layout-a2 .linha__grade {
-  --nome: clamp(110px, 12.5vw, 240px);
   padding: 0 0 0 max(0px, 180px - var(--gutter));
   display: grid;
-  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
-  grid-template-rows: auto auto auto auto 1fr auto;
+  grid-template-columns: minmax(0, 500px) minmax(0, 1fr);
   grid-template-areas:
-    "over   over"
-    "nome   nome"
+    "over   midia"
     "titulo midia"
     "desc   midia"
-    "cta    midia"
-    "specs  specs";
+    "specs  midia"
+    "cta    midia";
+  align-content: center;
   column-gap: clamp(32px, 4vw, 72px);
-  align-items: start;
 }
 .layout-a2 .linha__texto { display: contents; }
-.layout-a2 .linha__texto > .overline { grid-area: over; margin: 0; }
-.layout-a2 .linha__texto > .titulo {
-  grid-area: titulo;
-  margin: 28px 0 0;
-  font-size: 30px;
-}
-.layout-a2 .linha__descricao { grid-area: desc; margin-top: 10px; font-size: 16px; }
+.layout-a2 .linha__texto > .overline { grid-area: over; }
+.layout-a2 .linha__texto > .titulo { grid-area: titulo; margin-top: 18px; }
+.layout-a2 .linha__descricao { grid-area: desc; margin-top: 10px; }
 .layout-a2 .checklist { display: none; }
-.layout-a2 .linha__texto > .botao { grid-area: cta; margin-top: 28px; justify-self: start; }
+.layout-a2 .linha__texto > .botao { grid-area: cta; margin-top: 36px; justify-self: start; }
 
-/* nome gigante (decorativo; o h2 continua sendo o título real) */
-.layout-a2 .linha__grade::before {
-  content: attr(data-nome);
-  grid-area: nome;
-  font-family: var(--fonte-titulo);
-  font-size: var(--nome);
-  line-height: .82;
-  letter-spacing: .005em;
-  white-space: nowrap;
-  color: inherit;
-  margin-top: 6px;
+/* specs 2x2 */
+.layout-a2 .linha__specs {
+  grid-area: specs;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 28px;
+  margin: 34px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.layout-a2 .linha__specs li {
+  display: grid;
+  gap: 4px;
+  padding-top: 14px;
+  border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent);
   opacity: 0;
-  translate: -80px 0;
-  transition: opacity .7s ease, translate 1s cubic-bezier(.2, .7, .2, 1);
+  translate: 0 16px;
+  transition: opacity .6s ease, translate .7s cubic-bezier(.2, .7, .2, 1);
 }
-.layout-a2 .linha.ativa .linha__grade::before { opacity: 1; translate: none; transition-delay: .05s; }
+.layout-a2 .linha.ativa .linha__specs li { opacity: 1; translate: none; }
+.layout-a2 .linha.ativa .linha__specs li:nth-child(1) { transition-delay: .40s; }
+.layout-a2 .linha.ativa .linha__specs li:nth-child(2) { transition-delay: .48s; }
+.layout-a2 .linha.ativa .linha__specs li:nth-child(3) { transition-delay: .56s; }
+.layout-a2 .linha.ativa .linha__specs li:nth-child(4) { transition-delay: .64s; }
+.layout-a2 .linha__specs strong {
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1;
+  color: var(--laranja);
+}
+.layout-a2 .linha__specs span { font-size: 14px; line-height: 1.35; opacity: .75; }
 
-/* imagem: sobe por cima da parte de baixo do nome, cantos retos */
-.layout-a2 .linha__midia {
-  grid-area: midia;
-  position: relative;
-  z-index: 1;
-  justify-self: stretch;
-  width: 100%;
-  max-width: none;
-  height: clamp(280px, 100vh - 470px + var(--nome) * .45, 640px);
-  margin: calc(var(--nome) * -.45) 0 0;
-}
+/* foto sangrada: sai do grid, vai até a borda direita e se dissolve no fundo */
 .layout-a2 .linha__midia--foto {
-  border-radius: 3px;
-  box-shadow: 0 50px 80px -40px rgba(0, 0, 0, .55);
+  position: absolute;
+  top: 9vh;
+  bottom: 9vh;
+  right: 0;
+  width: calc(100vw - var(--barra, 0px) - var(--gutter) - max(0px, 180px - var(--gutter)) - 500px - clamp(32px, 4vw, 72px) + 60px);
+  /* arredonda para pixel inteiro: borda em meio pixel desenha uma linha fina na emenda */
+  width: round(down, calc(100vw - var(--barra, 0px) - var(--gutter) - max(0px, 180px - var(--gutter)) - 500px - clamp(32px, 4vw, 72px) + 60px), 1px);
+  max-width: none;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+  -webkit-mask:
+    linear-gradient(to right, transparent 3%, #000 32%),
+    linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask:
+    linear-gradient(to right, transparent 3%, #000 32%),
+    linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 .layout-a2 .linha__midia--foto img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: none;
+  transform: scale(1.04); /* corta a borda clara que vem nas fotos originais */
 }
-/* render: mantém o recorte do Figma (esconde as marcas nas bordas da arte)
-   e não cria camada própria, para o fundo cinza continuar se misturando */
+
+/* render (já sem fundo): também sai do grid, para não esticar as linhas do texto;
+   mantém o recorte do Figma */
 .layout-a2 .linha__midia--render {
-  z-index: auto;
-  justify-self: end;
-  width: auto;
-  aspect-ratio: 894 / 812;
-  margin-top: 0;
-}
-
-/* título pequeno some quando repete o nome gigante (continua no HTML para SEO) */
-.layout-a2 .titulo.titulo-igual {
+  /* altura limitada pela tela E pela largura que sobra à direita do texto */
+  --h: min(84vh, (100vw - var(--barra, 0px) - var(--gutter) - max(0px, 180px - var(--gutter)) - 500px - clamp(32px, 4vw, 72px) - 24px) * .908);
   position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
+  top: calc(50% - var(--h) / 2);
+  right: var(--gutter);
+  height: var(--h);
+  width: auto;
+  max-width: none;
+  aspect-ratio: 894 / 812;
 }
-.layout-a2 .linha:has(.titulo-igual) .linha__descricao { margin-top: 28px; }
-
-/* faixa de specs cruzando a tela */
-.layout-a2 .linha__specs {
-  grid-area: specs;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin: 32px 0 0;
-  padding: 0;
-  list-style: none;
-  border-top: 1px solid currentColor;
-  border-top-color: color-mix(in srgb, currentColor 18%, transparent);
-}
-.layout-a2 .linha__specs li {
-  display: grid;
-  gap: 4px;
-  padding: 20px 24px 0;
-  border-left: 1px solid color-mix(in srgb, currentColor 18%, transparent);
-  opacity: 0;
-  translate: 0 20px;
-  transition: opacity .6s ease, translate .7s cubic-bezier(.2, .7, .2, 1);
-}
-.layout-a2 .linha__specs li:first-child { padding-left: 0; border-left: 0; }
-.layout-a2 .linha.ativa .linha__specs li { opacity: 1; translate: none; }
-.layout-a2 .linha.ativa .linha__specs li:nth-child(1) { transition-delay: .35s; }
-.layout-a2 .linha.ativa .linha__specs li:nth-child(2) { transition-delay: .45s; }
-.layout-a2 .linha.ativa .linha__specs li:nth-child(3) { transition-delay: .55s; }
-.layout-a2 .linha.ativa .linha__specs li:nth-child(4) { transition-delay: .65s; }
-.layout-a2 .linha__specs strong {
-  font-family: var(--fonte-titulo);
-  font-weight: 400;
-  font-size: clamp(30px, 2.6vw, 46px);
-  line-height: 1;
-  color: var(--laranja);
-}
-.layout-a2 .linha__specs span { font-size: 14px; line-height: 1.35; opacity: .75; }

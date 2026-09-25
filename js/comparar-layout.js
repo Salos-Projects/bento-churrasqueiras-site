@@ -5,7 +5,7 @@
   var opcoes = [
     ["atual", "Atual"],
     ["a", "A · Vitrine fixa"],
-    ["a2", "A2 · Vitrine editorial"],
+    ["a2", "A2 · Vitrine sangrada"],
     ["d", "D · Editorial"]
   ];
 

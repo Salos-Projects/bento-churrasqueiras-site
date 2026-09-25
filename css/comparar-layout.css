@@ -310,3 +310,58 @@
   max-width: none;
   aspect-ratio: 894 / 812;
 }
+
+/* ==========================================================================
+   A3 · Vitrine ambiente (body.layout-a.layout-a2.layout-a3)
+   Fundo escuro quente; a cena de ambiente (imagem de IA) ocupa a metade
+   direita em altura total e se dissolve no escuro onde está o texto.
+   Ignora o seletor de fundo.
+   ========================================================================== */
+.layout-a3 .linhas { background: #171615 !important; }
+.layout-a3 .linha {
+  color: var(--branco);
+  background:
+    radial-gradient(ellipse 45% 55% at 12% 100%, rgba(242, 110, 34, .10), rgba(242, 110, 34, 0) 70%),
+    #171615 !important;
+}
+.layout-a3 .linha::before,
+.layout-a3 .linha::after { display: none !important; }
+.layout-a3 .linha__midia { display: none; }
+
+/* cena */
+.linha__cena { display: none; }
+.layout-a3 .linha__cena {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 66vw;
+  background: var(--img) center / cover no-repeat;
+  -webkit-mask: linear-gradient(to right, transparent 0%, #000 38%);
+  mask: linear-gradient(to right, transparent 0%, #000 38%);
+  scale: 1.12;
+  transition: scale 2.2s cubic-bezier(.2, .7, .2, 1);
+}
+.layout-a3 .linha.ativa .linha__cena { scale: 1; }
+/* leve escurecida embaixo para a transição entre seções */
+.layout-a3 .linha__cena::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(23, 22, 21, .35), transparent 18%, transparent 80%, rgba(23, 22, 21, .6));
+}
+
+/* texto claro */
+.layout-a3 .linha .overline,
+.layout-a3 .linha .titulo { color: var(--branco); }
+.layout-a3 .linha .overline { opacity: .7; }
+.layout-a3 .linha__descricao { color: rgba(255, 255, 255, .8); }
+.layout-a3 .linha__grade { position: relative; z-index: 1; }
+
+/* índice claro */
+.layout-a3 .vitrine-indice button { color: rgba(255, 255, 255, .4); }
+.layout-a3 .vitrine-indice button:hover { color: var(--branco); }
+.layout-a3 .vitrine-indice button[aria-current="true"] { color: var(--laranja); }
+.layout-a3 .vitrine-indice button[aria-current="true"] small { color: var(--branco); }
+.layout-a3 .vitrine-indice ol::before { background: rgba(255, 255, 255, .15); }

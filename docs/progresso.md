@@ -13,6 +13,8 @@
 - Textos da home: coletados do site atual e reescritos (atual × proposta, sem inventar fatos) → `docs/textos-home.md`, com 6 pendências para o cliente.
 - **Home em código** (`index.html`, `css/estilo.css`, `js/main.js`): segue o Figma (hero, header em pílulas de vidro, linhas, prova social, contato, newsletter, rodapé) com os textos da proposta e as 4 linhas do site atual. Fotos de SmartGrill, DuraGrill e Acessórios vêm do site atual (630×477, baixa resolução); a grelha usa o render do Figma. Conferida em 1920px e 390px, sem rolagem horizontal.
 - Limite do Figma: o arquivo está no time V4 (6 leituras/mês), já esgotado. A seção de prova social foi montada a partir do screenshot.
+- Seção de produtos: testados fundos (inox, nome da linha, claro/escuro, brasa) e layouts (vitrine fixa, editorial, vitrine sangrada, **vitrine ambiente**). Direção atual: **A3 · vitrine ambiente** — fundo escuro, cena de ambiente gerada por IA ocupando a metade direita, troca no scroll. Decidido: fotos de obra atuais não servem; cada linha terá uma imagem de ambiente em IA no padrão da foto da abertura. O render da grelha com legendas vai para a página do produto ("raio-X").
+- ⚠️ O render da grelha (do Figma) tem marcas "INNOVARE" e "KAFER" nas bordas — confirmar origem antes de publicar.
 
 ### Próximos passos
 1. Revisar a home com o Lucas e depois com o cliente; trocar as fotos das linhas por renders ou fotos em alta.

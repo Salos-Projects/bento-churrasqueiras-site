@@ -6,6 +6,7 @@
     ["atual", "Atual"],
     ["a", "A · Vitrine fixa"],
     ["a2", "A2 · Vitrine sangrada"],
+    ["a3", "A3 · Vitrine ambiente"],
     ["d", "D · Editorial"]
   ];
 
@@ -14,7 +15,7 @@
   if (!linhasEl || !linhas.length) return;
 
   var url = new URL(window.location.href);
-  var escolhido = url.searchParams.get("layout") || "a";
+  var escolhido = url.searchParams.get("layout") || "a3";
   var celular = window.matchMedia("(max-width: 900px)");
   var ativo = null; // layout efetivamente aplicado
 
@@ -45,6 +46,13 @@
   });
   var botoes = lista.querySelectorAll("button");
   linhas.forEach(function (l) {
+    if (l.dataset.ambiente) {
+      var cena = document.createElement("div");
+      cena.className = "linha__cena";
+      cena.setAttribute("aria-hidden", "true");
+      cena.style.setProperty("--img", 'url("' + new URL(l.dataset.ambiente, document.baseURI).href + '")');
+      l.insertBefore(cena, l.firstChild);
+    }
     var grade = l.querySelector(".linha__grade");
     if (grade && l.dataset.nome) grade.dataset.nome = l.dataset.nome;
     var t = l.querySelector(".titulo");
@@ -95,7 +103,7 @@
 
   /* ---------- Troca de layout ---------- */
   function limpar() {
-    document.body.classList.remove("layout-a", "layout-a2", "layout-d");
+    document.body.classList.remove("layout-a", "layout-a2", "layout-a3", "layout-d");
     linhas.forEach(function (l) {
       l.classList.remove("ativa", "visivel");
       var img = l.querySelector(".linha__midia--foto img");
@@ -107,12 +115,13 @@
 
   function aplicar() {
     // a vitrine fixa não funciona bem no celular: lá vira o editorial
-    var efetivo = (escolhido === "a" || escolhido === "a2") && celular.matches ? "d" : escolhido;
+    var efetivo = /^a/.test(escolhido) && celular.matches ? "d" : escolhido;
     limpar();
-    ativo = efetivo === "a2" ? "a" : efetivo;
-    if (efetivo === "a" || efetivo === "a2") {
+    ativo = /^a/.test(efetivo) ? "a" : efetivo;
+    if (ativo === "a") {
       document.body.classList.add("layout-a");
-      if (efetivo === "a2") document.body.classList.add("layout-a2");
+      if (efetivo === "a2" || efetivo === "a3") document.body.classList.add("layout-a2");
+      if (efetivo === "a3") document.body.classList.add("layout-a3");
       linhasEl.style.setProperty("--qtd", linhas.length);
       linhasEl.appendChild(indice);
       atualizarA();

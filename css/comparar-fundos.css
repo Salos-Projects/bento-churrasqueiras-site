@@ -1,0 +1,134 @@
+/* ==========================================================================
+   TEMPORÁRIO — opções de fundo para a seção de produtos.
+   Troque com ?fundo=0..4 ou pelo seletor no canto inferior esquerdo.
+   Depois da escolha, a opção vencedora vai para estilo.css e este arquivo sai.
+   ========================================================================== */
+
+:root {
+  /* ruído esticado na horizontal = aço escovado */
+  --inox-escovado: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2400' height='600'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.004 .9' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+  --inox-escovado-escuro: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2400' height='600'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.004 .9' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+}
+
+.linhas { position: relative; isolation: isolate; }
+.linha { position: relative; }
+
+/* Em todas as opções: o render da grelha tem fundo cinza sólido (#DADCE0).
+   brightness(1.17) deixa esse cinza branco puro e o multiply faz o branco
+   sumir, então o fundo da seção aparece através dele (sombra preservada). */
+body[class*="fundo-"]:not(.fundo-0) .linha__midia--render img {
+  filter: brightness(1.17);
+  mix-blend-mode: multiply;
+}
+body[class*="fundo-"]:not(.fundo-0) .linha__midia--render { isolation: auto; }
+
+/* ---------- 1. Inox escovado + luz de estúdio ---------- */
+.fundo-1 .linhas,
+.fundo-2 .linhas,
+.fundo-1 .prova,
+.fundo-2 .prova {
+  background:
+    var(--inox-escovado-escuro) 0 0 / 2400px 600px,
+    var(--inox-escovado) 1200px 300px / 2400px 600px,
+    var(--fundo-produto);
+  background-blend-mode: soft-light, soft-light, normal;
+}
+.fundo-1 .linha::after,
+.fundo-2 .linha::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 38% 55% at 72% 50%, rgba(255, 255, 255, .75), rgba(255, 255, 255, 0) 70%),
+    radial-gradient(ellipse 80% 90% at 50% 50%, transparent 55%, rgba(40, 42, 48, .10) 100%);
+}
+
+/* ---------- 2. Opção 1 + nome da linha gigante ao fundo ---------- */
+.fundo-2 .linha::before {
+  content: attr(data-nome);
+  position: absolute;
+  z-index: -1;
+  right: calc(var(--gutter) - 20px);
+  top: clamp(8px, 2vw, 36px);
+  font-family: var(--fonte-titulo);
+  font-size: clamp(120px, 14vw, 270px);
+  line-height: .8;
+  letter-spacing: .02em;
+  white-space: nowrap;
+  color: rgba(56, 56, 56, .05);
+  -webkit-text-stroke: 1.5px rgba(56, 56, 56, .22);
+  pointer-events: none;
+}
+.fundo-2 .linha { padding-top: clamp(96px, 11vw, 190px); }
+
+/* ---------- 3. Claro e escuro alternados (brasa no escuro) ---------- */
+.fundo-3 .linha:nth-child(odd) {
+  background:
+    radial-gradient(ellipse 38% 55% at 72% 50%, rgba(255, 255, 255, .7), rgba(255, 255, 255, 0) 70%),
+    var(--inox-escovado-escuro) 0 0 / 2400px 600px,
+    var(--fundo-produto);
+  background-blend-mode: normal, soft-light, normal;
+}
+.fundo-3 .linha:nth-child(even) {
+  background:
+    radial-gradient(ellipse 45% 45% at 72% 108%, rgba(242, 110, 34, .32), rgba(242, 110, 34, 0) 70%),
+    radial-gradient(ellipse 35% 45% at 72% 45%, rgba(255, 255, 255, .06), rgba(255, 255, 255, 0) 70%),
+    var(--inox-escovado) 0 0 / 2400px 600px,
+    linear-gradient(180deg, var(--grafite) 0%, var(--grafite-escuro) 100%);
+  background-blend-mode: normal, normal, soft-light, normal;
+  color: var(--branco);
+}
+.fundo-3 .linha:nth-child(even) .overline,
+.fundo-3 .linha:nth-child(even) .titulo { color: var(--branco); }
+.fundo-3 .linha:nth-child(even) .overline { opacity: .75; }
+.fundo-3 .linha:nth-child(even) .linha__descricao,
+.fundo-3 .linha:nth-child(even) .checklist { color: rgba(255, 255, 255, .88); }
+.fundo-3 .linha:nth-child(even) .checklist strong { color: var(--laranja-claro); }
+.fundo-3 .linha:nth-child(even) .linha__midia--foto { box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .8), 0 0 0 1px rgba(255, 255, 255, .06); }
+
+/* ---------- 4. Brilho de brasa (degradê quente suave) ---------- */
+.fundo-4 .linhas {
+  background:
+    radial-gradient(ellipse 40% 22% at 85% 30%, rgba(242, 110, 34, .14), rgba(242, 110, 34, 0) 100%),
+    radial-gradient(ellipse 40% 22% at 15% 70%, rgba(242, 110, 34, .12), rgba(242, 110, 34, 0) 100%),
+    radial-gradient(ellipse 50% 20% at 20% 12%, rgba(255, 255, 255, .6), rgba(255, 255, 255, 0) 100%),
+    radial-gradient(ellipse 50% 20% at 80% 88%, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0) 100%),
+    var(--fundo-produto);
+}
+
+/* ---------- Seletor ---------- */
+.seletor-fundo {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px 8px 16px;
+  border-radius: 40px;
+  background: rgba(20, 20, 20, .88);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font: 500 13px/1 var(--fonte-texto);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, .6);
+}
+.seletor-fundo span { margin-right: 6px; opacity: .7; }
+.seletor-fundo button {
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, .1);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+.seletor-fundo button:hover { background: rgba(255, 255, 255, .2); }
+.seletor-fundo button[aria-pressed="true"] { background: var(--laranja); }
+@media (max-width: 760px) {
+  .seletor-fundo { left: 10px; right: 90px; bottom: 16px; overflow-x: auto; }
+  .seletor-fundo span { display: none; }
+}

@@ -504,6 +504,47 @@ body.menu-aberto .topo__pilula--esq {
 }
 
 /* ==========================================================================
+   Abertura das linhas
+   ========================================================================== */
+.linhas-intro {
+  background: var(--fundo-produto);
+  padding: clamp(96px, 11vw, 180px) 0 clamp(56px, 6vw, 96px);
+  text-align: center;
+}
+.linhas-intro__grade { display: grid; justify-items: center; }
+.linhas-intro__over {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  color: var(--laranja);
+  letter-spacing: .32em;
+}
+.linhas-intro__over::after,
+.linhas-intro__traco {
+  content: "";
+  width: 48px;
+  height: 1px;
+  background: currentColor;
+  opacity: .6;
+}
+.linhas-intro__titulo {
+  margin-top: 26px;
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+  font-size: clamp(52px, 6vw, 104px);
+  line-height: .95;
+  letter-spacing: .01em;
+  color: var(--texto);
+}
+.linhas-intro__apoio {
+  margin-top: 24px;
+  max-width: 560px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--texto) 70%, transparent);
+}
+
+/* ==========================================================================
    Prova social
    ========================================================================== */
 .prova {

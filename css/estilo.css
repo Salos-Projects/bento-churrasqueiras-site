@@ -835,98 +835,94 @@ body.menu-aberto { overflow: hidden; }
 .depoimento__estrelas { margin-bottom: 8px; font-size: 13px; letter-spacing: 3px; color: var(--laranja); }
 
 /* ==========================================================================
-   Contato
+   Contato — fechamento da página, escuro quente com cena de ambiente
    ========================================================================== */
 .contato {
-  background: var(--fundo-contato);
-  color: var(--branco);
-  padding-top: 85px;
+  --escuro: #171615;
+  position: relative;
   overflow: hidden;
+  isolation: isolate;
+  background: var(--escuro);
+  color: var(--branco);
+  padding: clamp(110px, 11vw, 190px) 0;
 }
+.contato__cena {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 58vw;
+  z-index: -1;
+  background: url("../assets/img/ambiente-exemplo-2.webp") 60% center / cover no-repeat;
+  -webkit-mask: linear-gradient(to right, transparent, #000 45%);
+  mask: linear-gradient(to right, transparent, #000 45%);
+  opacity: .32;
+  filter: saturate(.85);
+}
+.contato__cena::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, var(--escuro), transparent 25%, transparent 75%, var(--escuro));
+}
+
 .contato__grade {
   display: grid;
-  grid-template-columns: minmax(0, 635px) minmax(0, 694px);
-  justify-content: space-between;
-  column-gap: 24px;
-}
-.contato__texto { padding-top: 111px; padding-bottom: 60px; }
-.contato__texto p { margin-top: 10px; }
-.contato__texto .botao { margin-top: 20px; }
-
-/* Mockup do celular: tudo em cqw (1cqw = 1% da largura do mockup, 693.5px no Figma) */
-.celular {
-  position: relative;
-  container-type: inline-size;
-  width: 100%;
-  aspect-ratio: 693.5 / 516;
-  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: #111b21;
-}
-.celular > * { position: absolute; max-width: none; }
-.celular__simbolo { left: 39.08cqw; top: .85cqw; width: 60.92cqw; }
-.celular__aparelho { left: 4.76cqw; top: 0; width: 77.24cqw; }
-.celular__tampa { left: 19.47cqw; top: 16.44cqw; width: 15.69cqw; height: 6.46cqw; background: #f0f2f5; }
-.celular__avatar { left: 19.75cqw; top: 18.08cqw; width: 5.91cqw; }
-.celular__nome { left: 26.82cqw; top: 20.97cqw; transform: translateY(-50%); font-size: 2.31cqw; white-space: nowrap; }
-
-.bolha {
-  width: 47.01cqw;
-  min-height: 12.11cqw;
-  padding: 1cqw 1.15cqw .6cqw;
-  border-radius: 1.44cqw;
-  background: var(--branco);
-  font-size: 3.17cqw;
-  line-height: 1.32;
-  box-shadow: 0 .3cqw .6cqw rgba(0, 0, 0, .12);
-}
-.bolha time { display: block; margin-top: -.2em; text-align: right; font-size: 1.59cqw; line-height: 2.16cqw; color: #667781; }
-.bolha--eu { left: 44.56cqw; top: 26.73cqw; background: #d9fdd3; }
-.bolha--1  { left: 0; top: 40.72cqw; }
-.bolha--2  { left: 0; top: 54.85cqw; }
-
-/* ==========================================================================
-   Newsletter
-   ========================================================================== */
-.news {
-  background: var(--laranja);
-  color: var(--branco);
-  padding-block: 100px;
-}
-.news__grade {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 585px);
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
   align-items: end;
-  gap: 40px;
+  gap: clamp(48px, 6vw, 120px);
 }
-.news .titulo { margin-top: 15px; max-width: 375px; }
-.news__form label { display: block; margin-bottom: 11px; }
-.news__campo {
-  display: flex;
+.contato__over {
+  display: inline-flex;
   align-items: center;
-  height: 58px;
-  padding: 6px 8px 6px 42px;
-  border-radius: 50px;
-  background: var(--branco);
+  gap: 18px;
+  color: var(--laranja);
+  letter-spacing: .32em;
 }
-.news__campo input {
-  flex: 1;
-  min-width: 0;
-  border: 0;
-  outline: 0;
-  background: none;
-  font: 400 18px/27px var(--fonte-texto);
-  color: var(--texto);
+.contato__traco { width: 48px; height: 1px; background: currentColor; opacity: .6; }
+.js [data-revelar] .contato__traco { scale: 0 1; transform-origin: 100% 50%; transition: scale 1.2s cubic-bezier(.19, 1, .22, 1) .25s; }
+.js [data-revelar].revelado .contato__traco { scale: 1 1; }
+.contato__titulo {
+  --atraso: 180ms;
+  margin-top: 26px;
+  max-width: 760px;
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+  font-size: clamp(52px, 5.4vw, 100px);
+  line-height: .95;
 }
-.news__campo input::placeholder { color: #878787; }
-.news__campo:focus-within { outline: 3px solid var(--grafite); outline-offset: 3px; }
-.news__campo .botao { width: 206px; padding-inline: 20px; font-weight: 400; }
-.news__form .aviso { margin-top: 10px; font-size: 15px; }
+.contato__apoio { margin-top: 28px; max-width: 520px; font-size: 18px; line-height: 1.65; color: rgba(255, 255, 255, .72); }
+.contato__cta { margin-top: 40px; }
+.contato__cta img { width: 20px; height: 20px; }
+
+/* canais em lista editorial */
+.canais { border-top: 1px solid rgba(255, 255, 255, .14); }
+.canal {
+  display: grid;
+  gap: 6px;
+  padding: 26px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .14);
+}
+.canal__rotulo { font-size: 12px; letter-spacing: .24em; text-transform: uppercase; color: var(--laranja); }
+.canal__valor {
+  justify-self: start;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(28px, 2.2vw, 38px);
+  line-height: 1.05;
+  letter-spacing: .01em;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size .5s cubic-bezier(.2, .7, .2, 1), color .2s ease;
+}
+.canal__valor:hover { color: var(--laranja-claro); background-size: 100% 1px; }
+.canal__nota { font-size: 14px; color: rgba(255, 255, 255, .55); }
+/* e-mail em Poppins minúsculo: em Bebas maiúsculo fica largo demais */
+.canal__valor--email { font-family: var(--fonte-texto); font-size: clamp(18px, 1.3vw, 22px); font-weight: 500; letter-spacing: 0; line-height: 1.3; }
 
 /* ==========================================================================
    Rodapé
    ========================================================================== */
 .rodape {
-  background: var(--grafite-escuro);
+  background: #121110;
   color: var(--branco);
   padding-top: clamp(64px, 7vw, 112px);
 }
@@ -991,6 +987,45 @@ body.menu-aberto { overflow: hidden; }
 .rodape__legal a { text-decoration: none; }
 .rodape__legal a:hover { color: var(--branco); }
 
+/* Receba o catálogo: faixa discreta no topo do rodapé */
+.catalogo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding-bottom: clamp(48px, 5vw, 72px);
+  margin-bottom: clamp(48px, 5vw, 72px);
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+.catalogo__titulo { font-family: var(--fonte-titulo); font-size: clamp(30px, 2.4vw, 40px); line-height: 1; }
+.catalogo__apoio { margin-top: 8px; font-size: 15px; color: rgba(255, 255, 255, .6); }
+.catalogo__campo {
+  display: flex;
+  align-items: center;
+  flex: 0 1 540px;
+  height: 58px;
+  padding: 5px 5px 5px 26px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, .04);
+  transition: border-color .2s ease;
+}
+.catalogo__campo:focus-within { border-color: var(--laranja); }
+.catalogo__campo input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  color: var(--branco);
+  font: 400 16px var(--fonte-texto);
+}
+.catalogo__campo input::placeholder { color: rgba(255, 255, 255, .4); }
+.catalogo__campo .botao { min-height: 46px; padding-inline: 26px; font-size: 14px; letter-spacing: .04em; }
+.catalogo .aviso { flex-basis: 100%; font-size: 14px; color: rgba(255, 255, 255, .7); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
 /* ---------- WhatsApp flutuante ---------- */
 .wpp-flutuante {
   position: fixed;
@@ -1025,6 +1060,8 @@ body.menu-aberto { overflow: hidden; }
 }
 
 @media (max-width: 1024px) {
+  .contato__grade { grid-template-columns: 1fr; align-items: start; }
+  .contato__cena { width: 100%; opacity: .3; }
   .topo__nav, .topo__wpp { display: none; }
   .topo__barra { grid-template-columns: 1fr auto; padding: 0 12px 0 28px; height: 84px; }
   .menu-botao { display: flex; justify-self: end; }
@@ -1039,11 +1076,7 @@ body.menu-aberto { overflow: hidden; }
   .menu__conteudo { grid-template-columns: 1fr; padding-top: 200px; }
   .menu__lado { padding-top: 0; }
 
-  .contato__grade { grid-template-columns: 1fr; }
-  .contato__texto { padding-top: 40px; padding-bottom: 40px; }
-  .celular { max-width: 640px; justify-self: center; }
 
-  .news__grade { grid-template-columns: 1fr; }
 
   .rodape__topo { flex-direction: column; }
   .rodape__marca, .rodape__colunas { flex-basis: auto; width: 100%; }
@@ -1053,6 +1086,10 @@ body.menu-aberto { overflow: hidden; }
   body { font-size: 16px; }
 
   .prova__titulo { font-size: 42px; }
+  .contato__titulo { font-size: 46px; }
+  .catalogo__campo { flex-basis: 100%; }
+  .catalogo__campo .botao { padding-inline: 18px; font-size: 13px; }
+  .canal__valor--email { font-size: 16px; }
   .prova__over, .linhas-intro__over { gap: 12px; letter-spacing: .22em; white-space: nowrap; }
   .prova__traco, .prova__over::after, .linhas-intro__traco, .linhas-intro__over::after { width: 22px; }
   .numero { padding: 28px 10px; }
@@ -1096,11 +1133,7 @@ body.menu-aberto { overflow: hidden; }
   .botao { font-size: 15px; padding-inline: 28px; }
 
 
-  .contato { padding-top: 24px; }
 
-  .news { padding-block: 64px; }
-  .news__campo { padding-left: 20px; }
-  .news__campo .botao { width: auto; }
 
   .rodape__colunas { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
   .rodape__colunas > :last-child { grid-column: 1 / -1; }

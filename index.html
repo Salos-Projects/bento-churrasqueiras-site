@@ -11,10 +11,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/estilo.css?v=1790366036">
+  <link rel="stylesheet" href="css/estilo.css?v=1790366371">
   <!-- TEMPORÁRIO: comparação de fundos da seção de produtos -->
-  <link rel="stylesheet" href="css/comparar-layout.css?v=1790366036">
-  <link rel="stylesheet" href="css/comparar-fundos.css?v=1790366036">
+  <link rel="stylesheet" href="css/comparar-layout.css?v=1790366371">
+  <link rel="stylesheet" href="css/comparar-fundos.css?v=1790366371">
 
   <script type="application/ld+json">
   {
@@ -359,43 +359,38 @@
       </div>
     </section>
 
-    <!-- ============ CONTATO ============ -->
+    <!-- ============ CONTATO (fechamento, escuro quente) ============ -->
     <section class="contato" aria-labelledby="contato-titulo">
+      <div class="contato__cena" aria-hidden="true"></div>
+
       <div class="container contato__grade">
-        <div class="contato__texto">
-          <h2 class="titulo titulo--claro" id="contato-titulo">Fale direto com quem fabrica</h2>
-          <p>Mande as medidas do seu espaço, ou uma foto, e a gente indica o modelo certo e faz o orçamento. Atendimento de segunda a sexta, direto da fábrica.</p>
-          <a class="botao" href="https://wa.me/5554996889900?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20de%20churrasqueira." target="_blank" rel="noopener" data-evento="whatsapp_contato">Pedir orçamento no WhatsApp</a>
+        <div class="contato__texto" data-revelar="scroll">
+          <p class="overline contato__over"><span class="contato__traco" aria-hidden="true"></span>Fale com a fábrica</p>
+          <h2 class="contato__titulo" id="contato-titulo" data-linhas>Sua churrasqueira, do projeto à instalação</h2>
+          <p class="contato__apoio">Mande as medidas do seu espaço, ou uma foto, e a gente indica o modelo certo e faz o orçamento, direto da fábrica.</p>
+          <a class="botao contato__cta" href="https://wa.me/5554996889900?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20de%20churrasqueira." target="_blank" rel="noopener" data-evento="whatsapp_contato">
+            <img src="assets/icones/whatsapp-branco.svg" alt="" width="20" height="20">
+            Pedir orçamento no WhatsApp
+          </a>
         </div>
 
-        <div class="celular" aria-hidden="true">
-          <img class="celular__simbolo" src="assets/marca/simbolo-contato.svg" alt="">
-          <img class="celular__aparelho" src="assets/img/celular-whatsapp.webp" alt="" width="980" height="944" loading="lazy">
-          <span class="celular__tampa"></span>
-          <img class="celular__avatar" src="assets/icones/wa-avatar.svg" alt="">
-          <span class="celular__nome">Bento Churrasqueiras</span>
-          <p class="bolha bolha--eu">Oi! Quero um orçamento de churrasqueira.<time>17:08</time></p>
-          <p class="bolha bolha--1">Olá! Que bom falar com você!<time>17:08</time></p>
-          <p class="bolha bolha--2">Me manda as medidas do espaço ou uma foto?<time>17:09</time></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ NEWSLETTER ============ -->
-    <section class="news" aria-labelledby="news-titulo">
-      <div class="container news__grade">
-        <div>
-          <p class="overline overline--claro">Assine nossa newsletter</p>
-          <h2 class="titulo titulo--claro" id="news-titulo">Receba promoções e novidades exclusivas</h2>
-        </div>
-        <!-- No Elementor este formulário vira um Fluent Forms; aqui é só o visual. -->
-        <form class="news__form" action="#" method="post" data-news>
-          <label for="news-email">Digite seu e-mail</label>
-          <div class="news__campo">
-            <input id="news-email" name="email" type="email" placeholder="seuemail@email.com" autocomplete="email" required>
-            <button class="botao" type="submit">Inscrever</button>
-          </div>
-        </form>
+        <ul class="canais">
+          <li class="canal">
+            <span class="canal__rotulo">WhatsApp</span>
+            <a class="canal__valor" href="https://wa.me/5554996889900?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento%20de%20churrasqueira." target="_blank" rel="noopener" data-evento="whatsapp_canal">(54) 99688-9900</a>
+            <span class="canal__nota">Resposta em horário comercial</span>
+          </li>
+          <li class="canal">
+            <span class="canal__rotulo">E-mail</span>
+            <a class="canal__valor canal__valor--email" href="mailto:vendas@bentochurrasqueiras.com.br">vendas@bentochurrasqueiras.com.br</a>
+            <span class="canal__nota">Projetos, arquitetos e revendas</span>
+          </li>
+          <li class="canal">
+            <span class="canal__rotulo">Visite a fábrica</span>
+            <a class="canal__valor" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Francisco+Jos%C3%A9+Milani+166+Garibaldi+RS" target="_blank" rel="noopener">Garibaldi · RS</a>
+            <span class="canal__nota">Seg a sex · 7h30–11h30 e 13h30–16h30 · com agendamento</span>
+          </li>
+        </ul>
       </div>
     </section>
   </main>
@@ -403,6 +398,19 @@
   <!-- ============ RODAPÉ ============ -->
   <footer class="rodape">
     <div class="container">
+      <!-- Receba o catálogo (pede o WhatsApp). No Elementor vira um Fluent Forms. -->
+      <form class="catalogo" action="#" method="post" data-catalogo>
+        <div class="catalogo__texto">
+          <p class="catalogo__titulo">Receba o catálogo completo</p>
+          <p class="catalogo__apoio">Todas as linhas, medidas e acabamentos, direto no seu WhatsApp.</p>
+        </div>
+        <label class="visually-hidden" for="catalogo-whats">Seu WhatsApp</label>
+        <div class="catalogo__campo">
+          <input id="catalogo-whats" name="whatsapp" type="tel" inputmode="tel" placeholder="(00) 00000-0000" autocomplete="tel" required>
+          <button class="botao" type="submit">Receber catálogo</button>
+        </div>
+      </form>
+
       <div class="rodape__topo">
         <div class="rodape__marca">
           <a href="/" aria-label="Bento Churrasqueiras — página inicial">
@@ -462,9 +470,9 @@
     <img src="assets/icones/whatsapp-branco.svg" alt="" width="28" height="28">
   </a>
 
-  <script src="js/main.js?v=1790366036" defer></script>
+  <script src="js/main.js?v=1790366371" defer></script>
   <!-- TEMPORÁRIO: comparação de fundos da seção de produtos -->
-  <script src="js/comparar-layout.js?v=1790366036" defer></script>
-  <script src="js/comparar-fundos.js?v=1790366036" defer></script>
+  <script src="js/comparar-layout.js?v=1790366371" defer></script>
+  <script src="js/comparar-fundos.js?v=1790366371" defer></script>
 </body>
 </html>

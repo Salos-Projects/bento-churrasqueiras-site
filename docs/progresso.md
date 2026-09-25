@@ -15,6 +15,7 @@
 - Limite do Figma: o arquivo está no time V4 (6 leituras/mês), já esgotado. A seção de prova social foi montada a partir do screenshot.
 - Seção de produtos: testados fundos (inox, nome da linha, claro/escuro, brasa) e layouts (vitrine fixa, editorial, vitrine sangrada, **vitrine ambiente**). Direção atual: **A3 · vitrine ambiente** — fundo escuro, cena de ambiente gerada por IA ocupando a metade direita, troca no scroll. Decidido: fotos de obra atuais não servem; cada linha terá uma imagem de ambiente em IA no padrão da foto da abertura. O render da grelha com legendas vai para a página do produto ("raio-X").
 - ⚠️ O render da grelha (do Figma) tem marcas "INNOVARE" e "KAFER" nas bordas — confirmar origem antes de publicar.
+- Home refinada (25/09): menu tradicional (pedido do cliente) não fixo; revelação linha a linha nos títulos; selo com texto real; prova social no **claro quente** (#F2EEE9) sem cards, com contagem nos números; contato vira fechamento no escuro quente com canais em lista; newsletter trocada por **"Receba o catálogo" pedindo WhatsApp** (vira Fluent Forms). Regra de dois tons: escuro quente = clima, claro quente = informação.
 
 ### Próximos passos
 1. Revisar a home com o Lucas e depois com o cliente; trocar as fotos das linhas por renders ou fotos em alta.

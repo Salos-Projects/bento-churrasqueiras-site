@@ -225,8 +225,8 @@
     }, { threshold: 0.15 }).observe(hero);
   }
 
-  /* ---------- Newsletter: só visual por enquanto (vira Fluent Forms no Elementor) ---------- */
-  document.querySelectorAll("[data-news]").forEach(function (form) {
+  /* ---------- Catálogo: só visual por enquanto (vira Fluent Forms no Elementor) ---------- */
+  document.querySelectorAll("[data-catalogo]").forEach(function (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var aviso = form.querySelector(".aviso") || form.appendChild(document.createElement("p"));

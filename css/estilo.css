@@ -1,6 +1,7 @@
 /* ==========================================================================
    Bento Churrasqueiras — Home
    Medidas de referência: Figma, frame de 1920px com grid de 1280px (margem 320px).
+   Largura do conteúdo ampliada para 1440px (margem 240px em telas de 1920px).
    ========================================================================== */
 
 /* ---------- Tokens (frame "Identidade Visual", 68:3) ---------- */
@@ -25,8 +26,9 @@
   --fonte-titulo: "Bebas Neue", "Oswald", "Arial Narrow", sans-serif;
   --fonte-texto: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  --largura: 1280px;
-  --gutter: max(24px, calc((100vw - var(--largura)) / 2));
+  --largura: 1440px;
+  /* --barra = largura da barra de rolagem (definida no main.js), para 100vw bater com o container */
+  --gutter: max(24px, calc((100vw - var(--barra, 0px) - var(--largura)) / 2));
   --raio-pilula: 800px;
 }
 
@@ -415,7 +417,6 @@ body.menu-aberto .topo__pilula--esq {
   transform: translate(-50%, -50%);
 }
 @keyframes girar { to { transform: rotate(360deg); } }
-@media (min-width: 1440px) { .selo { margin-right: -72px; } }
 
 /* ==========================================================================
    Linhas de produto
@@ -465,7 +466,9 @@ body.menu-aberto .topo__pilula--esq {
   position: relative;
   aspect-ratio: 894 / 812;
   overflow: hidden;
-  margin-right: calc(-1 * min(170px, var(--gutter) - 24px));
+  justify-self: end;
+  width: 100%;
+  max-width: 894px; /* tamanho do Figma */
 }
 .linha__midia--render img {
   position: absolute;
@@ -478,8 +481,8 @@ body.menu-aberto .topo__pilula--esq {
 
 /* Fotos reais de instalação (vindas do site atual) */
 .linha__midia--foto {
-  justify-self: center;
-  width: min(100%, 700px);
+  justify-self: end;
+  width: min(100%, 760px);
   border-radius: 28px;
   overflow: hidden;
   box-shadow: 0 40px 70px -30px rgba(0, 0, 0, .45);
@@ -499,7 +502,7 @@ body.menu-aberto .topo__pilula--esq {
 }
 .prova__cartao {
   position: relative;
-  width: min(1341px, 100% - 48px);
+  width: min(var(--largura) + 61px, 100% - 48px); /* um pouco mais largo que o grid, como no Figma */
   margin-inline: auto;
   padding: 87px 46px 58px;
   border-radius: 30px;

@@ -2,6 +2,13 @@
 (function () {
   "use strict";
 
+  /* ---------- Largura da barra de rolagem (usada no cálculo das margens) ---------- */
+  function medirBarra() {
+    document.documentElement.style.setProperty("--barra", window.innerWidth - document.documentElement.clientWidth + "px");
+  }
+  medirBarra();
+  window.addEventListener("resize", medirBarra);
+
   /* ---------- Menu em overlay ---------- */
   var botao = document.querySelector("[data-menu-abrir]");
   var menu = document.getElementById("menu");

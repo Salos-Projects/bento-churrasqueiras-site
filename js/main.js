@@ -6,26 +6,45 @@
   var botao = document.querySelector("[data-menu-abrir]");
   var menu = document.getElementById("menu");
 
+  var DURACAO_MENU = 700; // igual à transição do clip-path no CSS
+
+  // ordem de entrada dos itens (usada no atraso da animação)
+  if (menu) {
+    menu.querySelectorAll(".menu__lista > li, .menu__lado > *").forEach(function (el, i) {
+      el.style.setProperty("--i", i);
+    });
+  }
+
+  function origemDoCirculo() {
+    var r = botao.querySelector(".menu-botao__circulo").getBoundingClientRect();
+    menu.style.setProperty("--mx", r.left + r.width / 2 + "px");
+    menu.style.setProperty("--my", r.top + r.height / 2 + "px");
+  }
+
   function abrirMenu() {
+    origemDoCirculo();
     menu.hidden = false;
-    requestAnimationFrame(function () { menu.classList.add("aberto"); });
+    menu.offsetHeight; // força o navegador a aplicar o estado inicial antes da transição
+    menu.classList.add("aberto");
     botao.setAttribute("aria-expanded", "true");
     document.body.classList.add("menu-aberto");
     var primeiro = menu.querySelector("a");
-    if (primeiro) primeiro.focus();
+    if (primeiro) primeiro.focus({ preventScroll: true });
   }
 
   function fecharMenu() {
+    origemDoCirculo();
     menu.classList.remove("aberto");
     botao.setAttribute("aria-expanded", "false");
     document.body.classList.remove("menu-aberto");
     setTimeout(function () {
+      if (menu.classList.contains("aberto")) return; // reaberto no meio da animação
       menu.hidden = true;
       menu.querySelectorAll("[data-submenu]").forEach(function (g) {
         g.setAttribute("aria-expanded", "false");
         g.nextElementSibling.classList.remove("aberto");
       });
-    }, 250);
+    }, DURACAO_MENU);
     botao.focus();
   }
 

@@ -10,6 +10,7 @@
 - Decisão: configurador "Monte sua churrasqueira" (Staggs) fora do lançamento; decidir depois entre manter o Staggs ou refazer em código.
 
 - Figma do cliente conectado via MCP (conta Gmail, plano Starter = 20 leituras/mês). Paleta, fontes, logo/símbolo em SVG e estrutura da home extraídos → `docs/figma.md`, `assets/marca/`, `referencias/figma-site-completo.png`. 3 leituras usadas.
+- Textos da home: coletados do site atual e reescritos (atual × proposta, sem inventar fatos) → `docs/textos-home.md`, com 6 pendências para o cliente.
 
 ### Próximos passos
 1. Montar a home em código (HTML/CSS com tokens) seguindo o Figma (node IDs por seção em `docs/figma.md`).

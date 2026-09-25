@@ -18,10 +18,10 @@
 - Home refinada (25/09): menu tradicional (pedido do cliente) não fixo; revelação linha a linha nos títulos; selo com texto real; prova social no **claro quente** (#F2EEE9) sem cards, com contagem nos números; contato vira fechamento no escuro quente com canais em lista; newsletter trocada por **"Receba o catálogo" pedindo WhatsApp** (vira Fluent Forms). Regra de dois tons: escuro quente = clima, claro quente = informação.
 - Botões refinados definitivos (principal laranja só para conversão; secundário em contorno laranja; link com sublinhado que cresce). Fita de LED quente acima de "Conheça nossas linhas".
 - **Revisão geral (25/09):** 7 larguras (1920→360): sem rolagem horizontal, sem erros de console, sem imagens quebradas; home com ~720 KB e 31 requests (meta < 1,5 MB / 60). Corrigido: vitrine no celular caía no layout antigo claro → criada versão mobile da vitrine ambiente (escura, cena no topo de cada produto); alvos de toque ≥ 44px no rodapé/canais/links; CTAs encurtam no celular ("Pedir orçamento", "Receber").
+- **Limpeza do código (25/09):** vitrine ambiente passou para `estilo.css`/`main.js` com HTML estático (índice 01–04 e cenas no HTML, pronto para o Elementor); removidos os 4 arquivos de comparação (`comparar-*`), listas de checks e fotos de obra escondidas, regras CSS mortas e 8 assets sem uso. Mantidos para uso futuro: `assets/img/grelha-elevacao-manual.webp` (render com legendas → página do produto) e `assets/marca/logo-bento.svg`. Home: ~630 KB, 21 requests, zero erros.
 
 ### Próximos passos
 1. Gerar as 4 cenas de ambiente por IA (uma por linha, 16:9, ≥1920px, churrasqueira do centro para a direita) e uma **versão vertical da foto da hero** para o celular.
-2. Consolidar o código: passar a vitrine A3 e o fundo escolhido de `comparar-layout.css/js` e `comparar-fundos.css/js` para `estilo.css`/`main.js` e apagar as opções descartadas (antes de montar no Elementor).
-3. Pendências do cliente em `docs/textos-home.md` (+500, 2º WhatsApp, diferença SmartGrill × DuraGrill) e origem do render da grelha (marcas INNOVARE/KAFER).
+2. Pendências do cliente em `docs/textos-home.md` (+500, 2º WhatsApp, diferença SmartGrill × DuraGrill) e origem do render da grelha (marcas INNOVARE/KAFER).
 2. Definir se usamos as fotos atuais do site ou esperamos os originais em alta.
 3. Pendências com o cliente: ver seção 6 do briefing (Figma, renders, fotos, números reais, perfil Google, acesso admin ao WP).

@@ -204,6 +204,59 @@
     });
   }
 
+  /* ---------- Vitrine das linhas ----------
+     Desktop: a seção fica fixa e a linha "ativa" muda conforme o scroll.
+     Celular: cada linha fica "ativa" ao entrar na tela. */
+  var vitrine = document.querySelector(".linhas");
+  if (vitrine) {
+    var linhas = Array.prototype.slice.call(vitrine.querySelectorAll(".linha"));
+    var indice = vitrine.querySelector(".vitrine-indice");
+    var botoesIndice = indice ? indice.querySelectorAll("[data-ir]") : [];
+    var desktop = window.matchMedia("(min-width: 901px)");
+    vitrine.style.setProperty("--qtd", linhas.length);
+
+    var atualizarVitrine = function () {
+      if (!desktop.matches) return;
+      var total = vitrine.offsetHeight - window.innerHeight;
+      var p = Math.min(1, Math.max(0, -vitrine.getBoundingClientRect().top / total));
+      var i = Math.min(linhas.length - 1, Math.floor(p * linhas.length));
+      linhas.forEach(function (l, j) { l.classList.toggle("ativa", j === i); });
+      botoesIndice.forEach(function (b, j) { b.setAttribute("aria-current", String(j === i)); });
+      if (indice) indice.style.setProperty("--progresso", p);
+    };
+    var irPara = function (i) {
+      var topo = vitrine.getBoundingClientRect().top + window.scrollY;
+      var passo = (vitrine.offsetHeight - window.innerHeight) / linhas.length;
+      window.scrollTo({ top: topo + passo * i + 2, behavior: "smooth" });
+    };
+    botoesIndice.forEach(function (b) { b.addEventListener("click", function () { irPara(Number(b.dataset.ir)); }); });
+    // Tab entrando numa linha escondida: rola até ela
+    linhas.forEach(function (l, i) {
+      l.addEventListener("focusin", function () { if (desktop.matches && !l.classList.contains("ativa")) irPara(i); });
+    });
+
+    var obsLinhas = "IntersectionObserver" in window ? new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("ativa"); obsLinhas.unobserve(e.target); } });
+    }, { threshold: 0.15 }) : null;
+
+    var modoVitrine = function () {
+      if (obsLinhas) obsLinhas.disconnect();
+      linhas.forEach(function (l) { l.classList.remove("ativa"); });
+      if (desktop.matches) atualizarVitrine();
+      else if (obsLinhas) linhas.forEach(function (l) { obsLinhas.observe(l); });
+      else linhas.forEach(function (l) { l.classList.add("ativa"); });
+    };
+    var agendado = false;
+    window.addEventListener("scroll", function () {
+      if (agendado) return;
+      agendado = true;
+      requestAnimationFrame(function () { agendado = false; atualizarVitrine(); });
+    }, { passive: true });
+    window.addEventListener("resize", atualizarVitrine);
+    desktop.addEventListener("change", modoVitrine);
+    modoVitrine();
+  }
+
   /* ---------- Carrossel de avaliações (loop infinito) ---------- */
   var reduzir = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   document.querySelectorAll("[data-carrossel]").forEach(function (carrossel) {

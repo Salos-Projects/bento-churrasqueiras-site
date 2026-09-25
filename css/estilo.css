@@ -1258,6 +1258,19 @@ body.menu-aberto { overflow: hidden; }
 .ficha:hover .ficha__nome a { color: var(--laranja-claro); }
 .ficha__nome a:focus-visible { outline: none; }
 .ficha:has(a:focus-visible) { outline: 2px solid var(--laranja-claro); outline-offset: -2px; }
+.ficha__tag {
+  display: inline-block;
+  margin-left: 12px;
+  padding: 4px 10px;
+  border: 1px solid var(--laranja);
+  border-radius: 20px;
+  vertical-align: middle;
+  font: 500 11px/1 var(--fonte-texto);
+  font-style: normal;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--laranja);
+}
 .ficha__resumo { font-size: 16px; line-height: 1.6; color: rgba(255, 255, 255, .72); }
 .ficha__specs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
 .ficha__specs li { display: grid; gap: 2px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, .12); }

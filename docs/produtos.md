@@ -3,54 +3,65 @@
 Fonte única do conteúdo de produto. A página `/produtos/` e as fichas da home saem daqui.
 **Para adicionar uma linha:** acrescente a família (se for nova) ou o produto dentro de uma família, preenchendo os mesmos campos. No layout, família nova = novo capítulo; produto novo = nova ficha; família com 2+ modelos = comparativo.
 
-> Previsto: **mais 2 linhas** (tipo ainda não definido: podem ser rotativas novas ou famílias novas). O layout aguenta 1–5 produtos por família e N famílias.
+> O layout aguenta 1–5 produtos por família e N famílias. As linhas novas do Catálogo 2026 (Elevatto, Espetos suspensos, Suporte de fundo como linha) já entraram.
 
 No Elementor (recomendado): tipo de post **"Produto"** com campo **"Família"** + campos das fichas/comparativo (ACF ou JetEngine), listados com **Loop Grid** do Elementor Pro — linha nova entra pelo painel, sem mexer em layout.
 
 ---
 
-## Família: Churrasqueiras rotativas
+Fonte oficial: **Catálogo 2026** (PDF, 27 págs., recebido em 25/09/2026). Produtos do site antigo que não estão no catálogo (elevação manual, parrilla, bifeiras/cooktops, espeto de costelão, cestos/grelhas de encaixe) **continuam no site** por decisão do Lucas — revisar depois.
+⚠️ Catálogo diz "mais de 15 anos"; desde 2004 são 22 → avisar o cliente para corrigir o PDF.
+
+## Família 01: Churrasqueiras rotativas
 Frase: Espetos girando sozinhos, na velocidade certa, com assado por igual.
-Cena: ⚠️ imagem de IA a gerar (hoje: `ambiente-exemplo-2.webp`)
 
 | Campo | SmartGrill | DuraGrill |
 |---|---|---|
 | URL | `/smartgrill/` | `/duragrill/` |
-| Resumo (ficha) | Engenharia avançada e giro contínuo e silencioso. | Robustez clássica e resistência extrema. |
-| Spec 1 | Zero rangidos · rotação autolubrificante | Uso intenso · mecânica de alta durabilidade |
-| Spec 2 | Frente removível · acesso total para limpar | Estrutura clássica · acabamento imponente |
+| Resumo | Engenharia avançada e frente removível: remova e limpe sem esforço. | Robustez clássica e resistência extrema para uso intenso. |
+| Spec 1 | Frente removível · limpeza sem esforço | Uso intenso · mecânica de alta durabilidade |
+| Spec 2 | Regulável · velocidade dos espetos | Regulável · velocidade dos espetos |
 | **Comparativo** | | |
-| Foco | Engenharia avançada e giro contínuo silencioso | Robustez clássica e resistência extrema |
-| Mecânica | Sistema de rotação autolubrificante (zero rangidos) | Desempenho de alta durabilidade para uso intenso |
-| Design | Frente 100% removível para acesso total | Estrutura tradicional com acabamento imponente |
-| Limpeza | Máxima facilidade de higienização no pós-churrasco | Prática e direta |
+| Foco | Engenharia avançada e praticidade | Robustez clássica e resistência extrema |
+| Limpeza | Frente 100% removível: remova e limpe sem esforço | Prática e direta |
+| Design | Frente removível, acesso total | Estrutura tradicional, acabamento imponente |
+| Rotação | Velocidade regulável · buchas autolubrificantes | Velocidade regulável · buchas autolubrificantes |
+| Descanso balanço | Opcional | Opcional |
 | Material | 100% Inox 304 | 100% Inox 304 |
 | Garantia | 5 anos em motor e componentes | 5 anos em motor e componentes |
 
-Fonte do comparativo: post oficial da Bento no Instagram (25/09/2026).
-⚠️ Confirmar: o site antigo diz que a DuraGrill também tem buchas autolubrificantes (a página parece copiada da SmartGrill); o post trata a rotação autolubrificante como diferencial da SmartGrill.
+Catálogo: **as duas têm buchas autolubrificantes** (o post do Instagram dava a entender que era só a SmartGrill — segue o catálogo). Diferencial real da SmartGrill: frente removível.
 
-## Família: Grelhas
-Frase: Controle total da distância da brasa, corte a corte.
-Cena: ⚠️ imagem de IA a gerar (hoje: `hero-churrasqueira-central.webp`)
+## Família 02: Grelhas e elevação
+Frase: Controle total da distância da brasa — na manivela, no botão ou na voz.
 
-| Produto | URL | Resumo | Spec 1 | Spec 2 |
-|---|---|---|---|---|
-| Elevação manual | `/grelhas/#manual` | Suba e desça na manivela e divida o espaço com os espetos. | Manivela · elevação precisa | + Espetos · no mesmo espaço |
-| Elevação automática | `/grelhas/#automatica` | A grelha sobe e desce sozinha, instalada junto da churrasqueira. | Botão, controle ou app | Conjugada · no espaço da churrasqueira |
-| Parrilla | `/grelhas/#parrilla` | Canaletas inclinadas afastam a gordura do fogo para assar mais perto da brasa. | Argentina ou uruguaia | Inox 304 ou aço carbono |
+| Produto | URL | Resumo | Spec 1 | Spec 2 | Fonte |
+|---|---|---|---|---|---|
+| **Elevatto** (nova) | `/elevatto/` | Grelha e espetos sobem juntos, automaticamente, com rotação constante e regulável. | Voz, app ou botão · também por controle | Simultânea · espetos e grelha | Catálogo |
+| Grelha automática | `/grelhas/#automatica` | A grelha sobe e desce sozinha, integrada à churrasqueira, dividindo o espaço com os espetos. | Botão ou app · também por controle | Desmontável · limpeza simples | Catálogo |
+| Elevação manual | `/grelhas/#manual` | Suba e desça na manivela e divida o espaço com os espetos. | Manivela · elevação precisa | + Espetos · no mesmo espaço | Site antigo |
+| Parrilla | `/grelhas/#parrilla` | Canaletas inclinadas afastam a gordura do fogo para assar mais perto da brasa. | Argentina · ou uruguaia | Inox 304 · ou aço carbono | Site antigo |
 
-Render com legendas da elevação manual (`assets/img/grelha-elevacao-manual.webp`) → "raio-X" na página `/grelhas/`. ⚠️ Confirmar origem (marcas INNOVARE/KAFER nas bordas).
+Elevatto (catálogo): Inox 304; elevação por botão, controle ou app; instalação integrada; espetos no mesmo espaço; elevação automática simultânea de espetos e grelhas; controle por voz; rotação constante e regulável; sistema desmontável.
 
-## Família: Acessórios
+## Família 03: Linha minimalista
+Frase: Menos estrutura à vista, mais destaque para o seu revestimento.
+
+| Produto | URL | Resumo | Spec 1 | Spec 2 | Fonte |
+|---|---|---|---|---|---|
+| **Suporte de fundo** | `/suporte-de-fundo/` | Visual minimalista que deixa o revestimento aparecer e amplia a área gourmet. | Minimalista · estrutura discreta | Revestimento · em destaque | Catálogo |
+| **Espetos suspensos** (nova) | `/espetos-suspensos/` | Estrutura prática e funcional, com giro fácil dos espetos para qualquer tipo de carne. | Giro fácil · manuseio simples | Versátil · diferentes carnes | Catálogo |
+
+## Família 04: Acessórios
 Frase: Complementos em Inox 304 para aproveitar cada centímetro da churrasqueira.
-Cena: ⚠️ imagem de IA a gerar (hoje: `ambiente-exemplo-2.webp`)
 
-| Produto | URL | Resumo | Spec 1 | Spec 2 |
-|---|---|---|---|---|
-| Bifeiras e cooktops | `/acessorios/#bifeiras` | De embutir ou sobrepor, sob medida, com ajuste de pressão nos queimadores. | Sob medida | Embutir ou sobrepor |
-| Espeto de costelão | `/acessorios/#costelao` | Reforçado para uma costela bovina inteira, fixado na lateral da churrasqueira. | Costela inteira | Fixação lateral |
-| Espetos e acessórios | `/acessorios/#espetos` | Suportes de fundo, grelhas de encaixe e cestos para espetos de coração. | Suportes e grelhas | Cestos para coração |
+| Produto | URL | Resumo | Spec 1 | Spec 2 | Fonte |
+|---|---|---|---|---|---|
+| Bifeiras e cooktops | `/acessorios/#bifeiras` | De embutir ou sobrepor, sob medida, com ajuste de pressão nos queimadores. | Sob medida | Embutir ou sobrepor | Site antigo |
+| Espeto de costelão | `/acessorios/#costelao` | Reforçado para uma costela bovina inteira, fixado na lateral da churrasqueira. | Costela inteira | Fixação lateral | Site antigo |
+| Cestos e grelhas de encaixe | `/acessorios/#espetos` | Grelhas de encaixe de espetos e cestos para espetos de coração. | Encaixe · nos espetos | Cestos · para coração | Site antigo |
+
+Cenas de IA a gerar: uma por família (hoje as duas imagens de exemplo). Fotos do catálogo = referência (baixa resolução, 300–900 px).
 
 ## Como funciona o sob medida (4 passos)
 1. **Medidas ou foto** — você manda pelo WhatsApp.

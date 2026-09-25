@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/estilo.css?v=1790368877">
+  <link rel="stylesheet" href="../css/estilo.css?v=1790371982">
 
 </head>
 <body>
@@ -35,6 +35,7 @@
               <ul>
                 <li><a href="/smartgrill/">SmartGrill</a></li>
                 <li><a href="/duragrill/">DuraGrill</a></li>
+                <li><a href="/elevatto/">Elevatto</a></li>
                 <li><a href="/grelhas/">Grelhas</a></li>
                 <li><a href="/acessorios/">Acessórios</a></li>
                 <li class="topo__painel-todos"><a href="/produtos/">Todos os produtos</a></li>
@@ -77,6 +78,7 @@
               <li><a href="/produtos/">Todos os produtos</a></li>
               <li><a href="/smartgrill/">SmartGrill</a></li>
               <li><a href="/duragrill/">DuraGrill</a></li>
+              <li><a href="/elevatto/">Elevatto</a></li>
               <li><a href="/grelhas/">Grelhas</a></li>
               <li><a href="/acessorios/">Acessórios</a></li>
             </ul>
@@ -114,8 +116,9 @@
         <!-- atalhos por família: acrescente um item quando entrar uma família nova -->
         <nav class="atalhos" aria-label="Famílias de produto">
           <a href="#rotativas"><span>01</span>Churrasqueiras rotativas</a>
-          <a href="#grelhas"><span>02</span>Grelhas</a>
-          <a href="#acessorios"><span>03</span>Acessórios</a>
+          <a href="#elevacao"><span>02</span>Grelhas e elevação</a>
+          <a href="#minimalista"><span>03</span>Linha minimalista</a>
+          <a href="#acessorios"><span>04</span>Acessórios</a>
         </nav>
       </div>
     </section>
@@ -132,32 +135,33 @@
         <ul class="fichas" data-revelar="scroll" data-qtd="2">
             <li class="ficha">
               <h3 class="ficha__nome"><a href="/smartgrill/">SmartGrill</a></h3>
-              <p class="ficha__resumo">Engenharia avançada e giro contínuo e silencioso.</p>
+              <p class="ficha__resumo">Engenharia avançada e frente removível: remova e limpe sem esforço.</p>
               <ul class="ficha__specs">
-                <li><strong>Zero rangidos</strong><span>rotação autolubrificante</span></li>
-                <li><strong>Frente removível</strong><span>acesso total para limpar</span></li>
+                <li><strong>Frente removível</strong><span>limpeza sem esforço</span></li>
+                <li><strong>Regulável</strong><span>velocidade dos espetos</span></li>
               </ul>
               <span class="ficha__link" aria-hidden="true">Conhecer</span>
             </li>
             <li class="ficha">
               <h3 class="ficha__nome"><a href="/duragrill/">DuraGrill</a></h3>
-              <p class="ficha__resumo">Robustez clássica e resistência extrema.</p>
+              <p class="ficha__resumo">Robustez clássica e resistência extrema para uso intenso.</p>
               <ul class="ficha__specs">
                 <li><strong>Uso intenso</strong><span>mecânica de alta durabilidade</span></li>
-                <li><strong>Estrutura clássica</strong><span>acabamento imponente</span></li>
+                <li><strong>Regulável</strong><span>velocidade dos espetos</span></li>
               </ul>
               <span class="ficha__link" aria-hidden="true">Conhecer</span>
             </li>
         </ul>
       </div>
     </section>
+
     <!-- ============ COMPARATIVO (só em famílias com 2+ modelos; uma coluna por modelo) ============ -->
     <section class="comparativo" aria-labelledby="comp-rotativas-titulo">
       <div class="container">
         <div class="comparativo__cabeca" data-revelar="scroll">
           <p class="overline comparativo__over"><span class="comparativo__traco" aria-hidden="true"></span>Qual escolher</p>
           <h2 class="comparativo__titulo" id="comp-rotativas-titulo" data-linhas>SmartGrill ou DuraGrill?</h2>
-          <p class="comparativo__apoio">As duas são 100% Inox 304 e resistem ao tempo, ao calor e à corrosão. A escolha depende do seu estilo na hora de comandar a brasa.</p>
+          <p class="comparativo__apoio">As duas são 100% Inox 304, com velocidade regulável e buchas autolubrificantes. A diferença está na praticidade da limpeza e no estilo da estrutura.</p>
         </div>
         <div class="tabela" role="region" aria-label="Comparativo SmartGrill e DuraGrill" tabindex="0">
           <table>
@@ -169,18 +173,19 @@
               </tr>
             </thead>
             <tbody>
-              <tr><th scope="row">Foco</th><td>Engenharia avançada e giro contínuo silencioso</td><td>Robustez clássica e resistência extrema</td></tr>
-              <tr><th scope="row">Mecânica</th><td>Rotação autolubrificante, <strong>zero rangidos</strong></td><td>Alta durabilidade para <strong>uso intenso</strong></td></tr>
-              <tr><th scope="row">Design</th><td><strong>Frente 100% removível</strong> para acesso total</td><td>Estrutura tradicional com acabamento imponente</td></tr>
-              <tr><th scope="row">Limpeza</th><td>Máxima facilidade no pós-churrasco</td><td>Prática e direta</td></tr>
+              <tr><th scope="row">Foco</th><td>Engenharia avançada e praticidade</td><td>Robustez clássica e resistência extrema</td></tr>
+              <tr><th scope="row">Limpeza</th><td><strong>Frente 100% removível:</strong> remova e limpe sem esforço</td><td>Prática e direta</td></tr>
+              <tr><th scope="row">Design</th><td>Frente removível, acesso total</td><td>Estrutura tradicional com acabamento imponente</td></tr>
+              <tr><th scope="row">Rotação</th><td>Velocidade regulável, buchas autolubrificantes</td><td>Velocidade regulável, buchas autolubrificantes</td></tr>
+              <tr><th scope="row">Descanso balanço</th><td>Opcional</td><td>Opcional</td></tr>
               <tr><th scope="row">Material</th><td>100% Inox 304</td><td>100% Inox 304</td></tr>
               <tr><th scope="row">Garantia</th><td>5 anos em motor e componentes</td><td>5 anos em motor e componentes</td></tr>
             </tbody>
             <tfoot>
               <tr>
                 <th scope="row"><span class="visually-hidden">Saiba mais</span></th>
-                <td><a class="botao botao--sec" href="/smartgrill/">Conhecer<span class="so-desktop"> a SmartGrill</span></a></td>
-                <td><a class="botao botao--sec" href="/duragrill/">Conhecer<span class="so-desktop"> a DuraGrill</span></a></td>
+                <td><a class="botao botao--sec" href="/smartgrill/"><span>Conhecer<span class="so-desktop"> a SmartGrill</span></span></a></td>
+                <td><a class="botao botao--sec" href="/duragrill/"><span>Conhecer<span class="so-desktop"> a DuraGrill</span></span></a></td>
               </tr>
             </tfoot>
           </table>
@@ -188,31 +193,40 @@
       </div>
     </section>
 
-    <!-- ============ CAPÍTULO: GRELHAS (bloco reutilizável: copie para uma família nova) ============ -->
-    <section class="familia" id="grelhas" aria-labelledby="grelhas-titulo">
+    <!-- ============ CAPÍTULO: GRELHAS E ELEVAÇÃO (bloco reutilizável: copie para uma família nova) ============ -->
+    <section class="familia" id="elevacao" aria-labelledby="elevacao-titulo">
       <div class="familia__cena" style="background-image: url('../assets/img/hero-churrasqueira-central.webp')" aria-hidden="true"></div>
       <div class="container familia__cabeca" data-revelar="scroll">
-        <p class="overline familia__over"><span class="familia__num">02</span>Grelhas</p>
-        <h2 class="familia__titulo" id="grelhas-titulo" data-linhas>Grelhas</h2>
-        <p class="familia__frase">Controle total da distância da brasa, corte a corte.</p>
+        <p class="overline familia__over"><span class="familia__num">02</span>Grelhas e elevação</p>
+        <h2 class="familia__titulo" id="elevacao-titulo" data-linhas>Grelhas e elevação</h2>
+        <p class="familia__frase">Controle total da distância da brasa, na manivela, no botão ou na voz.</p>
       </div>
       <div class="container">
-        <ul class="fichas" data-revelar="scroll" data-qtd="3">
+        <ul class="fichas" data-revelar="scroll" data-qtd="4">
+            <li class="ficha">
+              <h3 class="ficha__nome"><a href="/elevatto/">Elevatto</a> <em class="ficha__tag">Novo</em></h3>
+              <p class="ficha__resumo">Grelha e espetos sobem juntos, automaticamente, com rotação constante e regulável.</p>
+              <ul class="ficha__specs">
+                <li><strong>Voz, app ou botão</strong><span>também por controle remoto</span></li>
+                <li><strong>Simultânea</strong><span>elevação de espetos e grelha</span></li>
+              </ul>
+              <span class="ficha__link" aria-hidden="true">Conhecer</span>
+            </li>
+            <li class="ficha">
+              <h3 class="ficha__nome"><a href="/grelhas/#automatica">Grelha automática</a></h3>
+              <p class="ficha__resumo">A grelha sobe e desce sozinha, integrada à churrasqueira e dividindo o espaço com os espetos.</p>
+              <ul class="ficha__specs">
+                <li><strong>Botão ou app</strong><span>também por controle remoto</span></li>
+                <li><strong>Desmontável</strong><span>limpeza simples</span></li>
+              </ul>
+              <span class="ficha__link" aria-hidden="true">Conhecer</span>
+            </li>
             <li class="ficha">
               <h3 class="ficha__nome"><a href="/grelhas/#manual">Elevação manual</a></h3>
               <p class="ficha__resumo">Suba e desça na manivela e divida o espaço com os espetos.</p>
               <ul class="ficha__specs">
                 <li><strong>Manivela</strong><span>elevação precisa</span></li>
                 <li><strong>+ Espetos</strong><span>no mesmo espaço</span></li>
-              </ul>
-              <span class="ficha__link" aria-hidden="true">Conhecer</span>
-            </li>
-            <li class="ficha">
-              <h3 class="ficha__nome"><a href="/grelhas/#automatica">Elevação automática</a></h3>
-              <p class="ficha__resumo">A grelha sobe e desce sozinha, instalada junto da churrasqueira.</p>
-              <ul class="ficha__specs">
-                <li><strong>Botão ou app</strong><span>também por controle remoto</span></li>
-                <li><strong>Conjugada</strong><span>no espaço da churrasqueira</span></li>
               </ul>
               <span class="ficha__link" aria-hidden="true">Conhecer</span>
             </li>
@@ -228,11 +242,44 @@
         </ul>
       </div>
     </section>
-    <!-- ============ CAPÍTULO: ACESSÓRIOS (bloco reutilizável: copie para uma família nova) ============ -->
-    <section class="familia" id="acessorios" aria-labelledby="acessorios-titulo">
+
+    <!-- ============ CAPÍTULO: LINHA MINIMALISTA (bloco reutilizável: copie para uma família nova) ============ -->
+    <section class="familia" id="minimalista" aria-labelledby="minimalista-titulo">
       <div class="familia__cena" style="background-image: url('../assets/img/ambiente-exemplo-2.webp')" aria-hidden="true"></div>
       <div class="container familia__cabeca" data-revelar="scroll">
-        <p class="overline familia__over"><span class="familia__num">03</span>Acessórios</p>
+        <p class="overline familia__over"><span class="familia__num">03</span>Linha minimalista</p>
+        <h2 class="familia__titulo" id="minimalista-titulo" data-linhas>Linha minimalista</h2>
+        <p class="familia__frase">Menos estrutura à vista, mais destaque para o seu revestimento.</p>
+      </div>
+      <div class="container">
+        <ul class="fichas" data-revelar="scroll" data-qtd="2">
+            <li class="ficha">
+              <h3 class="ficha__nome"><a href="/suporte-de-fundo/">Suporte de fundo</a></h3>
+              <p class="ficha__resumo">Visual minimalista que deixa o revestimento aparecer e amplia a área gourmet.</p>
+              <ul class="ficha__specs">
+                <li><strong>Minimalista</strong><span>estrutura discreta</span></li>
+                <li><strong>Revestimento</strong><span>em destaque</span></li>
+              </ul>
+              <span class="ficha__link" aria-hidden="true">Conhecer</span>
+            </li>
+            <li class="ficha">
+              <h3 class="ficha__nome"><a href="/espetos-suspensos/">Espetos suspensos</a> <em class="ficha__tag">Novo</em></h3>
+              <p class="ficha__resumo">Estrutura prática e funcional, com giro fácil dos espetos para qualquer tipo de carne.</p>
+              <ul class="ficha__specs">
+                <li><strong>Giro fácil</strong><span>manuseio simples</span></li>
+                <li><strong>Versátil</strong><span>diferentes tipos de carne</span></li>
+              </ul>
+              <span class="ficha__link" aria-hidden="true">Conhecer</span>
+            </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ CAPÍTULO: ACESSÓRIOS (bloco reutilizável: copie para uma família nova) ============ -->
+    <section class="familia" id="acessorios" aria-labelledby="acessorios-titulo">
+      <div class="familia__cena" style="background-image: url('../assets/img/hero-churrasqueira-central.webp')" aria-hidden="true"></div>
+      <div class="container familia__cabeca" data-revelar="scroll">
+        <p class="overline familia__over"><span class="familia__num">04</span>Acessórios</p>
         <h2 class="familia__titulo" id="acessorios-titulo" data-linhas>Acessórios</h2>
         <p class="familia__frase">Complementos em Inox 304 para aproveitar cada centímetro da churrasqueira.</p>
       </div>
@@ -257,10 +304,10 @@
               <span class="ficha__link" aria-hidden="true">Conhecer</span>
             </li>
             <li class="ficha">
-              <h3 class="ficha__nome"><a href="/acessorios/#espetos">Espetos e acessórios</a></h3>
-              <p class="ficha__resumo">Suportes de fundo, grelhas de encaixe e cestos para espetos de coração.</p>
+              <h3 class="ficha__nome"><a href="/acessorios/#espetos">Cestos e grelhas de encaixe</a></h3>
+              <p class="ficha__resumo">Grelhas de encaixe de espetos e cestos para espetos de coração.</p>
               <ul class="ficha__specs">
-                <li><strong>Suportes</strong><span>e grelhas de encaixe</span></li>
+                <li><strong>Encaixe</strong><span>nos espetos</span></li>
                 <li><strong>Cestos</strong><span>para espetos de coração</span></li>
               </ul>
               <span class="ficha__link" aria-hidden="true">Conhecer</span>
@@ -268,6 +315,7 @@
         </ul>
       </div>
     </section>
+
     <!-- ============ COMO FUNCIONA O SOB MEDIDA ============ -->
     <section class="passos" aria-labelledby="passos-titulo">
       <div class="container">
@@ -361,6 +409,7 @@
             <ul>
               <li><a href="/smartgrill/">Linha SmartGrill</a></li>
               <li><a href="/duragrill/">Linha DuraGrill</a></li>
+              <li><a href="/elevatto/">Linha Elevatto</a></li>
               <li><a href="/grelhas/">Grelhas</a></li>
               <li><a href="/acessorios/">Acessórios</a></li>
             </ul>
@@ -402,6 +451,6 @@
     <img src="../assets/icones/whatsapp-branco.svg" alt="" width="28" height="28">
   </a>
 
-  <script src="../js/main.js?v=1790368877" defer></script>
+  <script src="../js/main.js?v=1790371982" defer></script>
 </body>
 </html>

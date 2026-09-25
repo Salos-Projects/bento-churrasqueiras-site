@@ -10,10 +10,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/img/hero-area-gourmet.webp" imagesrcset="assets/img/hero-area-gourmet-1280.webp 1280w, assets/img/hero-area-gourmet.webp 2560w" imagesizes="100vw">
-  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="preload" as="image" href="assets/img/hero-churrasqueira-central.webp" imagesrcset="assets/img/hero-churrasqueira-central-1280.webp 1280w, assets/img/hero-churrasqueira-central.webp 1920w" imagesizes="100vw">
+  <link rel="stylesheet" href="css/estilo.css?v=1790355215">
   <!-- TEMPORÁRIO: comparação de fundos da seção de produtos -->
-  <link rel="stylesheet" href="css/comparar-fundos.css">
+  <link rel="stylesheet" href="css/comparar-fundos.css?v=1790355215">
 
   <script type="application/ld+json">
   {
@@ -113,7 +113,7 @@
     <!-- ============ HERO ============ -->
     <section class="hero">
       <div class="hero__foto">
-        <img src="assets/img/hero-area-gourmet.webp" srcset="assets/img/hero-area-gourmet-1280.webp 1280w, assets/img/hero-area-gourmet.webp 2560w" sizes="100vw" alt="Área gourmet com churrasqueira rotativa em inox embutida em bancada de pedra escura" width="2560" height="1460" fetchpriority="high">
+        <img src="assets/img/hero-churrasqueira-central.webp" srcset="assets/img/hero-churrasqueira-central-1280.webp 1280w, assets/img/hero-churrasqueira-central.webp 1920w" sizes="100vw" alt="Área gourmet com churrasqueira rotativa em inox embutida em parede de pedra, com bancada preta e prateleiras iluminadas" width="1920" height="1080" fetchpriority="high">
       </div>
       <img class="hero__sombra" src="assets/img/hero-sombra.svg" alt="" aria-hidden="true">
 
@@ -321,59 +321,57 @@
 
   <!-- ============ RODAPÉ ============ -->
   <footer class="rodape">
-    <span class="simbolo rodape__simbolo" aria-hidden="true"><span class="simbolo__f3"></span><span class="simbolo__f7"></span><span class="simbolo__f6"></span></span>
     <div class="container">
-      <div class="rodape__grade">
+      <div class="rodape__topo">
         <div class="rodape__marca">
-          <img src="assets/marca/logo-footer.svg" alt="Bento Churrasqueiras" width="159" height="89" loading="lazy">
-          <p>Churrasqueiras únicas, como cada cliente.</p>
-        </div>
-        <nav class="rodape__col" aria-labelledby="rod-produtos">
-          <h2 id="rod-produtos">Produtos</h2>
-          <ul>
-            <li><a href="/smartgrill/">Linha SmartGrill</a></li>
-            <li><a href="/duragrill/">Linha DuraGrill</a></li>
-            <li><a href="/grelhas/">Grelhas</a></li>
-            <li><a href="/acessorios/">Acessórios</a></li>
-          </ul>
-        </nav>
-        <nav class="rodape__col" aria-labelledby="rod-empresa">
-          <h2 id="rod-empresa">Empresa</h2>
-          <ul>
-            <li><a href="/empresa/">Sobre nós</a></li>
-            <li><a href="/projetos/">Projetos</a></li>
-            <li><a href="/assistencia/">Assistência</a></li>
-            <li><a href="/contato/#localizacao">Localização</a></li>
-            <li><a href="/politica-de-privacidade/">Política de Privacidade</a></li>
-          </ul>
-        </nav>
-        <div class="rodape__col rodape__col--contato">
-          <h2>Contato</h2>
-          <ul>
-            <li><img src="assets/icones/email.svg" alt="" width="18" height="17"><a href="mailto:vendas@bentochurrasqueiras.com.br">vendas@bentochurrasqueiras.com.br</a></li>
-            <li><img src="assets/icones/whatsapp-laranja.svg" alt="" width="24" height="24"><a href="https://wa.me/5554996889900" target="_blank" rel="noopener" data-evento="whatsapp_rodape">(54) 99688-9900</a></li>
-            <!-- TODO cliente: confirmar se este 2º número está ativo -->
-            <li><img src="assets/icones/whatsapp-laranja.svg" alt="" width="24" height="24"><a href="https://wa.me/5554999268929" target="_blank" rel="noopener" data-evento="whatsapp_rodape_2">(54) 99926-8929</a></li>
-            <li class="rodape__endereco">Rua Francisco José Milani, 166<br>Linha Garibaldina · Garibaldi/RS</li>
+          <a href="/" aria-label="Bento Churrasqueiras — página inicial">
+            <img src="assets/marca/logo-footer.svg" alt="Bento Churrasqueiras" width="142" height="80" loading="lazy">
+          </a>
+          <p>Churrasqueiras rotativas sob medida em Inox 304, fabricadas em Garibaldi (RS) desde 2004.</p>
+          <ul class="rodape__redes">
+            <li><a href="https://www.instagram.com/bentochurrasqueiras/" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/icones/instagram.svg" alt="" width="20" height="20"></a></li>
+            <li><a href="https://www.facebook.com/BentoChurrasqueiras/" target="_blank" rel="noopener" aria-label="Facebook"><img src="assets/icones/facebook.svg" alt="" width="20" height="20"></a></li>
           </ul>
         </div>
-        <div class="rodape__col">
-          <h2>Horários</h2>
-          <ul>
-            <li>Seg a sex</li>
-            <li>7h30 – 11h30</li>
-            <li>13h30 – 16h30</li>
-            <li class="rodape__nota">Visitas com agendamento pelo representante</li>
-          </ul>
+
+        <div class="rodape__colunas">
+          <nav class="rodape__col" aria-labelledby="rod-produtos">
+            <h2 id="rod-produtos">Produtos</h2>
+            <ul>
+              <li><a href="/smartgrill/">Linha SmartGrill</a></li>
+              <li><a href="/duragrill/">Linha DuraGrill</a></li>
+              <li><a href="/grelhas/">Grelhas</a></li>
+              <li><a href="/acessorios/">Acessórios</a></li>
+            </ul>
+          </nav>
+          <nav class="rodape__col" aria-labelledby="rod-empresa">
+            <h2 id="rod-empresa">Empresa</h2>
+            <ul>
+              <li><a href="/empresa/">Sobre nós</a></li>
+              <li><a href="/projetos/">Projetos</a></li>
+              <li><a href="/assistencia/">Assistência</a></li>
+              <li><a href="/contato/">Contato</a></li>
+            </ul>
+          </nav>
+          <div class="rodape__col">
+            <h2>Atendimento</h2>
+            <ul>
+              <li><a href="https://wa.me/5554996889900" target="_blank" rel="noopener" data-evento="whatsapp_rodape">(54) 99688-9900</a></li>
+              <!-- TODO cliente: confirmar se este 2º número está ativo -->
+              <li><a href="https://wa.me/5554999268929" target="_blank" rel="noopener" data-evento="whatsapp_rodape_2">(54) 99926-8929</a></li>
+              <li><a href="mailto:vendas@bentochurrasqueiras.com.br">vendas@bentochurrasqueiras.com.br</a></li>
+              <li>Seg a sex · 7h30–11h30 e 13h30–16h30</li>
+              <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Francisco+Jos%C3%A9+Milani+166+Garibaldi+RS" target="_blank" rel="noopener">Rua Francisco José Milani, 166<br>Linha Garibaldina · Garibaldi/RS</a></li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <div class="rodape__base">
         <p>© <span data-ano>2026</span> Bento Churrasqueiras · CNPJ 21.482.236/0001-81</p>
-        <div class="rodape__redes">
-          <a href="https://www.facebook.com/BentoChurrasqueiras/" target="_blank" rel="noopener" aria-label="Facebook"><img src="assets/icones/facebook.svg" alt="" width="24" height="24"></a>
-          <a href="https://www.instagram.com/bentochurrasqueiras/" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/icones/instagram.svg" alt="" width="24" height="24"></a>
-        </div>
+        <ul class="rodape__legal">
+          <li><a href="/politica-de-privacidade/">Política de Privacidade</a></li>
+        </ul>
       </div>
     </div>
   </footer>
@@ -383,8 +381,8 @@
     <img src="assets/icones/whatsapp-branco.svg" alt="" width="28" height="28">
   </a>
 
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js?v=1790355215" defer></script>
   <!-- TEMPORÁRIO: comparação de fundos da seção de produtos -->
-  <script src="js/comparar-fundos.js" defer></script>
+  <script src="js/comparar-fundos.js?v=1790355215" defer></script>
 </body>
 </html>

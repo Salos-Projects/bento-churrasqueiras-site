@@ -36,17 +36,43 @@
 - **Página Assistência** (`/assistencia/`): abertura, bloco escuro com "como acionar a garantia" (3 passos + condições do site atual) e **formulário de chamado** com os campos do Fluent Forms atual (nome, WhatsApp, e-mail, descrição, fotos do defeito) + produto (opcional, novo); dúvidas e manuais. Sem bloco de orçamento/catálogo (quem chega aqui já é cliente). No Elementor: manter o **Fluent Forms 5** existente, estilizado igual, e acrescentar o campo Produto.
 - Corrigido no site todo: a máscara de revelação dos títulos cortava acentos de maiúsculas (Ê, É, Ú).
 
-### Pendências das páginas de linha (perguntar ao cliente)
-- **SmartGrill/DuraGrill:** o que é o "descanso balanço"; manual completo de instalação da linha Smart (link quebrado no site atual); se existe manual de instalação da DuraGrill.
-- **Suporte de fundo:** como é fixado; se aceita grelha e espetos juntos (as fotos sugerem que sim); como é a limpeza.
-- **Espetos suspensos:** se o giro é manual (sem motor); quantos espetos cabem; limpeza.
-- **Acessórios:** diferença entre bifeira e cooktop (gás ou elétrico?); se vende acessório avulso para quem já tem churrasqueira; fotos melhores (as atuais têm 630 px).
-- **Projetos:** cidade (e, se possível, a linha) de cada foto; fotos em alta (as do site atual têm 450 px); a foto com a marca BRAZERO é da Bento?
-- **Assistência:** precisa de nota fiscal? atendimento em domicílio ou envio da peça? atende fora do RS? manual completo da linha Smart.
-- **Todas:** cidade de cada projeto das galerias; renders limpos para os raio-X; prazo de fabricação; se a Bento instala; menus só listam SmartGrill, DuraGrill, Elevatto, Grelhas e Acessórios (Suporte de fundo e Espetos suspensos entram por Produtos — decidir se vão ao menu).
+- **Páginas Empresa, Contato e Política de Privacidade (26/09):** Empresa com abertura em foto, propósito + 4 pilares, **linha do tempo** 2004 → 2009 → hoje (desenha no scroll; vertical no celular) e números + depoimentos da home. Contato com canais + formulário (campos do Fluent Forms 3 atual) no escuro e **mapa** (Google Maps, tons neutros que ganham cor no hover) no claro. Privacidade reescrita do zero como **rascunho LGPD** (a atual é o texto padrão do WordPress, sobre comentários e Gravatar), com índice fixo. **Site completo: nenhum link interno dá 404.**
+- Foto "BRAZERO" era na verdade **BRAZEDO Restaurante** (cliente, não concorrente) → voltou ao mosaico de Projetos como parrilla.
+
+## Pendências do cliente (lista única — revisar juntos)
+
+**Números e fatos da marca**
+1. "+500 churrasqueiras entregues" é real? Há outro número bom (cidades, estados)?
+2. O 2º WhatsApp (54) 99926-8929 está ativo?
+3. Prazo médio de fabricação.
+4. A Bento instala ou só entrega? (o site tem manual de instalação)
+5. PDF do catálogo diz "mais de 15 anos" — são 22 (desde 2004).
+6. Link do perfil do Google (avaliações).
+
+**Produtos**
+7. O que é o "descanso balanço" (opcional da SmartGrill e DuraGrill)?
+8. Elevatto: qual assistente de voz (Alexa? Google?).
+9. Suporte de fundo: como é fixado; aceita grelha e espetos juntos?; limpeza.
+10. Espetos suspensos: o giro é manual (sem motor)?; quantos espetos cabem; limpeza.
+11. Acessórios: diferença entre bifeira e cooktop (gás ou elétrico?); vende avulso para quem já tem churrasqueira?
+12. Grelha manual, parrilla, bifeiras/cooktops, costelão e cestos continuam à venda? (não estão no Catálogo 2026)
+13. Menu: incluir Suporte de fundo e Espetos suspensos? (hoje entram só pela página Produtos)
+
+**Manuais e assistência**
+14. Manual completo de instalação da linha Smart (link quebrado no site atual) e manual da DuraGrill, se houver.
+15. Garantia: precisa de nota fiscal? Atendimento no local ou envio da peça? Atende fora do RS?
+
+**Fotos e imagens**
+16. Renders limpos da Bento para os raio-X (os atuais são fotos do catálogo; o render do Figma era da KAFER).
+17. Fotos em alta das obras + **cidade** de cada projeto (galerias e mosaico mostram "cidade a confirmar").
+18. Fotos da fábrica e da equipe para a página Empresa.
+
+**Privacidade e acesso**
+19. Revisar a Política de Privacidade (rascunho) com o jurídico; confirmar quais ferramentas rodam no Google Tag Manager/Stape (Google Analytics? Meta Pixel?) e o canal de privacidade (hoje vendas@).
+20. Aviso de cookies: o site não tem. Recomendado, se houver cookies de publicidade.
+21. Acesso admin ao WordPress.
 
 ### Próximos passos
-1. **Cenas por IA:** uma por linha da home (5) e uma por família na página Produtos (4), 16:9, ≥1920px, churrasqueira do centro para a direita; fotos do Catálogo 2026 como referência. Mais uma **versão vertical da hero** para o celular.
-2. **Páginas de cada linha:** **todas feitas** (SmartGrill, DuraGrill, Elevatto, Grelhas, Suporte de fundo, Espetos suspensos, Acessórios). Institucionais: feitas Projetos e Assistência; faltam Empresa, Contato e Política de Privacidade.
-3. **Pendências do cliente** (`docs/textos-home.md`, `docs/produtos.md`, briefing seção 6): +500 entregues, 2º WhatsApp, prazo de fabricação, se a Bento instala, se grelha manual/parrilla/bifeiras/costelão continuam, renders limpos da Bento para o raio-X (o que tínhamos era da KAFER), "mais de 15 anos" no PDF do catálogo, perfil do Google, acesso admin ao WP.
-4. Montagem no Elementor só quando o Lucas liberar.
+1. **Revisar as pendências acima com o cliente.**
+2. **Cenas por IA:** uma por linha da home (5) e uma por família na página Produtos (4), 16:9, ≥1920px, churrasqueira do centro para a direita; fotos do Catálogo 2026 como referência. Mais uma **versão vertical da hero** para o celular.
+3. Montagem no Elementor só quando o Lucas liberar.

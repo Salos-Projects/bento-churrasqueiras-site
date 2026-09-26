@@ -1634,6 +1634,8 @@ body.menu-aberto { overflow: hidden; }
 .galeria__grade li:hover img { scale: 1.05; }
 .galeria__grade span { position: absolute; left: 16px; bottom: 14px; font-size: 13px; letter-spacing: .06em; color: rgba(255, 255, 255, .85); text-shadow: 0 1px 8px rgba(0, 0, 0, .7); }
 .galeria__mais { display: inline-block; margin-top: 36px; }
+/* fotos horizontais (churrasqueiras largas) */
+.galeria__grade[data-formato="paisagem"] li { aspect-ratio: 4 / 3; }
 
 /* ---------- Dúvidas frequentes (claro quente) ---------- */
 .faq { background: #f2eee9; color: var(--grafite); padding: clamp(110px, 10vw, 180px) 0; }
@@ -1707,6 +1709,7 @@ body.menu-aberto { overflow: hidden; }
   .galeria__grade[data-qtd="3"] { grid-template-columns: 1fr 1fr; }
   .modelo__num { font-size: 48px; }
   .galeria__grade { grid-template-columns: 1fr 1fr; }
+  .galeria__grade[data-formato="paisagem"] { grid-template-columns: 1fr; }
   .faq__grade { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {

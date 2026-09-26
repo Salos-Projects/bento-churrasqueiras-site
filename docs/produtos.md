@@ -23,7 +23,7 @@ Frase: Espetos girando sozinhos, na velocidade certa, com assado por igual.
 | Spec 2 | Regulável · velocidade dos espetos | Regulável · velocidade dos espetos |
 | **Comparativo** | | |
 | Foco | Engenharia avançada e praticidade | Robustez clássica e resistência extrema |
-| Limpeza | Frente 100% removível: remova e limpe sem esforço | Prática e direta |
+| Limpeza | Frente 100% removível: remova e limpe sem esforço | Régua superior destacável (site atual) |
 | Design | Frente removível, acesso total | Estrutura tradicional, acabamento imponente |
 | Rotação | Velocidade regulável · buchas autolubrificantes | Velocidade regulável · buchas autolubrificantes |
 | Descanso balanço | Opcional | Opcional |

@@ -27,8 +27,18 @@
 
 - **Página SmartGrill** (`/smartgrill/`): mesmo modelo — abertura, destaques, raio-X com 5 pontos na foto do catálogo (provisória), recursos em 2 colunas, ficha técnica **SmartGrill × DuraGrill**, galeria (4 fotos do catálogo), dúvidas e outras linhas. Novo bloco **Manuais e cuidados** (PDFs do site atual) na coluna das dúvidas, reaproveitável na DuraGrill. ⚠️ Perguntar ao cliente: o que é o "descanso balanço" (opcional) e o manual completo de instalação da linha Smart (link quebrado no site atual).
 
+- **Páginas DuraGrill, Suporte de fundo, Espetos suspensos e Acessórios (26/09):** todas as linhas de produto com página própria. DuraGrill no modelo da SmartGrill (ficha DuraGrill × SmartGrill; fato novo do site atual: **régua superior destacável** — comparativo da SmartGrill/Produtos atualizado); Suporte de fundo e Espetos suspensos com raio-X de 4 pontos e ficha comparando os dois; Acessórios no modelo de Grelhas (modelos com âncoras #bifeiras, #costelao, #espetos, sem raio-X). Galeria ganhou variante **horizontal** (`data-formato="paisagem"`) para fotos largas. Fotos: Catálogo 2026 (DuraGrill, Suporte, Espetos) e site atual, 630 px (Acessórios) — todas provisórias.
+- ⚠️ Corrigido: a 4ª foto da galeria da SmartGrill era da DuraGrill (o PDF reaproveita a imagem em várias páginas; a foto aparece de fato na pág. 06, DuraGrill).
+
+### Pendências das páginas de linha (perguntar ao cliente)
+- **SmartGrill/DuraGrill:** o que é o "descanso balanço"; manual completo de instalação da linha Smart (link quebrado no site atual); se existe manual de instalação da DuraGrill.
+- **Suporte de fundo:** como é fixado; se aceita grelha e espetos juntos (as fotos sugerem que sim); como é a limpeza.
+- **Espetos suspensos:** se o giro é manual (sem motor); quantos espetos cabem; limpeza.
+- **Acessórios:** diferença entre bifeira e cooktop (gás ou elétrico?); se vende acessório avulso para quem já tem churrasqueira; fotos melhores (as atuais têm 630 px).
+- **Todas:** cidade de cada projeto das galerias; renders limpos para os raio-X; prazo de fabricação; se a Bento instala; menus só listam SmartGrill, DuraGrill, Elevatto, Grelhas e Acessórios (Suporte de fundo e Espetos suspensos entram por Produtos — decidir se vão ao menu).
+
 ### Próximos passos
 1. **Cenas por IA:** uma por linha da home (5) e uma por família na página Produtos (4), 16:9, ≥1920px, churrasqueira do centro para a direita; fotos do Catálogo 2026 como referência. Mais uma **versão vertical da hero** para o celular.
-2. **Páginas de cada linha:** feitas Grelhas, Elevatto e SmartGrill. Faltam DuraGrill, Suporte de fundo, Espetos suspensos e Acessórios.
+2. **Páginas de cada linha:** **todas feitas** (SmartGrill, DuraGrill, Elevatto, Grelhas, Suporte de fundo, Espetos suspensos, Acessórios). Faltam as institucionais: Empresa, Projetos, Assistência, Contato e Política de Privacidade.
 3. **Pendências do cliente** (`docs/textos-home.md`, `docs/produtos.md`, briefing seção 6): +500 entregues, 2º WhatsApp, prazo de fabricação, se a Bento instala, se grelha manual/parrilla/bifeiras/costelão continuam, renders limpos da Bento para o raio-X (o que tínhamos era da KAFER), "mais de 15 anos" no PDF do catálogo, perfil do Google, acesso admin ao WP.
 4. Montagem no Elementor só quando o Lucas liberar.

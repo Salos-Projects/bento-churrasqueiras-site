@@ -1615,6 +1615,14 @@ body.menu-aberto { overflow: hidden; }
 .modelo:target { background: linear-gradient(to right, rgba(242, 110, 34, .08), transparent 60%); }
 
 .ficha-tecnica { padding-top: 0; }
+/* recursos (linha de produto único): itens sem lista de specs, em 2 colunas */
+.modelos--recursos .modelos__lista { display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(40px, 5vw, 96px); }
+.modelos--recursos .modelo { grid-template-columns: 90px minmax(0, 1fr); }
+.modelos--recursos .modelo__num { font-size: 48px; }
+/* selo "Novo" na abertura */
+.linha-hero__selo { display: inline-flex; align-items: center; gap: 12px; margin-top: 30px; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255, 255, 255, .7); }
+.linha-hero__selo span { padding: 5px 11px; border: 1px solid var(--laranja); border-radius: 20px; font-size: 11px; letter-spacing: .14em; color: var(--laranja); }
+.galeria__grade[data-qtd="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
 /* ---------- Galeria de projetos (escuro) ---------- */
 .galeria { background: #171615; color: var(--branco); padding: clamp(110px, 10vw, 180px) 0; }
@@ -1665,6 +1673,9 @@ body.menu-aberto { overflow: hidden; }
   .destaques__lista li:nth-child(3) { border-left: 0; padding-left: 0; }
   .destaques__lista li:nth-child(n+3) { border-top: 1px solid rgba(255, 255, 255, .14); }
   .modelo { grid-template-columns: 1fr; gap: 16px; }
+  .modelos--recursos .modelos__lista { grid-template-columns: 1fr; }
+  .modelos--recursos .modelo { grid-template-columns: 1fr; }
+  .galeria__grade[data-qtd="3"] { grid-template-columns: 1fr 1fr; }
   .modelo__num { font-size: 48px; }
   .galeria__grade { grid-template-columns: 1fr 1fr; }
   .faq__grade { grid-template-columns: 1fr; }

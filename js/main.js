@@ -322,6 +322,30 @@
     });
   });
 
+  /* ---------- Assistência: fotos anexadas + envio (só visual; vira Fluent Forms) ---------- */
+  document.querySelectorAll("[data-chamado]").forEach(function (form) {
+    var campo = form.querySelector("[data-arquivos]");
+    var caixa = campo && campo.closest(".chamado__arquivos");
+    var texto = form.querySelector("[data-arquivos-texto]");
+    var original = texto ? texto.textContent : "";
+    if (campo && texto) {
+      campo.addEventListener("change", function () {
+        var n = campo.files.length;
+        texto.textContent = n ? (n === 1 ? campo.files[0].name : n + " fotos selecionadas") : original;
+      });
+      ["dragenter", "dragover"].forEach(function (ev) { caixa.addEventListener(ev, function () { caixa.classList.add("arrastando"); }); });
+      ["dragleave", "drop"].forEach(function (ev) { caixa.addEventListener(ev, function () { caixa.classList.remove("arrastando"); }); });
+    }
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var envio = form.querySelector(".chamado__envio");
+      var aviso = envio.querySelector(".aviso") || envio.appendChild(document.createElement("p"));
+      aviso.className = "aviso";
+      aviso.setAttribute("role", "status");
+      aviso.textContent = "Protótipo: o envio será ligado ao formulário do site.";
+    });
+  });
+
   /* ---------- Projetos: filtro por família ---------- */
   var mosaico = document.querySelector("[data-mosaico]");
   var filtros = document.querySelector("[data-filtros]");

@@ -30,11 +30,15 @@
 - **Páginas DuraGrill, Suporte de fundo, Espetos suspensos e Acessórios (26/09):** todas as linhas de produto com página própria. DuraGrill no modelo da SmartGrill (ficha DuraGrill × SmartGrill; fato novo do site atual: **régua superior destacável** — comparativo da SmartGrill/Produtos atualizado); Suporte de fundo e Espetos suspensos com raio-X de 4 pontos e ficha comparando os dois; Acessórios no modelo de Grelhas (modelos com âncoras #bifeiras, #costelao, #espetos, sem raio-X). Galeria ganhou variante **horizontal** (`data-formato="paisagem"`) para fotos largas. Fotos: Catálogo 2026 (DuraGrill, Suporte, Espetos) e site atual, 630 px (Acessórios) — todas provisórias.
 - ⚠️ Corrigido: a 4ª foto da galeria da SmartGrill era da DuraGrill (o PDF reaproveita a imagem em várias páginas; a foto aparece de fato na pág. 06, DuraGrill).
 
+- **Página Projetos** (`/projetos/`): abertura institucional, **mosaico** de 35 fotos (catálogo + site atual) com **filtro por família** e **ampliação** (setas, teclado, deslizar no celular, Esc), "Como funciona" e contato. Legendas "Cidade a confirmar". Fora do mosaico: Galeria6 do site atual (arquivo quebrado) e Galeria2 (coifa com a marca **BRAZERO** — confirmar se é projeto da Bento). No Elementor: galeria com filtro (Gallery do Pro ou Loop Grid + taxonomia).
+- Corrigido: mensagem do WhatsApp no contato de Suporte de fundo, Espetos suspensos e Acessórios tinha perdido a palavra "orçamento".
+
 ### Pendências das páginas de linha (perguntar ao cliente)
 - **SmartGrill/DuraGrill:** o que é o "descanso balanço"; manual completo de instalação da linha Smart (link quebrado no site atual); se existe manual de instalação da DuraGrill.
 - **Suporte de fundo:** como é fixado; se aceita grelha e espetos juntos (as fotos sugerem que sim); como é a limpeza.
 - **Espetos suspensos:** se o giro é manual (sem motor); quantos espetos cabem; limpeza.
 - **Acessórios:** diferença entre bifeira e cooktop (gás ou elétrico?); se vende acessório avulso para quem já tem churrasqueira; fotos melhores (as atuais têm 630 px).
+- **Projetos:** cidade (e, se possível, a linha) de cada foto; fotos em alta (as do site atual têm 450 px); a foto com a marca BRAZERO é da Bento?
 - **Todas:** cidade de cada projeto das galerias; renders limpos para os raio-X; prazo de fabricação; se a Bento instala; menus só listam SmartGrill, DuraGrill, Elevatto, Grelhas e Acessórios (Suporte de fundo e Espetos suspensos entram por Produtos — decidir se vão ao menu).
 
 ### Próximos passos

@@ -322,6 +322,69 @@
     });
   });
 
+  /* ---------- Projetos: filtro por família ---------- */
+  var mosaico = document.querySelector("[data-mosaico]");
+  var filtros = document.querySelector("[data-filtros]");
+  if (mosaico && filtros) {
+    var itensMosaico = Array.prototype.slice.call(mosaico.children);
+    var aviso = document.querySelector("[data-filtro-aviso]");
+    filtros.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-filtro]");
+      if (!b) return;
+      var f = b.dataset.filtro, n = 0;
+      filtros.querySelectorAll("[data-filtro]").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+      itensMosaico.forEach(function (li) {
+        var mostra = f === "todos" || li.dataset.familia === f;
+        li.hidden = !mostra;
+        if (mostra) { n++; li.style.animation = "none"; li.offsetHeight; li.style.animation = ""; }
+      });
+      if (aviso) aviso.textContent = n + " projetos";
+    });
+  }
+
+  /* ---------- Projetos: ampliação com anterior/próxima (só entre as fotos visíveis) ---------- */
+  var janela = document.querySelector("[data-lupa-janela]");
+  if (mosaico && janela && typeof janela.showModal === "function") {
+    var lupaImg = janela.querySelector("[data-lupa-img]");
+    var atual = 0, visiveis = [];
+    var mostrar = function (i) {
+      atual = (i + visiveis.length) % visiveis.length;
+      var li = visiveis[atual], img = li.querySelector("img");
+      lupaImg.src = img.currentSrc || img.src;
+      lupaImg.alt = img.alt;
+      janela.querySelector("[data-lupa-titulo]").textContent = li.querySelector(".mosaico__legenda strong").textContent;
+      janela.querySelector("[data-lupa-texto]").textContent = li.querySelector(".mosaico__legenda span").textContent;
+      janela.querySelector("[data-lupa-conta]").textContent = (atual + 1) + " / " + visiveis.length;
+    };
+    var gatilho = null;
+    mosaico.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-lupa]");
+      if (!b) return;
+      gatilho = b;
+      visiveis = Array.prototype.slice.call(mosaico.children).filter(function (li) { return !li.hidden; });
+      mostrar(visiveis.indexOf(b.parentElement));
+      janela.showModal();
+    });
+    janela.querySelector("[data-lupa-ant]").addEventListener("click", function () { mostrar(atual - 1); });
+    janela.querySelector("[data-lupa-prox]").addEventListener("click", function () { mostrar(atual + 1); });
+    janela.querySelector("[data-lupa-fechar]").addEventListener("click", function () { janela.close(); });
+    janela.addEventListener("click", function (e) { if (e.target === janela) janela.close(); });
+    janela.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") mostrar(atual - 1);
+      if (e.key === "ArrowRight") mostrar(atual + 1);
+    });
+    janela.addEventListener("close", function () { if (gatilho) gatilho.focus(); });
+    // deslizar no celular
+    var x0 = null;
+    janela.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    janela.addEventListener("touchend", function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 50) mostrar(atual + (dx < 0 ? 1 : -1));
+      x0 = null;
+    });
+  }
+
   /* ---------- Ano no rodapé ---------- */
   document.querySelectorAll("[data-ano]").forEach(function (el) {
     el.textContent = new Date().getFullYear();

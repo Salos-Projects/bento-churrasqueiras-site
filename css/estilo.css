@@ -1665,6 +1665,35 @@ body.menu-aberto { overflow: hidden; }
 .faq summary:hover { color: var(--laranja-escuro); }
 .faq details p { padding: 0 48px 26px 0; font-size: 16px; line-height: 1.7; color: rgba(41, 41, 41, .72); }
 
+/* manuais para download (coluna do título das dúvidas) */
+.manuais { margin-top: clamp(48px, 5vw, 80px); }
+.manuais__rotulo { font-size: 12px; font-weight: 500; letter-spacing: .24em; text-transform: uppercase; color: rgba(41, 41, 41, .55); }
+.manuais__lista { margin-top: 18px; border-top: 1px solid rgba(41, 41, 41, .14); }
+.manuais__lista a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(41, 41, 41, .14);
+  color: inherit;
+  text-decoration: none;
+}
+.manuais__lista strong { font-size: 16px; font-weight: 500; transition: color .3s ease; }
+.manuais__lista small { grid-column: 1; font-size: 13px; color: rgba(41, 41, 41, .6); }
+.manuais__lista a::after {
+  content: "PDF ↓";
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  color: var(--laranja);
+  transition: translate .3s ease;
+}
+.manuais__lista a:hover strong { color: var(--laranja-escuro); }
+.manuais__lista a:hover::after { translate: 0 3px; }
+
 /* capítulo sem cena (ex.: outras linhas) */
 .familia--sem-cena .familia__cabeca { padding-top: clamp(110px, 10vw, 180px); }
 

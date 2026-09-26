@@ -25,8 +25,10 @@
 - ⚠️ **Render da grelha era da KAFER** (concorrente) → removido do projeto.
 - **Página Elevatto** (`/elevatto/`): mesmo modelo — abertura com selo "Novo · Catálogo 2026", destaques, raio-X (foto do catálogo, provisória), **recursos** em 2 colunas (variante para linha de produto único), ficha técnica **Elevatto × Grelha automática**, galeria, dúvidas e outras linhas. ⚠️ Perguntar ao cliente: qual assistente de voz (Alexa? Google?).
 
+- **Página SmartGrill** (`/smartgrill/`): mesmo modelo — abertura, destaques, raio-X com 5 pontos na foto do catálogo (provisória), recursos em 2 colunas, ficha técnica **SmartGrill × DuraGrill**, galeria (4 fotos do catálogo), dúvidas e outras linhas. Novo bloco **Manuais e cuidados** (PDFs do site atual) na coluna das dúvidas, reaproveitável na DuraGrill. ⚠️ Perguntar ao cliente: o que é o "descanso balanço" (opcional) e o manual completo de instalação da linha Smart (link quebrado no site atual).
+
 ### Próximos passos
 1. **Cenas por IA:** uma por linha da home (5) e uma por família na página Produtos (4), 16:9, ≥1920px, churrasqueira do centro para a direita; fotos do Catálogo 2026 como referência. Mais uma **versão vertical da hero** para o celular.
-2. **Páginas de cada linha:** feitas Grelhas e Elevatto. Faltam SmartGrill, DuraGrill, Suporte de fundo, Espetos suspensos e Acessórios.
+2. **Páginas de cada linha:** feitas Grelhas, Elevatto e SmartGrill. Faltam DuraGrill, Suporte de fundo, Espetos suspensos e Acessórios.
 3. **Pendências do cliente** (`docs/textos-home.md`, `docs/produtos.md`, briefing seção 6): +500 entregues, 2º WhatsApp, prazo de fabricação, se a Bento instala, se grelha manual/parrilla/bifeiras/costelão continuam, renders limpos da Bento para o raio-X (o que tínhamos era da KAFER), "mais de 15 anos" no PDF do catálogo, perfil do Google, acesso admin ao WP.
 4. Montagem no Elementor só quando o Lucas liberar.

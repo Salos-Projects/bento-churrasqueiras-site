@@ -304,7 +304,8 @@
 
   /* ---------- WhatsApp flutuante: aparece depois do hero ---------- */
   var flutuante = document.querySelector(".wpp-flutuante");
-  var hero = document.querySelector(".hero");
+  // a abertura de cada página: hero da home, abertura de linha ou abertura institucional
+  var hero = document.querySelector(".hero, .linha-hero, .pg-abertura");
   if (flutuante && hero && "IntersectionObserver" in window) {
     new IntersectionObserver(function (entradas) {
       flutuante.classList.toggle("visivel", !entradas[0].isIntersecting);

@@ -39,6 +39,19 @@
 - **Páginas Empresa, Contato e Política de Privacidade (26/09):** Empresa com abertura em foto, propósito + 4 pilares, **linha do tempo** 2004 → 2009 → hoje (desenha no scroll; vertical no celular) e números + depoimentos da home. Contato com canais + formulário (campos do Fluent Forms 3 atual) no escuro e **mapa** (Google Maps, tons neutros que ganham cor no hover) no claro. Privacidade reescrita do zero como **rascunho LGPD** (a atual é o texto padrão do WordPress, sobre comentários e Gravatar), com índice fixo. **Site completo: nenhum link interno dá 404.**
 - Foto "BRAZERO" era na verdade **BRAZEDO Restaurante** (cliente, não concorrente) → voltou ao mosaico de Projetos como parrilla.
 
+## 27/09/2026 — Revisão geral (14 páginas × 6 larguras, textos × Catálogo 2026)
+- **Checagem automática** (1920/1440/1024/768/390/360): zero erros de JS, zero rolagem horizontal, zero imagens quebradas, zero links/âncoras quebrados, IDs únicos, 1 H1 por página, hierarquia de títulos ok, todos os campos com rótulo.
+- **Textos × catálogo:** páginas de produto batem item a item com o Catálogo 2026 (e com o site atual para o que não está no catálogo).
+- ⚠️ **Corrigido — spec da KAFER na home:** o bloco "Grelhas" dizia "Linha de custo-benefício · Grelha de Elevação Manual · **35 kg de capacidade**" — isso vinha das legendas do render do Figma (produto da KAFER). Agora apresenta a família Grelhas (automática, manivela, parrilla), igual à página /grelhas/.
+- Corrigido: home › Acessórios listava "Suportes de fundo" (hoje é linha própria) → trocado por Costelão.
+- Corrigido: "Receba o catálogo — todas as linhas, **medidas e acabamentos**" (o PDF não tem medidas nem acabamentos) → "com fotos e detalhes de cada modelo".
+- Corrigido: "Sua churrasqueira, do projeto **à instalação**" (não confirmado que a Bento instala) → "do projeto ao primeiro churrasco".
+- Corrigido: "qualquer tipo de carne" → "diferentes tipos de carne" (texto do catálogo).
+- Corrigido: **WhatsApp flutuante só aparecia na home** (o script procurava `.hero`) → agora aparece em todas as páginas depois da abertura.
+- Corrigido (visual): alvos de toque ≥ 44px também no tablet; aviso "Deslize para comparar" na tabela de Grelhas no celular; galeria de 3 fotos no celular sem foto órfã e legendas em uma linha; palavras longas das tabelas com hifenização; campo do catálogo com 48px; rodapé com respiro para o botão flutuante.
+- SEO: títulos encurtados para ≤ 61 caracteres e descrições ≤ 160.
+- Peso: páginas entre 0,5 e 0,9 MB; Projetos 1,8 MB (36 fotos, carregam conforme a rolagem) e Contato 2,2 MB (quase tudo é o mapa do Google, carregado só ao chegar nele). Opcional: trocar o mapa por uma imagem com "abrir mapa".
+
 ## Pendências do cliente (lista única — revisar juntos)
 
 **Números e fatos da marca**
@@ -56,7 +69,7 @@
 10. Espetos suspensos: o giro é manual (sem motor)?; quantos espetos cabem; limpeza.
 11. Acessórios: diferença entre bifeira e cooktop (gás ou elétrico?); vende avulso para quem já tem churrasqueira?
 12. Grelha manual, parrilla, bifeiras/cooktops, costelão e cestos continuam à venda? (não estão no Catálogo 2026)
-13. Menu: incluir Suporte de fundo e Espetos suspensos? (hoje entram só pela página Produtos)
+13. Menu e home: incluir Suporte de fundo e Espetos suspensos? (hoje entram só pela página Produtos; a vitrine da home tem 5 linhas e não mostra a linha minimalista)
 
 **Manuais e assistência**
 14. Manual completo de instalação da linha Smart (link quebrado no site atual) e manual da DuraGrill, se houver.
@@ -71,6 +84,8 @@
 19. Revisar a Política de Privacidade (rascunho) com o jurídico; confirmar quais ferramentas rodam no Google Tag Manager/Stape (Google Analytics? Meta Pixel?) e o canal de privacidade (hoje vendas@).
 20. Aviso de cookies: o site não tem. Recomendado, se houver cookies de publicidade.
 21. Acesso admin ao WordPress.
+22. E-mail "Projetos, arquitetos e revendas": a Bento trabalha com revendas? (texto do contato)
+23. Catálogo PDF: frase de abertura "Tecnologia e tradição unidas pela paixão de assar" pode virar texto da Empresa, se o cliente quiser.
 
 ### Próximos passos
 1. **Revisar as pendências acima com o cliente.**

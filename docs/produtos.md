@@ -52,7 +52,7 @@ Frase: Menos estrutura à vista, mais destaque para o seu revestimento.
 | Produto | URL | Resumo | Spec 1 | Spec 2 | Fonte |
 |---|---|---|---|---|---|
 | **Suporte de fundo** | `/suporte-de-fundo/` | Visual minimalista que deixa o revestimento aparecer e amplia a área gourmet. | Minimalista · estrutura discreta | Revestimento · em destaque | Catálogo |
-| **Espetos suspensos** (nova) | `/espetos-suspensos/` | Estrutura prática e funcional, com giro fácil dos espetos para qualquer tipo de carne. | Giro fácil · manuseio simples | Versátil · diferentes carnes | Catálogo |
+| **Espetos suspensos** (nova) | `/espetos-suspensos/` | Estrutura prática e funcional, com giro fácil dos espetos para diferentes tipos de carne. | Giro fácil · manuseio simples | Versátil · diferentes carnes | Catálogo |
 
 ## Família 04: Acessórios
 Frase: Complementos em Inox 304 para aproveitar cada centímetro da churrasqueira.

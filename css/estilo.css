@@ -57,10 +57,7 @@ html.lenis { scroll-behavior: auto; }
 .lenis [data-lenis-prevent] { overscroll-behavior: contain; }
 .lenis.lenis-scrolling iframe { pointer-events: none; }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-}
+/* movimento reduzido: ver o bloco no fim do arquivo */
 
 .container {
   width: min(var(--largura), 100% - 48px);
@@ -568,7 +565,7 @@ html.lenis { scroll-behavior: auto; }
 /* ==========================================================================
    Revelação de títulos (hero e "Conheça nossas linhas")
    Cada linha sobe de trás de uma máscara; o resto entra em seguida.
-   Sem JS ou com movimento reduzido, tudo aparece normalmente.
+   Sem JS, tudo aparece normalmente; com movimento reduzido, as linhas só esmaecem.
    ========================================================================== */
 .rv-linha {
   display: block;
@@ -624,9 +621,6 @@ html.lenis { scroll-behavior: auto; }
 /* enquanto o JS não divide as linhas, o título fica invisível (evita piscar) */
 .js [data-linhas]:not(.rv-pronto) { visibility: hidden; }
 
-@media (prefers-reduced-motion: reduce) {
-  .rv-in, .js [data-revelar] > *, .js .hero .selo { translate: none !important; rotate: none !important; opacity: 1 !important; scale: 1 !important; }
-}
 
 /* ==========================================================================
    Vitrine das linhas — escuro quente, cena de ambiente (imagem de IA) por linha
@@ -2331,3 +2325,40 @@ html.lenis { scroll-behavior: auto; }
   /* o botão flutuante do WhatsApp não cobre a última linha do rodapé */
   .rodape { padding-bottom: 88px; }
 }
+
+/* ==========================================================================
+   Movimento reduzido (Windows "Efeitos de animação" desligado, macOS "Reduzir
+   movimento", economia de bateria...). Menos movimento não é nenhum movimento:
+   ficam os esmaecimentos (opacidade e cor); saem deslocamento, zoom, giro e
+   loops contínuos. As durações e atrasos de cada regra continuam valendo.
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition-property: opacity, color, background-color, border-color, fill !important;
+  }
+
+  /* títulos: em vez de subir da máscara, cada linha esmaece */
+  .js .rv-in { translate: none; rotate: none; opacity: 0; }
+  .revelado .rv-in, .linha.ativa .titulo .rv-in { opacity: 1; }
+
+  /* estados de entrada: sem deslocamento nem zoom, só a opacidade */
+  .js [data-revelar] > :not([data-linhas]),
+  .js .linha__texto > *, .js .linha__specs li,
+  .js .faixa, .raiox__rotulo { translate: none !important; }
+  .js .hero .selo, .linha__cena { scale: 1 !important; }
+
+  /* raio-X: pontos e linhas esmaecem em vez de crescer/desenhar */
+  .raiox__ponto { scale: 1; opacity: 0; transition-duration: .5s; }
+  .raiox__ponto.on { opacity: 1; }
+  .raiox__linhas path { stroke-dashoffset: 0; opacity: 0; }
+  .raiox__linhas path.on { opacity: 1; }
+
+  /* traços finos que "se desenham": aparecem inteiros */
+  .js [data-revelar] .linhas-intro__traco, .js [data-revelar] .linhas-intro__over::after,
+  .js [data-revelar] .prova__traco, .js [data-revelar] .prova__over::after,
+  .js [data-revelar] .contato__traco,
+  .js .historia__marcos[data-revelar]:not(.revelado)::before { scale: 1 1; }
+}
+

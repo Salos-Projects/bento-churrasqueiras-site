@@ -144,7 +144,8 @@
 
   /* ---------- Números: contam de 0 até o valor ao entrar na tela ---------- */
   var numeros = document.querySelector("[data-numeros]");
-  if (numeros && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  // a contagem não desloca nada na tela: vale também para quem pede menos movimento
+  if (numeros && "IntersectionObserver" in window) {
     var alvos = numeros.querySelectorAll("[data-contar]");
     alvos.forEach(function (el) { el.textContent = "0"; });
     var obsNum = new IntersectionObserver(function (es) {
@@ -303,7 +304,6 @@
       var p = Math.min(1, Math.max(0, -r.top / (sec.offsetHeight - window.innerHeight)));
       mostrar(Math.min(total, Math.floor(p * (total + 1) + .15)));
     };
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { mostrar(total); return; }
     window.addEventListener("scroll", atualizar, { passive: true });
     window.addEventListener("resize", atualizar);
     atualizar();

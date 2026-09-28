@@ -87,6 +87,8 @@
 22. E-mail "Projetos, arquitetos e revendas": a Bento trabalha com revendas? (texto do contato)
 23. Catálogo PDF: frase de abertura "Tecnologia e tradição unidas pela paixão de assar" pode virar texto da Empresa, se o cliente quiser.
 
+- **Movimento reduzido (28/09):** o site desligava todas as animações quando o sistema pede menos movimento (Windows "Efeitos de animação" desligado, macOS "Reduzir movimento"), e por isso parecia quebrado em alguns computadores. Agora, nesse modo, ficam os esmaecimentos (títulos, blocos, legendas do raio-X no scroll) e a contagem dos números; saem deslocamento, zoom, giro do selo, carrossel contínuo e rolagem suave. Regras no fim do `estilo.css`.
+
 ### Próximos passos
 1. **Revisar as pendências acima com o cliente.**
 2. **Cenas por IA:** recebidas em 28/09 as de **SmartGrill, DuraGrill, Elevatto e Acessórios** (`assets/img/<linha>/cena-<linha>.webp`) — já na vitrine da home, na abertura das 4 páginas de linha e nos capítulos/faixas de Produtos (Rotativas usa a DuraGrill). A abertura das páginas de linha passou a mostrar a foto só nos 72% da direita (as cenas têm a churrasqueira no centro). **Faltam:** Grelhas, Suporte de fundo, Espetos suspensos (família Minimalista) e a **versão vertical da hero** para o celular.

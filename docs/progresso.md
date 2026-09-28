@@ -91,5 +91,5 @@
 
 ### Próximos passos
 1. **Revisar as pendências acima com o cliente.**
-2. **Cenas por IA:** recebidas em 28/09 as de **SmartGrill, DuraGrill, Elevatto e Acessórios** (`assets/img/<linha>/cena-<linha>.webp`) — já na vitrine da home, na abertura das 4 páginas de linha e nos capítulos/faixas de Produtos (Rotativas usa a DuraGrill). A abertura das páginas de linha passou a mostrar a foto só nos 72% da direita (as cenas têm a churrasqueira no centro). **Faltam:** Grelhas, Suporte de fundo, Espetos suspensos (família Minimalista) e a **versão vertical da hero** para o celular.
+2. **Cenas por IA:** recebidas em 28/09 as de **SmartGrill, DuraGrill, Elevatto e Acessórios** (`assets/img/<linha>/cena-<linha>.webp`) — já na vitrine da home, na abertura das 4 páginas de linha e nos capítulos/faixas de Produtos (Rotativas usa a DuraGrill). A abertura das páginas de linha passou a mostrar a foto só nos 72% da direita (as cenas têm a churrasqueira no centro). Grelhas recebida em seguida (`grelhas/cena-grelhas.webp`, churrasqueira à direita → `background-position` à direita no HTML), na home e na abertura de /grelhas/. **Faltam:** Suporte de fundo, Espetos suspensos (família Minimalista) e a **versão vertical da hero** para o celular.
 3. Montagem no Elementor só quando o Lucas liberar.

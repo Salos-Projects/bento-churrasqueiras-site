@@ -50,6 +50,13 @@ h1, h2, h3, p, ul, figure { margin: 0; }
 ul, ol { padding: 0; list-style: none; }
 body.menu-aberto { overflow: hidden; }
 
+/* Rolagem suave (Lenis, ligada no main.js) — a Lenis anima sozinha, então o smooth do CSS sai */
+html.lenis, html.lenis body { height: auto; }
+html.lenis { scroll-behavior: auto; }
+.lenis.lenis-stopped { overflow: clip; }
+.lenis [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-scrolling iframe { pointer-events: none; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }

@@ -9,6 +9,32 @@
   medirBarra();
   window.addEventListener("resize", medirBarra);
 
+  /* ---------- Rolagem suave (Lenis) ----------
+     Só no mouse/trackpad: no toque a rolagem nativa do celular já é suave.
+     Desligada para quem pede menos movimento. */
+  var lenis = null;
+  if (window.Lenis && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    lenis = new window.Lenis({ autoRaf: true, lerp: 0.09, allowNestedScroll: true });
+    // menu em overlay e ampliação de fotos rolam por conta própria
+    document.querySelectorAll("#menu, [data-lupa-janela]").forEach(function (el) { el.setAttribute("data-lenis-prevent", ""); });
+    // links internos (#secao): desliza até o alvo (a Lenis respeita o scroll-margin-top) e leva o foco junto
+    document.addEventListener("click", function (e) {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      var a = e.target.closest('a[href^="#"]');
+      var alvo = a && a.getAttribute("href").length > 1 && document.getElementById(decodeURIComponent(a.getAttribute("href").slice(1)));
+      if (!alvo) return;
+      e.preventDefault();
+      lenis.scrollTo(alvo);
+      history.pushState(null, "", a.getAttribute("href"));
+      if (!alvo.hasAttribute("tabindex") && alvo.tabIndex < 0) alvo.setAttribute("tabindex", "-1");
+      alvo.focus({ preventScroll: true });
+    });
+  }
+  function rolarAte(y) {
+    if (lenis) lenis.scrollTo(y);
+    else window.scrollTo({ top: y, behavior: "smooth" });
+  }
+
   /* ---------- Revelação dos títulos (linha a linha) ---------- */
   var titulos = Array.prototype.slice.call(document.querySelectorAll("[data-linhas]"));
   titulos.forEach(function (t) { t.dataset.original = t.innerHTML; });
@@ -227,7 +253,7 @@
     var irPara = function (i) {
       var topo = vitrine.getBoundingClientRect().top + window.scrollY;
       var passo = (vitrine.offsetHeight - window.innerHeight) / linhas.length;
-      window.scrollTo({ top: topo + passo * i + 2, behavior: "smooth" });
+      rolarAte(topo + passo * i + 2);
     };
     botoesIndice.forEach(function (b) { b.addEventListener("click", function () { irPara(Number(b.dataset.ir)); }); });
     // Tab entrando numa linha escondida: rola até ela

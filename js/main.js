@@ -436,6 +436,38 @@
     });
   }
 
+  /* ---------- Selo "Modelo patenteado" preso a um ponto da foto de fundo ----------
+     data-ancora="x y" = frações da foto; data-foto="largura altura" = tamanho original.
+     Refaz a conta do background-size: cover + background-position do elemento pai.
+     Com [data-selo-celular] na página, abaixo de 901px o selo vai para o lado do título
+     (no celular o canto da churrasqueira fica fora do corte da foto). */
+  document.querySelectorAll(".selo-patente[data-ancora]").forEach(function (selo) {
+    var foto = selo.parentElement;
+    var a = selo.dataset.ancora.split(" ").map(Number);
+    var d = selo.dataset.foto.split(" ").map(Number);
+    var celular = document.querySelector("[data-selo-celular]");
+    var mq = window.matchMedia("(max-width: 900px)");
+    function pct(v, livre) { return /%$/.test(v) ? parseFloat(v) / 100 * livre : parseFloat(v) || 0; }
+    function posicionar() {
+      if (celular && mq.matches) {
+        if (selo.parentElement !== celular) { celular.appendChild(selo); selo.classList.remove("selo-patente--foto"); selo.style.left = selo.style.top = ""; }
+        return;
+      }
+      if (selo.parentElement !== foto) { foto.appendChild(selo); selo.classList.add("selo-patente--foto"); }
+      var w = foto.clientWidth, h = foto.clientHeight;
+      var k = Math.max(w / d[0], h / d[1]);
+      var lw = d[0] * k, lh = d[1] * k;
+      var cs = getComputedStyle(foto);
+      var x = pct(cs.backgroundPositionX, w - lw), y = pct(cs.backgroundPositionY, h - lh);
+      selo.style.left = (x + a[0] * lw).toFixed(1) + "px";
+      selo.style.top = (y + a[1] * lh).toFixed(1) + "px";
+    }
+    posicionar();
+    if (window.ResizeObserver) new ResizeObserver(posicionar).observe(foto);
+    else window.addEventListener("resize", posicionar);
+    mq.addEventListener("change", posicionar);
+  });
+
   /* ---------- Ano no rodapé ---------- */
   document.querySelectorAll("[data-ano]").forEach(function (el) {
     el.textContent = new Date().getFullYear();

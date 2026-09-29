@@ -2376,7 +2376,6 @@ html.lenis { scroll-behavior: auto; }
 .titulo-com-selo { display: flex; align-items: center; gap: clamp(18px, 2.4vw, 40px); }
 .titulo-com-selo > :first-child { margin-top: 0; }
 .linha-hero .titulo-com-selo { margin-top: 22px; }
-.linha .titulo-com-selo { margin-top: 20px; }
 
 .selo-patente {
   --tam: clamp(104px, 10.5vw, 168px);
@@ -2456,10 +2455,22 @@ html.lenis { scroll-behavior: auto; }
   40%      { filter: drop-shadow(0 14px 22px rgba(0, 0, 0, .45)) drop-shadow(0 0 18px rgba(232, 176, 34, .22)); }
 }
 
-.linha .selo-patente { --tam: clamp(84px, 6.5vw, 112px); }
+/* na foto: centro do selo no ponto data-ancora (o JS calcula left/top conforme o "cover" da foto) */
+.selo-patente--foto {
+  --tam: clamp(120px, 9.5vw, 184px);
+  position: absolute;
+  z-index: 1;
+  translate: -50% -50%;
+}
+.selo-patente--foto:not([style*="left"]) { visibility: hidden; }
+.linha .selo-patente--foto { --tam: clamp(96px, 7.5vw, 140px); }
+/* home: o carimbo só acontece quando a Elevatto entra na vitrine */
+.linha:not(.ativa) .selo-patente { animation: none; opacity: 0; }
+@media (max-width: 900px) {
+  .linha .selo-patente--foto { --tam: clamp(64px, 17vw, 110px); }
+}
 @media (max-width: 760px) {
   .selo-patente { --tam: 92px; }
-  .linha .selo-patente { --tam: 76px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .selo-patente, .selo-patente__brilho, .selo-patente__brilho::after, .selo-patente__faisca { animation: none; }

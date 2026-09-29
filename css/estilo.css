@@ -1472,18 +1472,18 @@ html.lenis { scroll-behavior: auto; }
 }
 .linha-hero__foto {
   position: absolute;
-  inset: 0 0 0 auto;
-  width: 72%; /* as cenas têm a churrasqueira no centro: a foto ocupa a direita e o texto fica no escuro */
+  inset: 0;
   z-index: -1;
-  background: center 45% / cover no-repeat;
+  /* as fotos da hero já vêm com a churrasqueira à direita: ancorada à direita, o lado claro fica sob o texto */
+  background: right center / cover no-repeat;
 }
 .linha-hero__foto::after {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to top, #171615 2%, rgba(23, 22, 21, .55) 45%, rgba(23, 22, 21, .2)),
-    linear-gradient(to right, #171615, rgba(23, 22, 21, .6) 22%, rgba(23, 22, 21, 0) 55%);
+    linear-gradient(to top, #171615 2%, rgba(23, 22, 21, .5) 40%, rgba(23, 22, 21, .15)),
+    linear-gradient(to right, #171615 8%, rgba(23, 22, 21, .82) 34%, rgba(23, 22, 21, .25) 52%, rgba(23, 22, 21, 0) 64%);
 }
 .migalha { display: flex; gap: 12px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255, 255, 255, .65); }
 .migalha a { text-decoration: none; }
@@ -1741,7 +1741,7 @@ html.lenis { scroll-behavior: auto; }
 }
 @media (max-width: 760px) {
   .linha-hero { padding-top: 160px; min-height: 620px; }
-  .linha-hero__foto { width: 100%; }
+  .linha-hero__foto { background-position: 72% center; }
   .linha-hero__titulo { font-size: 84px; }
   .linha-hero__apoio { font-size: 16px; }
   .destaques__lista li { padding: 24px 16px; }

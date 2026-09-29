@@ -647,7 +647,7 @@ html.lenis { scroll-behavior: auto; }
 .linha__cena {
   position: absolute;
   inset: 0 0 0 auto;
-  background: center / cover no-repeat; /* a imagem vem no style do HTML */
+  background: 90% center / cover no-repeat; /* a imagem vem no style do HTML; a churrasqueira ocupa ~50–95% da largura da foto */
   scale: 1.12;
   transition: scale 2.2s cubic-bezier(.2, .7, .2, 1);
 }
@@ -803,7 +803,7 @@ html.lenis { scroll-behavior: auto; }
     width: 100%;
     height: 62vw;
     min-height: 240px;
-    background-position: 50% 45%;
+    background-position: 72% 45%;
     -webkit-mask: linear-gradient(to bottom, #000 55%, transparent);
     mask: linear-gradient(to bottom, #000 55%, transparent);
   }
@@ -1196,7 +1196,7 @@ html.lenis { scroll-behavior: auto; }
   overflow: hidden;
   isolation: isolate;
   border-radius: 6px;
-  background: center / cover no-repeat;
+  background: 72% center / cover no-repeat; /* fotos com a churrasqueira à direita */
   color: var(--branco);
   text-decoration: none;
   transition: flex-grow .7s cubic-bezier(.2, .7, .2, 1);
@@ -1252,7 +1252,7 @@ html.lenis { scroll-behavior: auto; }
   inset: 0 0 auto;
   height: var(--cena-h);
   z-index: -1;
-  background: center / cover no-repeat; /* a imagem vem no style do HTML */
+  background: right center / cover no-repeat; /* a imagem vem no style do HTML; churrasqueira à direita */
   -webkit-mask: linear-gradient(to bottom, #000 45%, transparent);
   mask: linear-gradient(to bottom, #000 45%, transparent);
 }

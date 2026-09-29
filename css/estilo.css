@@ -1488,8 +1488,27 @@ html.lenis { scroll-behavior: auto; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to top, #171615 2%, rgba(23, 22, 21, .5) 40%, rgba(23, 22, 21, .15)),
-    linear-gradient(to right, #171615 8%, rgba(23, 22, 21, .82) 34%, rgba(23, 22, 21, .25) 52%, rgba(23, 22, 21, 0) 64%);
+    /* sombra só onde precisa: topo (leitura do menu), base curta (emenda com a faixa de destaques)
+       e lado esquerdo (texto). A churrasqueira, à direita, fica com a luz da foto. */
+    linear-gradient(to bottom, rgba(23, 22, 21, .45), rgba(23, 22, 21, 0) 22%),
+    linear-gradient(to top, #171615 1%, rgba(23, 22, 21, .5) 10%, rgba(23, 22, 21, 0) 26%),
+    linear-gradient(to right, #171615 8%, rgba(23, 22, 21, .82) 34%, rgba(23, 22, 21, .2) 50%, rgba(23, 22, 21, 0) 58%);
+}
+/* foto com a churrasqueira no centro (linha minimalista): no desktop a foto começa em 45% da
+   largura, com a borda esquerda esfumada, para o produto não ficar atrás do título */
+@media (min-width: 901px) {
+  .linha-hero--foto-centro .linha-hero__foto {
+    left: 45%;
+    background-position: var(--foco, 50%) center;
+    -webkit-mask: linear-gradient(to right, transparent, #000 30%);
+            mask: linear-gradient(to right, transparent, #000 30%);
+  }
+  .linha-hero--foto-centro .linha-hero__titulo { max-width: 42vw; }
+  .linha-hero--foto-centro .linha-hero__foto::after {
+    background:
+      linear-gradient(to bottom, rgba(23, 22, 21, .45), rgba(23, 22, 21, 0) 22%),
+      linear-gradient(to top, #171615 1%, rgba(23, 22, 21, .5) 10%, rgba(23, 22, 21, 0) 26%);
+  }
 }
 .migalha { display: flex; gap: 12px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255, 255, 255, .65); }
 .migalha a { text-decoration: none; }

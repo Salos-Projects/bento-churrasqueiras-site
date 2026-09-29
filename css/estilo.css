@@ -2368,3 +2368,99 @@ html.lenis { scroll-behavior: auto; }
   .js .historia__marcos[data-revelar]:not(.revelado)::before { scale: 1 1; }
 }
 
+
+/* ==========================================================================
+   Selo "Modelo patenteado" (Elevatto): brilho metálico que varre o selo,
+   faíscas e halo dourado. Reutilizável: .selo-patente ao lado de um título.
+   ========================================================================== */
+.titulo-com-selo { display: flex; align-items: center; gap: clamp(18px, 2.4vw, 40px); }
+.titulo-com-selo > :first-child { margin-top: 0; }
+.linha-hero .titulo-com-selo { margin-top: 22px; }
+.linha .titulo-com-selo { margin-top: 20px; }
+
+.selo-patente {
+  --tam: clamp(104px, 10.5vw, 168px);
+  position: relative;
+  flex: none;
+  width: var(--tam);
+  aspect-ratio: 1;
+  rotate: -8deg;
+  filter: drop-shadow(0 14px 22px rgba(0, 0, 0, .45)) drop-shadow(0 0 18px rgba(232, 176, 34, .22));
+  animation: selo-carimbo .9s cubic-bezier(.2, 1.35, .35, 1) .55s both, selo-halo 4.8s ease-in-out 1.6s infinite;
+}
+.selo-patente img { display: block; width: 100%; height: 100%; }
+
+/* faixa de luz diagonal recortada no formato do selo */
+.selo-patente__brilho {
+  position: absolute;
+  inset: 0;
+  -webkit-mask: url("../assets/img/elevatto/selo-patenteado.webp") center / contain no-repeat;
+          mask: url("../assets/img/elevatto/selo-patenteado.webp") center / contain no-repeat;
+  background: linear-gradient(115deg,
+    transparent 40%,
+    rgba(255, 246, 210, .35) 46%,
+    rgba(255, 255, 255, .85) 50%,
+    rgba(255, 246, 210, .35) 54%,
+    transparent 60%) no-repeat;
+  background-size: 250% 250%;
+  background-position: 120% 120%;
+  mix-blend-mode: screen;
+  animation: selo-varre 4.8s cubic-bezier(.45, .05, .25, 1) 1.5s infinite;
+}
+/* segunda passada, mais fina e forte, para o reflexo "estourar" */
+.selo-patente__brilho::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-size: 250% 250%;
+  background-image: linear-gradient(115deg, transparent 47%, rgba(255, 255, 255, .9) 50%, transparent 53%);
+  animation: inherit;
+}
+
+/* faíscas: estrelas de 4 pontas que acendem quando a luz passa */
+.selo-patente__faisca {
+  position: absolute;
+  top: 14%; left: 14%;
+  width: 22%;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, #fff 0 6%, rgba(255, 240, 190, .9) 12%, rgba(255, 220, 120, 0) 45%);
+  clip-path: polygon(50% 0, 56% 44%, 100% 50%, 56% 56%, 50% 100%, 44% 56%, 0 50%, 44% 44%);
+  opacity: 0;
+  scale: 0;
+  pointer-events: none;
+  animation: selo-faisca 4.8s ease-out 1.5s infinite;
+}
+.selo-patente__faisca:nth-of-type(2) { top: 4%; left: 62%; animation-delay: 2.35s; }
+.selo-patente__faisca:nth-of-type(3) { top: 66%; left: 8%; width: 15%; animation-delay: 2.7s; }
+
+.selo-patente:hover .selo-patente__brilho,
+.selo-patente:hover .selo-patente__brilho::after { animation-duration: 1.6s; }
+
+@keyframes selo-carimbo {
+  from { opacity: 0; scale: 1.6; rotate: -24deg; }
+  to   { opacity: 1; scale: 1;   rotate: -8deg; }
+}
+@keyframes selo-varre {
+  0%        { background-position: 120% 120%; }
+  38%, 100% { background-position: -20% -20%; }
+}
+@keyframes selo-faisca {
+  0%, 100% { opacity: 0; scale: 0; rotate: 0deg; }
+  6%       { opacity: 1; scale: 1; rotate: 45deg; }
+  16%      { opacity: 0; scale: .2; rotate: 90deg; }
+}
+@keyframes selo-halo {
+  0%, 100% { filter: drop-shadow(0 14px 22px rgba(0, 0, 0, .45)) drop-shadow(0 0 18px rgba(232, 176, 34, .22)); }
+  12%      { filter: drop-shadow(0 14px 22px rgba(0, 0, 0, .45)) drop-shadow(0 0 34px rgba(245, 195, 60, .5)); }
+  40%      { filter: drop-shadow(0 14px 22px rgba(0, 0, 0, .45)) drop-shadow(0 0 18px rgba(232, 176, 34, .22)); }
+}
+
+.linha .selo-patente { --tam: clamp(84px, 6.5vw, 112px); }
+@media (max-width: 760px) {
+  .selo-patente { --tam: 92px; }
+  .linha .selo-patente { --tam: 76px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .selo-patente, .selo-patente__brilho, .selo-patente__brilho::after, .selo-patente__faisca { animation: none; }
+}

@@ -459,7 +459,9 @@
       var lw = d[0] * k, lh = d[1] * k;
       var cs = getComputedStyle(foto);
       var x = pct(cs.backgroundPositionX, w - lw), y = pct(cs.backgroundPositionY, h - lh);
-      selo.style.left = (x + a[0] * lw).toFixed(1) + "px";
+      // nunca deixa o selo sair da foto (em telas estreitas o canto pode ficar no limite)
+      var meio = selo.offsetWidth / 2 + 10;
+      selo.style.left = Math.min(Math.max(x + a[0] * lw, meio), w - meio).toFixed(1) + "px";
       selo.style.top = (y + a[1] * lh).toFixed(1) + "px";
     }
     posicionar();

@@ -1196,7 +1196,7 @@ html.lenis { scroll-behavior: auto; }
   overflow: hidden;
   isolation: isolate;
   border-radius: 6px;
-  background: 72% center / cover no-repeat; /* fotos com a churrasqueira à direita */
+  background: center / cover no-repeat;
   color: var(--branco);
   text-decoration: none;
   transition: flex-grow .7s cubic-bezier(.2, .7, .2, 1);
@@ -1249,12 +1249,17 @@ html.lenis { scroll-behavior: auto; }
 }
 .familia__cena {
   position: absolute;
-  inset: 0 0 auto;
+  inset: 0 0 auto auto;
   height: var(--cena-h);
+  /* a imagem vem no style do HTML: fotos 16:9 com a churrasqueira à direita, na metade da altura.
+     A cena tem a proporção da foto (sem zoom), presa à direita; o lado esquerdo se esfuma no escuro
+     e a churrasqueira fica ao lado do título */
+  width: calc(var(--cena-h) * 16 / 9);
+  max-width: 100%;
   z-index: -1;
-  background: right center / cover no-repeat; /* a imagem vem no style do HTML; churrasqueira à direita */
-  -webkit-mask: linear-gradient(to bottom, #000 45%, transparent);
-  mask: linear-gradient(to bottom, #000 45%, transparent);
+  background: right 35% / cover no-repeat;
+  -webkit-mask: linear-gradient(to bottom, #000 60%, transparent);
+  mask: linear-gradient(to bottom, #000 60%, transparent);
 }
 .familia__cena::after {
   content: "";
@@ -1262,19 +1267,20 @@ html.lenis { scroll-behavior: auto; }
   inset: 0;
   background:
     linear-gradient(to bottom, var(--escuro), rgba(23, 22, 21, 0) 25%),
-    linear-gradient(to right, rgba(23, 22, 21, .75), rgba(23, 22, 21, 0) 55%);
+    linear-gradient(to right, var(--escuro), rgba(23, 22, 21, .75) 22%, rgba(23, 22, 21, 0) 48%);
 }
 .pg-abertura + .familia .familia__cena {
-  -webkit-mask: linear-gradient(to bottom, transparent, #000 30%, #000 45%, transparent);
-  mask: linear-gradient(to bottom, transparent, #000 30%, #000 45%, transparent);
+  -webkit-mask: linear-gradient(to bottom, transparent, #000 30%, #000 60%, transparent);
+  mask: linear-gradient(to bottom, transparent, #000 30%, #000 60%, transparent);
 }
 /* primeiro capítulo depois das faixas: a cena nasce mais devagar do escuro, para não colar nas imagens de cima */
 .pg-abertura + .familia .familia__cena::after {
   background:
     linear-gradient(to bottom, var(--escuro) 8%, rgba(23, 22, 21, 0) 50%),
-    linear-gradient(to right, rgba(23, 22, 21, .75), rgba(23, 22, 21, 0) 55%);
+    linear-gradient(to right, var(--escuro), rgba(23, 22, 21, .75) 22%, rgba(23, 22, 21, 0) 48%);
 }
-.familia__cabeca { padding-top: calc(var(--cena-h) - 230px); max-width: none; }
+/* desktop: o bloco de texto fica centrado na altura da churrasqueira, ao lado dela */
+.familia__cabeca { padding-top: calc(var(--cena-h) * .5 - 190px); max-width: none; }
 .familia__over { display: flex; align-items: center; gap: 16px; color: var(--branco); opacity: .8; letter-spacing: .28em; }
 .familia__num { font-family: var(--fonte-titulo); font-size: 22px; letter-spacing: 0; color: var(--laranja); }
 .familia__titulo {

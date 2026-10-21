@@ -52,6 +52,13 @@
 - SEO: títulos encurtados para ≤ 61 caracteres e descrições ≤ 160.
 - Peso: páginas entre 0,5 e 0,9 MB; Projetos 1,8 MB (36 fotos, carregam conforme a rolagem) e Contato 2,2 MB (quase tudo é o mapa do Google, carregado só ao chegar nele). Opcional: trocar o mapa por uma imagem com "abrir mapa".
 
+## 21/10/2026 — Ajustes pedidos pelo cliente
+
+- Garantia: "5 anos **na parte mecânica**" (antes "em motor e componentes") em todo o site.
+- Grelhas automática e manual: instalação **conjugada ou lateral** à churrasqueira (antes "integrada"); ficha das grelhas ganhou a linha "Instalação".
+- Elevação manual: sem "manivela" — agora "manual" / "na mão" em todo o site.
+- Elevatto continua "integrada" (o sistema sobe os espetos junto) — confirmar com o cliente.
+
 ## Pendências do cliente (lista única — revisar juntos)
 
 **Números e fatos da marca**

@@ -28,20 +28,20 @@ Frase: Espetos girando sozinhos, na velocidade certa, com assado por igual.
 | Rotação | Velocidade regulável · buchas autolubrificantes | Velocidade regulável · buchas autolubrificantes |
 | Descanso balanço | Opcional | Opcional |
 | Material | 100% Inox 304 | 100% Inox 304 |
-| Garantia | 5 anos em motor e componentes | 5 anos em motor e componentes |
+| Garantia | 5 anos na parte mecânica | 5 anos na parte mecânica |
 
 Catálogo: **as duas têm buchas autolubrificantes** (o post do Instagram dava a entender que era só a SmartGrill — segue o catálogo). Diferencial real da SmartGrill: frente removível.
 
 ## Família 02: Grelhas e elevação
 
 ⚠️ O render "grelha com legendas" que veio do Figma **é da KAFER Churrasqueiras** (produto "Innovare manivela", @kaferchurrasqueiras na imagem) — removido do projeto em 25/09/2026. Não usar. Pedir ao cliente renders limpos da Bento para o raio-X.
-Frase: Controle total da distância da brasa — na manivela, no botão ou na voz.
+Frase: Controle total da distância da brasa — na mão, no botão ou na voz.
 
 | Produto | URL | Resumo | Spec 1 | Spec 2 | Fonte |
 |---|---|---|---|---|---|
 | **Elevatto** (nova) | `/elevatto/` | Grelha e espetos sobem juntos, automaticamente, com rotação constante e regulável. | Voz, app ou botão · também por controle | Simultânea · espetos e grelha | Catálogo |
-| Grelha automática | `/grelhas/#automatica` | A grelha sobe e desce sozinha, integrada à churrasqueira, dividindo o espaço com os espetos. | Botão ou app · também por controle | Desmontável · limpeza simples | Catálogo |
-| Elevação manual | `/grelhas/#manual` | Suba e desça na manivela e divida o espaço com os espetos. | Manivela · elevação precisa | + Espetos · no mesmo espaço | Site antigo |
+| Grelha automática | `/grelhas/#automatica` | A grelha sobe e desce sozinha, conjugada à churrasqueira (dividindo o espaço com os espetos) ou na lateral. | Botão ou app · também por controle | Desmontável · limpeza simples | Catálogo |
+| Elevação manual | `/grelhas/#manual` | Suba e desça a grelha na mão, conjugada à churrasqueira ou na lateral. | Manual · elevação precisa | + Espetos · no mesmo espaço | Site antigo |
 | Parrilla | `/grelhas/#parrilla` | Canaletas inclinadas afastam a gordura do fogo para assar mais perto da brasa. | Argentina · ou uruguaia | Inox 304 · ou aço carbono | Site antigo |
 
 Elevatto (catálogo): Inox 304; elevação por botão, controle ou app; instalação integrada; espetos no mesmo espaço; elevação automática simultânea de espetos e grelhas; controle por voz; rotação constante e regulável; sistema desmontável.

@@ -1,0 +1,5 @@
+# só o site vai para a Vercel; anotações internas ficam no GitHub
+docs/
+referencias/
+README.md
+.github/

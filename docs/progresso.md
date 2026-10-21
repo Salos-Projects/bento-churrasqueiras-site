@@ -30,7 +30,7 @@
 - **Páginas DuraGrill, Suporte de fundo, Espetos suspensos e Acessórios (26/09):** todas as linhas de produto com página própria. DuraGrill no modelo da SmartGrill (ficha DuraGrill × SmartGrill; fato novo do site atual: **régua superior destacável** — comparativo da SmartGrill/Produtos atualizado); Suporte de fundo e Espetos suspensos com raio-X de 4 pontos e ficha comparando os dois; Acessórios no modelo de Grelhas (modelos com âncoras #bifeiras, #costelao, #espetos, sem raio-X). Galeria ganhou variante **horizontal** (`data-formato="paisagem"`) para fotos largas. Fotos: Catálogo 2026 (DuraGrill, Suporte, Espetos) e site atual, 630 px (Acessórios) — todas provisórias. (21/10: raio-X da DuraGrill passou para o **render do cliente** `duragrill/duragrill-raiox.webp`, variante `raiox--paisagem`, como na Elevatto.)
 - ⚠️ Corrigido: a 4ª foto da galeria da SmartGrill era da DuraGrill (o PDF reaproveita a imagem em várias páginas; a foto aparece de fato na pág. 06, DuraGrill).
 
-- **Página Projetos** (`/projetos/`): abertura institucional, **mosaico** de 35 fotos (catálogo + site atual) com **filtro por família** e **ampliação** (setas, teclado, deslizar no celular, Esc), "Como funciona" e contato. Legendas "Cidade a confirmar". Fora do mosaico: Galeria6 do site atual (arquivo quebrado) e Galeria2 (coifa com a marca **BRAZERO** — confirmar se é projeto da Bento). No Elementor: galeria com filtro (Gallery do Pro ou Loop Grid + taxonomia).
+- **Página Projetos** (`/projetos/`): abertura institucional, **mosaico** de 35 fotos (catálogo + site atual) com **filtro por família** e **ampliação** (setas, teclado, deslizar no celular, Esc), "Como funciona" e contato. Legendas só com o nome do produto (21/10: o cliente decidiu não mostrar a cidade dos projetos). Fora do mosaico: Galeria6 do site atual (arquivo quebrado) e Galeria2 (coifa com a marca **BRAZERO** — confirmar se é projeto da Bento). No Elementor: galeria com filtro (Gallery do Pro ou Loop Grid + taxonomia).
 - Corrigido: mensagem do WhatsApp no contato de Suporte de fundo, Espetos suspensos e Acessórios tinha perdido a palavra "orçamento".
 
 - **Página Assistência** (`/assistencia/`): abertura, bloco escuro com "como acionar a garantia" (3 passos + condições do site atual) e **formulário de chamado** com os campos do Fluent Forms atual (nome, WhatsApp, e-mail, descrição, fotos do defeito) + produto (opcional, novo); dúvidas e manuais. Sem bloco de orçamento/catálogo (quem chega aqui já é cliente). No Elementor: manter o **Fluent Forms 5** existente, estilizado igual, e acrescentar o campo Produto.
@@ -84,7 +84,7 @@
 
 **Fotos e imagens**
 16. Renders limpos da Bento para os raio-X (os atuais são fotos do catálogo; o render do Figma era da KAFER).
-17. Fotos em alta das obras + **cidade** de cada projeto (galerias e mosaico mostram "cidade a confirmar").
+17. Fotos em alta das obras. ~~Cidade de cada projeto~~ — decidido em 21/10: não vamos mostrar cidade.
 18. Fotos da fábrica e da equipe para a página Empresa.
 
 **Privacidade e acesso**

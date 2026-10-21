@@ -404,7 +404,8 @@
       lupaImg.src = img.currentSrc || img.src;
       lupaImg.alt = img.alt;
       janela.querySelector("[data-lupa-titulo]").textContent = li.querySelector(".mosaico__legenda strong").textContent;
-      janela.querySelector("[data-lupa-texto]").textContent = li.querySelector(".mosaico__legenda span").textContent;
+      var texto = li.querySelector(".mosaico__legenda span");
+      janela.querySelector("[data-lupa-texto]").textContent = texto ? texto.textContent : "";
       janela.querySelector("[data-lupa-conta]").textContent = (atual + 1) + " / " + visiveis.length;
     };
     var gatilho = null;

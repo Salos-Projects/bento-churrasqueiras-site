@@ -57,6 +57,7 @@
 - Garantia: "5 anos **na parte mecânica**" (antes "em motor e componentes") em todo o site.
 - Grelhas automática e manual: instalação **conjugada ou lateral** à churrasqueira (antes "integrada"); ficha das grelhas ganhou a linha "Instalação".
 - Elevação manual: sem "manivela" — agora "manual" / "na mão" em todo o site.
+- Prévia de link (Open Graph) em todas as páginas com imagens em `assets/og/` e página `404.html` própria. ⚠️ As tags `og:url`/`og:image` apontam para `bento-churrasqueiras-site.vercel.app` — trocar pelo domínio definitivo na publicação.
 - Elevatto continua "integrada" (o sistema sobe os espetos junto) — confirmar com o cliente.
 
 ## Pendências do cliente (lista única — revisar juntos)
